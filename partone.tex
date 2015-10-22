@@ -25,7 +25,7 @@ Some grabbing anecdote...
 
 \chapter{Symbols, Semaphores, and the Optical Telegraph}
 
-If I tell you to envision a telegraph, you may draw up in your mind some electrical apparatus. You are likely not that far off the mark, and we will soon learn the inner workings of Samuel Morse's electrical telegraph which wired the Victorian world, a precursor to the modern Internet. But the word ``telegraph'' was coined long before Morse ever fiddled with electricity, and was originally used to describe a system for conveying information quickly over long distances that involved no wires or electricity at all. Instead, this \emph{optical telegraph} was based on an ancient paradigm: ordinary sight.
+Decades before the invention of the well-known electrical telegraph in the early 19th century, the word ``telegraph'' was already in widespread use. Much like signal fires that have been used since ancient times to convey information, this \emph{optical telegraph} required no wires at all, but instead relied on ordinary sight. In the section that follows we will explore a few different sight-based communication systems, which will help us understand fundamental elements of a communication system within a historical context.
 
 \section{The First Telecommunication Network}
 
@@ -80,7 +80,7 @@ Using this system, you could compose a message (``hey Mary, let's stop being so 
 
 This system is an example of what we can call a \emph{semaphore system} of communication. It may not seem all that groundbreaking. After all, a lot of the decisions were arbitrary and we came up with them in a pretty ad hoc fashion. And it may not seem all that useful for your game of catch; it would certainly be faster to jog 25 yards towards her and speak a full sentence aloud than it would be to try to spell out dozens of letters via arm positions.
 
-But is there any way for us to extend the essence of this idea to quickly transfer information across dozens or even hundreds of miles? 
+But is there any way for us to extend the essence of this idea to quickly transfer information across dozens or even hundreds of miles?
 
 This question was on the mind of a twentysomething in Paris way back in the 1780s. His name was Claude Chappe, and though he was not an expert on communication systems, he experimented furiously and through trial and error was able to devise a system that could be made to work for sending messages hundreds of miles much more quickly than human beings had ever been able to communicate messages before.
 
@@ -108,9 +108,9 @@ With government backing, the first line between Paris and the town of Lille was 
 \includegraphics[width=0.5\linewidth]{chappe_network}
 \end{figure}
 
-This was the world's first telecommunications (``distant communication'') network, and it required no wires at all. 
+This was the world's first telecommunications (``distant communication'') network, and it required no wires at all.
 
-The network in France was copied in other countries, as telegraph towers started appearing all over. Indeed, if you live in a city, you may have a neighborhood nearby called something like \emph{telegraph hill}; this name is derived from the hills upon which optical telegraphs were placed. 
+The network in France was copied in other countries, as telegraph towers started appearing all over. Indeed, if you live in a city, you may have a neighborhood nearby called something like \emph{telegraph hill}; this name is derived from the hills upon which optical telegraphs were placed.
 
 The optical telegraph was the first time in history that messages could be delivered many miles away in a relatively short amount of time, and for the next half century, this was the only systematic method for doing so.
 
@@ -212,9 +212,9 @@ With 105 sets of 5 lights ($105*5=525$ lights total), Mary could convey this ent
 
 Another remarkable thing happens when we start adding lights to our communication system: the number of possible configurations quickly gets astronomically large rather quickly.
 
-For example, with 27 lights, Mary can display... 
+For example, with 27 lights, Mary can display...
 
-\[ \underbrace{2 * 2 * ... * 2}_{27 times} = 2^{27} = 134217728\] 
+\[ \underbrace{2 * 2 * ... * 2}_{27 times} = 2^{27} = 134217728\]
 
 ...over 134 million possible configurations!
 
@@ -232,7 +232,7 @@ However, with a little arithmetic, we can see just how clearly impossible it wou
 
 Suppose ``Mary'' was actually a cluster of supercomputers. Let's suppose each computer can rotate through a hundred thousand trillion ($10^{17}$) possible configurations per second. That is far more powerful than the world's most powerful supercomputer as of the writing of this text in 2015. And suppose further that there were a trillion computers in the cluster -- this is more computers than we have on the planet, even if you count phones, tablets, laptops, servers, smartcollars for dogs -- everything. But in our extreme hypothetical we have a trillion computers each counting a hundred thousand trillion possibilities per second.
 
-To multiple two exponential numbers together, you merely add their exponents: 
+To multiple two exponential numbers together, you merely add their exponents:
 
 \[10^{12} * 10^{17} = \underbrace{(10*10... *10)}_{12 times} * \underbrace{(10*10*... * 10)}_{17 times} = \underbrace{(10*10*...10)}_{29 times} = 10^{29}.\]
 
@@ -249,11 +249,11 @@ of the total number of possible configurations!
 How can such a ludicrously large number of configurations arise from a mere 525 lights? This is the essence of \emph{exponential growth}. Indeed, the table above that lists the number of lights and the corresponding number of configurations is one way to plot the values of the quantity $2^n$ as a function of $n$. We could also look at this graphically, and see the ``hockey stick'' curve associated with exponential growth: \\
 
 \begin{tikzpicture}[domain=0:10,yscale=1,xscale=1,smooth]
-  \begin{axis}[ 
+  \begin{axis}[
     xlabel=$n \text{ (number of lights)}$,
     ylabel={$f(n) = 2^n \text{ (number of configurations)}$}
-  ] 
-    \addplot[mark=none]{2^x}; 
+  ]
+    \addplot[mark=none]{2^x};
   \end{axis}
 \end{tikzpicture} \\
 
