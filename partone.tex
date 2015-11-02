@@ -23,11 +23,11 @@
 
 Some grabbing anecdote...
 
-\chapter{Symbols, Semaphores, and the Optical Telegraph}
+\chapter{Communication at a Distance}
 
-Decades before the invention of the well-known electrical telegraph in the early 19th century, the word ``telegraph'' was already in widespread use. Much like signal fires that have been used since ancient times to convey information, this \emph{optical telegraph} required no wires at all, but instead relied on ordinary sight. In the section that follows we will explore a few different sight-based communication systems, which will help us understand fundamental elements of a communication system within a historical context.
+Decades before the invention of the electrical telegraph that brought near-instantaneous communication to the Victorian world, the word ``telegraph'' was already in widespread use, having been coined by a French inventor named Claude Chappe to describe a network of towers that was also used to relay information. Much like signal fires that have been used since antiquity to convey simple, this \emph{optical telegraph} required no wires at all, as it instead relied on ordinary sight. In the section that follows we will explore a few different sight-based communication systems and in doing so lay some fundamental groundwork for understanding communication systems in general.
 
-\section{The First Telecommunication Network}
+\section{Telecommunications Using Plain Sight}
 
 Suppose you decide to play a game of catch with your friend Mary. After throwing back and forth a little, the inner athlete in Mary takes over and she decides just throwing the ball around is too boring -- she wants to practice some drills.
 
@@ -35,7 +35,7 @@ You're too far apart to yell at each other, so she waves you over. Soon she is e
 
 You grumble to yourself about Mary's inability to just have fun without making activities so competitive, but know that it would be futile to resist. And besides, you have a much more practical question in front of you: how is she going to indicate if she wants a high ball or a low ball? After all, she's far enough away that shouting is no use. The two of you briefly consider having her hold up one finger for a high ball, and two for a low ball, but quickly realize it will be hard to discern the number of fingers she's holding up from a distance.
 
-After a few seconds, you find a good system. She will raise her right arm straight up in indicate that she wants a high ball thrown, and will put her right arm straight out sideways for a low ball:
+It doesn't take long for the two of you to devise a system. She will raise her right arm straight up in indicate that she wants a high ball thrown, and will put her right arm straight out sideways for a low ball:
 
 \begin{figure}[H]
 \centering
@@ -74,63 +74,76 @@ After thinking through it a bit more, you realize that if you could represent ev
 \includegraphics[width=0.9\linewidth]{semaphore_flags}
 \end{figure}
 
-Here we display one possible system where the person signalling holds flags for extra emphasis so that the arm positions can be seen from far away.
+Here we display one possible system where the person signaling holds flags for extra emphasis so that the arm positions can be seen from far away.
 
-Using this system, you could compose a message (``hey Mary, let's stop being so intense when we play catch''), and pass that message to Mary encoded via your arm signaling system, who in turn could decode it and in doing so receive the message.
+Using this system, you could compose a message (``hey Mary, let's stop being so intense when we play catch''), and pass that message to Mary one letter at a time encoded via your arm signaling system, who in turn could decode it and understand the message.
 
-This system is an example of what we can call a \emph{semaphore system} of communication. It may not seem all that groundbreaking. After all, a lot of the decisions were arbitrary and we came up with them in a pretty ad hoc fashion. And it may not seem all that useful for your game of catch; it would certainly be faster to jog 25 yards towards her and speak a full sentence aloud than it would be to try to spell out dozens of letters via arm positions.
+This system is an example of what is called a \emph{semaphore system} of communication. While it may not seem that groundbreaking or useful for your game of catch, the core idea of transmitting symbols is the essence of all digital communication.
 
-But is there any way for us to extend the essence of this idea to quickly transfer information across dozens or even hundreds of miles?
+Now is there any way for us to extend this idea to quickly transfer information across dozens or even hundreds of miles?
 
-This question was on the mind of a twentysomething in Paris way back in the 1780s. His name was Claude Chappe, and though he was not an expert on communication systems, he experimented furiously and through trial and error was able to devise a system that could be made to work for sending messages hundreds of miles much more quickly than human beings had ever been able to communicate messages before.
+The key insight is that to turn this basic semaphore system into something useful, we will need a \emph{network} of relay stations, each passing a message along to the next faster than any horse could ride.
 
-\subsection{The Chappe system}
+\[ [GRAPHIC OF NETWORK OF RELAY STATIONS] \]
 
-There were two key extensions to our idea above that Chappe employed in order to mold the ideas we just explored into a useful communication system.
+Even those in the ancient world understood that this was a conceptually sound design:
 
-First, instead of using human arms, there would have to be big mechanical ones raised high on a tower so that it could be seen from as far away as possible. In particular, there were two arms both connected to a large cross arm. Such a tower looked something like this:
+\[ [INSERT QUOTE FROM ANCIENT WORLD] \]
+
+Of course, theorizing this is one thing, but putting such an expensive system into practice is quite another. For hundreds of years it seemed out of reach, until the stars aligned in France in the 1790s when an inventor named Claude Chappe was able to champion and build a working telegraph network, and in the process coined the name \emph{telegraph}, which translates to English as ``far writer.''
+
+\subsection{The Chappe System}
+
+If the idea of using a network of stations to relay information had been around for millenia, why did it take so long to start laying the stones and bricks to make it a reality?
+
+The reasons are primarily economic. A century before Chappe was devising systems for towers to communicate, in 1684, the British thinker Robert Hooke wrote out a detailed proposal for a system of communication at a distance, but the proposal languished and was never implemented.
+
+To get a sense of the economics at play, let's say one wanted to be able to send and receive messages from 300 miles away – roughly the distance from Paris to Lyon, or Philadelphia to Boston. Supposing intermediate stations were 10 miles apart, the cost of building the network would be the cost of building and maintaining 30 stations: that meant building 30 expensive buildings, and employing perhaps 60 human beings or more to manage the buildings and relay messages. Moreover the cost is pretty much all up front: it takes many stations to be built before information can usefully travel from large city centers.
+
+This was too high a price for the English government of the late 17th century to spend on an unproven idea without any critical use cases. But a hundred years later when Chappe was (re)inventing his optical telegraph, revolutionary France was embroiled in intense international military conflict. In this context, not only did instability of the revolution encourage spikes in short-term spending by those in power looking out for their own interests, but the \emph{value} of being able to transmit and receive information quickly had also skyrocketed for a military waging fast-paced wars on multiple fronts.
+
+This made the government receptive to the ideas of the young entrepreneurial Chappe, who furiously iterated on the design of his towers.
+
+Chappe's challenge was to figure out the nitty gritty details: how were two relay stations going to actually communicate? Chappe tried a variety of systems, some rather elaborate that involved synchronizing the time between two relay stations. In the end, the simpler solution won out, a trend that we will see continues for centuries.
+
+The relay stations would be large towers with mechanical arms that could be seen from as far away as possible. In particular, there were two small arms both connected to a large cross arm:
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.3\linewidth]{chappe_tower}
 \end{figure}
 
-This obelisk was given the name telegraph, which we could translate as ``distant writer.'' Similar to how we used human arms when experimenting with communication earlier, the arms of the tower could be given many different positions, each corresponding to a different letter or phrase. The advantage of the mechanical arms over human ones, of course, is that the arms on the tower are much larger and hence can be seen from further away.
+This obelisk was the first thing to be given the name telegraph, which we could translate as ``distant writer.'' Similar to how we used human arms when experimenting with communication earlier, the arms of the tower could be given many different positions, each corresponding to a different letter or phrase. The advantage of the mechanical arms over human ones, of course, is that the arms on the tower are much larger and hence can be seen from further away.
 
-Second, for Chappe's system to work, there would have to be a vast network of such towers, each 10 to 20 miles apart, which was just close enough for each tower to see the next with the aid of a telescope. While there was not anything particularly novel about Chappe's system, the combination of his perseverance and fortuitous timing made this possible. In fact, the technology behind the Chappe system was well known for quite some time -- Robert Hooke had devised a similar system over a hundred years earlier in England in 1684, but it was never put into practice.
+Since this first telegraph was to be used for strictly military purposes, the meaning of the arm positions emanating from the towers was to be kept secret. In fact, even the operators of towers often were simply mimicking the arm positions of the transmitting tower, without knowing the meaning of the message contained within that series of arm positions. [CITE]
 
-Why did Chappe's vision materialize whereas Hooke's did not? In both cases, government funding was necessary to finance the project, given large infrastructure costs associated with building and maintaining towers. But when Chappe was lobbying the French government in 1792, it was an especially tumultuous period in French history: the first phase of the French revolution had begun only a couple of years earlier, and the French Revolutionary Wars were beginning to take place. Given this backdrop of extreme change and military conflict, the value of facilitating fast information flow became apparent and Chappe's vision was embraced.
-
-With government backing, the first line between Paris and the town of Lille was completed in 1792 and within a few years, this telegraph network spanned much of France:
+The first line of these towers between Paris and the town of Lille was completed in 1792 and given the military usefulness, within a few years, the telegraph network spanned much of France:
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\linewidth]{chappe_network}
 \end{figure}
 
-This was the world's first telecommunications (``distant communication'') network, and it required no wires at all.
+This was the world's first extensive telecommunications (``distant communication'') network, and it required no wires at all.
 
-The network in France was copied in other countries, as telegraph towers started appearing all over. Indeed, if you live in a city, you may have a neighborhood nearby called something like \emph{telegraph hill}; this name is derived from the hills upon which optical telegraphs were placed.
-
-The optical telegraph was the first time in history that messages could be delivered many miles away in a relatively short amount of time, and for the next half century, this was the only systematic method for doing so.
+The network in France was copied in other countries, as telegraph towers started appearing all over. Indeed, if you live in a hilly city, you may have a neighborhood nearby called something like \emph{telegraph hill}; this name is derived from the hills upon which optical telegraphs were placed to maximize visibility.
 
 \section{A System of Lights}
 
-Chappe's system is one way to communicate effectively at a distance, but are there more practical systems that we might employ for this purpose that make use of visual aids?
+Chappe's large mechanical arm positions provide one way to communicate effectively at a distance, mimicking the game of catch we played earlier with Mary.
 
-Suppose that your football-playing friend Mary lives several miles away on a hill which is clearly visible from your house. Just after your game of ``catch,'' as you are about to part ways, Mary extends you an open invitation to dinner for being such an excellent quarterback. She tells you to come any night that you would like -- how nice of her!
+In this section, let's briefly consider another method of communication using light. Suppose that your football-playing friend Mary lives several miles away on a hill which is clearly visible from your house. Just after your game of ``catch,'' as you are about to part ways, Mary extends you an open invitation to dinner for being such an excellent quarterback. She tells you to come any night that you would like -- how nice of her!
 
 Unfortunately, there is a catch. Mary prefers a quiet life and so has no phone or Internet connection. She assures you that she will be reliably cooking every night, and that if you show up around 8 o'clock in the evening, you will be able to enjoy whatever she has prepared and there is no need to let her know in advance that you'll be joining.
 
 But alas, you are a vegetarian, and Mary sometimes likes to cook meat. While you enjoy Mary's company, it's definitely not worth a forty five minute hike to her house unless you know Mary has cooked a meal you can enjoy.
 
-How can Mary communicate to you so that you know whether or not to come?
+How can Mary communicate to you so that you know whether or not to come? Building a tower is too much work, and you couldn't see it in the dark anyway.
 
-You immediately think of Chappe and his two-armed tower (having studied up on your phone after your football game sparked your curiosity about communication systems) but quickly realize that the feasibility of building and placing such a tower on Mary's roof is far-fetched, to say the least.
-
-And then just as you are about to give up, Mary remembers that she has a huge bright light on her roof that when turned on is visible to you from your house. If she is cooking a meal with meat, she will shine the light and leave it on all evening. That way you will know that if you see the light on, you should avoid coming over.
+But just as you are about to give up, Mary remembers that she has a huge bright light on her roof that when turned on is visible to you from your house. (Light bulbs were not invented until the late 1800s, so this was not available to Chappe.) If she is cooking a meal with meat, she will shine the light and leave it on all evening. That way you will know that if you see the light on, you should avoid coming over.
 
 How does this simple communication system work? There are only two possible configurations for the light: on or off. Let's name the light being on as $1$ and the light being off as $0$:
+
 
 \begin{figure}[H]
 \centering
@@ -200,94 +213,298 @@ Hopefully you are starting to see a pattern. With every light we add, we double 
 
 Written more concisely, we have just seen that if we have some number $n$ lights, then we can display $2^n$ possible configurations.
 
-Here the letter '$n$' is a variable. It could stand for $1$ or $4$ or $442424323$. And the notation above refers to exponentiation -- it's just a shorthand way of saying 2 multiplied by itself $n$ times:
-
-\[ 2^n = \underbrace{2*2*2*...* 2}_{\text{n times}}\]
-
-But let's back track a moment to notice that something remarkable happens once we get up to 5 lights. We can now convey one of $2^5 = 2*2*2*2*2 = 32$ possible configurations, which means we have enough information to display each letter of the 26-character alphabet, with some room left over for spaces, commas, periods, and a few other important characters.
-
-And since a single 5-light set can display a single letter (or space, or period), then what happens if we string together multiple sets of 5-lights? You can imagine, perhaps, several 5-light sets on top of Mary's house, although the analogy will soon start to strain the bounds of realism given how difficult it would be to tell each light from the next. (And being able to distinguish each individual light is critical -- knowing that 4 lights are on out of 10 gives you far less information than knowing \emph{which} four of the ten lights is on.)
-
-With 105 sets of 5 lights ($105*5=525$ lights total), Mary could convey this entire 105-character sentence.
-
-Another remarkable thing happens when we start adding lights to our communication system: the number of possible configurations quickly gets astronomically large rather quickly.
-
-For example, with 27 lights, Mary can display...
-
-\[ \underbrace{2 * 2 * ... * 2}_{27 times} = 2^{27} = 134217728\]
-
-...over 134 million possible configurations!
-
-Consider the 525 lights that could be used to convey the self-referential sentence above. The number of possible configurations that can be displayed with this many lights is 2 multiplied by itself 525 times, or $2^{525}$.
-
-This is greater than $10^{158}$, or a one followed by 158 zeroes: \\
-
-\longnumber{4in}{1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000} \\
-
-To get a sense of how large this number is, suppose we were to try to cycle through every possible configuration of our 525 lights, displaying them all one configuration at a time. For example, all the lights being on is one possible configuration, so this would appear somewhere when we cycle through. Another possible configuration is Light \#411 being on, Light \#21 being on, and the rest being off. A third example of a possible configuration is all lights being on except for Light \#45.
-
-We have described three possible configurations. Of course there are many, many more. You might guess that with enough painstakingly tedious work one could write down all of the possible configurations as strings of 0s and 1s for our 525 light system, just as we wrote down all of the 8 possibilities for a 3 light system. After all, writing down a few of the possible configurations doesn't seem so bad, since each possible configuration only requires 525 characters. Once we have them written down, you might think programming a computer to cycle through them wouldn't be too hard either.
-
-However, with a little arithmetic, we can see just how clearly impossible it would be to list or cycle through displaying all of the configurations.
-
-Suppose ``Mary'' was actually a cluster of supercomputers. Let's suppose each computer can rotate through a hundred thousand trillion ($10^{17}$) possible configurations per second. That is far more powerful than the world's most powerful supercomputer as of the writing of this text in 2015. And suppose further that there were a trillion computers in the cluster -- this is more computers than we have on the planet, even if you count phones, tablets, laptops, servers, smartcollars for dogs -- everything. But in our extreme hypothetical we have a trillion computers each counting a hundred thousand trillion possibilities per second.
-
-To multiple two exponential numbers together, you merely add their exponents:
-
-\[10^{12} * 10^{17} = \underbrace{(10*10... *10)}_{12 times} * \underbrace{(10*10*... * 10)}_{17 times} = \underbrace{(10*10*...10)}_{29 times} = 10^{29}.\]
-
-So that means the cluster is able to count $10^{29}$ configurations per second.
-
-There are 60 seconds in a minute, and 60 minutes in an hour, and 24 hours in a day, and 365 days in a year. So that mean that our ``Mary'' cluster counts $10^29 * 60 * 60 * 24 * 365 = 3.1536*10^{36}$ configurations per year.
-
-How many years would it take for our ``Mary'' supercluster to finish this task? In order to compute that, we must take the roughly $10^{158}$ total possible configurations and divide it by the $10^{36}$ possibilities displayed per year. (And dividing two exponential numbers with the same base in involves subtracting the exponents -- try it). Doing this division gives us our answer: it would take our supercluster roughly $10^{122}$ years, or ten thousand trillion trillion googol years, keeping in mind that a googol ($10^{100}$) is a number so insanely large that it inspired the name of the world's most popular search engine. The age of the universe is roughly 13-14 billion years, so even if this supercluster had been at it since the universe first started trying to display each possible configuration, it wouldn't even make a dent in displaying all possible combinations of the 525 lights. In fact, to be precise, such a supercluster of computers working since the dawn of the universe would have displayed less than \\
-
-\longnumber{4in}{0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001\%} \\
-
-of the total number of possible configurations!
-
-How can such a ludicrously large number of configurations arise from a mere 525 lights? This is the essence of \emph{exponential growth}. Indeed, the table above that lists the number of lights and the corresponding number of configurations is one way to plot the values of the quantity $2^n$ as a function of $n$. We could also look at this graphically, and see the ``hockey stick'' curve associated with exponential growth: \\
-
-\begin{tikzpicture}[domain=0:10,yscale=1,xscale=1,smooth]
-  \begin{axis}[
-    xlabel=$n \text{ (number of lights)}$,
-    ylabel={$f(n) = 2^n \text{ (number of configurations)}$}
-  ]
-    \addplot[mark=none]{2^x};
-  \end{axis}
-\end{tikzpicture} \\
-
-Let's review. We've come up with a system that would allow us to display an English sentence using 525 lights -- recall that a set of 5 lights allowed us to display an English letter -- and then we asked the question of how many total configurations we could display with the 525 lights. We learned that this is an obscenely large number of configurations. Should we be worried at all? Is our light ssystem doomed to fail?
-
-Actually, it's still quite alright and is a viable system of communication. We don't need to display each possible configuration, which is good, because we've just learned it's an impossible task. Instead, we generally just need to work with the configurations of lights that we care about -- the ones that help us transfer useful information.
-
-Moreover, what we learned about exponentials above will be critical to creating systems of encryption that cannot be broken with sheer computational power alone. To help to illustrate the real-world implications of what we learned about our system of lights above, consider the following fact which we will prove later on: a random 6-character password is weak enough that it can be cracked by anyone with a laptop, but a random 12-character password is so strong that even the world's most sophisticated intelligence agencies would not even bother trying to break it.
+There are many more questions we might want to answer about our system of lights. What messages can be sent with these lights? What about just a single light? How fast can information be transmitted? What if a light is burned out? We will return to these questions in time, but first let's travel back to the early 1800s, when people were only first starting to understand the power of electricity.
 
 \chapter{The Electrical Telegraph}
 
 So far we've talked about two systems for communicating at a distance: the optical telegraph system, and the system of lights on top of Mary's house. One major limitation of both of those systems is that they rely on line of sight. What happens if it gets foggy? Or if you want to communicate across a large body of water that doesn't allow for the construction of towers along the way?
 
-The electrical telegraph solves these problems, providing a more robust solution to long distance communication by using electricity over a wire to transmit a signal. This approach doesn't have the shortcoming of the line-of-sight approaches – the wire can snake around large mountains, treacherous deserts, and lie at the bottom of bodies of water. Moreover, it doesn't require expensive towers to be built and maintained, and wires can fairly easily be repositioned, and so a network based on the electrical telegraph turned out to be much less expensive and more flexible when compared with the optical telegraph networks. Given all the advantages of the electrical telegraph, once it became established as a viable solution, it quickly eclipsed the optical telegraph, and nowadays when someone talks about the ``telegraph'' they are almost certainly referring to the electrical telegraph. I will follow this convention, and explicitly use the phrase ``optical telegraph'' when I need to refer to the older line-of-sight Chappe technology.
+The electrical telegraph solves these problems, providing a more robust solution to long distance communication. Electricity can be made to travel over a wire and this can in turn be used as the fundamental building block of a communication system. This approach doesn't have the shortcoming of the line-of-sight approaches – the wires can snake around large mountains, treacherous deserts, and lie at the bottom of bodies of water. Moreover, electrical telegraphy doesn't require expensive towers to be built and maintained, and wires can fairly easily be repositioned, and so a network based on the electrical telegraph is much less expensive and more flexible than an optical telegraph network.
 
-The development of the electrical telegraph occurred in the first half of the 19th century, and relied on advances in battery technology and a steady progression in our ability as human beings to harness the power of electricity in increasingly sophisticated ways. Like most great inventions, the ideas behind the telegraph were developed more or less independently by more than one person.
+Given all the advantages of the electrical telegraph, it is no surprise that shortly after being invented, it eclipsed the optical telegraph as the dominant mechanism for communicating at a distance, and nowadays when someone talks about the ``telegraph'' they are almost certainly referring to the electrical telegraph. I will follow this convention, and explicitly use the phrase ``optical telegraph'' when I need to refer to the older line-of-sight-based Chappe technology.
 
-The man who gets the majority of the credit as the father of the telegraph is Samuel Morse, a painter-turned-inventor who was born in 1792, a year after Chappe started building out his optical telegraph network in earnest. Morse was unaware of telegraphy through his early life; he painted portraits through his 30s and only in his 40s turned his attention towards electricity and the idea of creating a system of communication using electricity over a wire. He then obsessively worked on this problem until he eventually developed and popularized the dominant telegraphy system which became the standard for telegraphy for the next sixty years.
+The development of the electrical telegraph occurred in the first half of the 19th century, and relied on advances in battery technology and a steady progression in our ability as human beings to harness the power of electricity in increasingly sophisticated ways. The telegraph in some sense represents society's first proof of the power of electricity, since it is by most measures the first major technology based on electricity that ordinary people interacted with on a regular basis.
 
-Besides Morse, the other prominent pair of inventors were Cooke and Wheatstone, who worked in England, and developed ideas independently of the American-born painter-turned-inventor. Conceptually, all of these people were on a similar track, but Morse's system had certain advantages over that of Cooke and Wheatstone, and eventually even Cooke and Wheatstone agreed that the “Morse system” was superior. [CITE]
+Like many great inventions, the ideas behind the telegraph were developed more or less independently by more than one person, and bitter patent lawsuits were not far behind. The man who has ended up getting the majority of the credit as the father of the telegraph is Samuel Morse, an American painter-turned-inventor who was born in 1792, right when Chappe was furiously iterating on his towers. Morse was unaware of telegraphy of any sort through his early life; he painted portraits through his 30s and only in his 40s turned his attention towards electricity and the idea of creating a system of communication using electricity over a wire. He then obsessively worked on this problem until he eventually developed and popularized the dominant telegraphy system which became the standard for the next sixty years.
 
-\section{Circuits}
+Besides Morse, the other prominent pair of inventors were Cooke and Wheatstone, who worked in England, independently developing their own ideas and systems for how to communicate over a wire. Conceptually, all of these people were on a similar track, but Morse's system had certain advantages over that of Cooke and Wheatstone, and eventually even Cooke and Wheatstone agreed that the ``Morse system'' was superior.
 
-An electric telegraph is in essence just a very simple electrical circuit. There is a power source, a switch and a loop of wire connected to an electrical device that one would like to operate:
+\section{A Simple Circuit}
+
+An electric telegraph is in essence just a very simple electrical circuit. There is a power source, a switch and a loop of wire connected to an electrical device that acts as a receiver indicating whether or not electricity is flowing through the circuit:
+
+\[ [DIAGRAM] \]
+
+In the circuit diagram above, the power source is the battery is drawn on the left. It has positive and negative terminals, which we'll talk about in a minute. The little angled line represents a switch. If the switch is open, as it is in the diagram above, electricity does not flow through the circuit. If the switch it closed, on the other hand, then an electric current flows through:
+
+\[ [DIAGRAM] \]
+
+When electrical current flows through the circuit, the electrical device on the right hand side has electricity running through it. Typically in elementary electrical engineering textbooks, a lightbulb is used as an illustration of this electrical device indicating that electricity is flowing through a circuit.
+
+\[ [DIAGRAM] \]
+
+Unfortunately for Morse and his peers, there were no light bulbs in the 1830s and 1840s, but there were elementary alternatives serving the same conceptual function as a light bulb.
+
+\section{One Telegraph to Rule Them All}
+
+While all electrical telegraphy developed through the 1840s was based on the paradigm of a simple circuit that we described above, the details varied quite a bit among competing designs. There was not a single telegraph during this period, but rather a plethora of distinct competing experimental systems for communicating over electrical wires.
+
+Many early designs involved creating one circuit per letter of the alphabet. In England in the late 1830s, Cooke and Wheatstone developed a working prototype of a telegraph that involved six wires. On the receiving end of this telegraph, there were five needles that could be made point to a particular letter.
+
+\[ [INSERT IMAGE] \]
+
+When the dust settled, however, the telegraph that became the de facto worldwide standard was an iteration coming from Morse and his collaborators, notably Alfred Vail. As we will see time and time again, simplicity is a major virtue when designing a telecommunications system, and this was an advantage of the Morse telegraph over other early prototypes.
+
+Let's look in a bit more detail at how the Morse telegraph worked. Here is a representation superimposed on our basic circuit above:
+
+\[ [DIAGRAM] \]
+
+The circuit was closed by default, which means that electricity was flowing through. Transmission occurred via \emph{telegraph key}, an invention of Vail that was essentially just a single button that an operator could press. When pressed, the circuit was opened and electricity no longer could flow through the wire. When released, electricity resumed.
+
+\[ [IMAGE OF TELEGRAPH KEY] \]
+
+Telegraph operators would tap out messages with this single key in a specified manner (which we'll discuss shortly).
+
+On the receiving end, there was a bit more variance in terms of what gadget was actually used to receive messages over the life of the telegraph. After experimentation with all sorts of receiving devices –- making little marks on paper, making needles point to particular locations, and so on -- the winning gadget employed throughout the peak of the telegraph in the mid to late 1800s was called a \emph{sounder}:
+
+\[ [IMAGE OF SOUNDER] \]
+
+This device allowed telegraph operators to listen to clicks and pauses which corresponded to the pressing and lifting of the telegraph key by the operator at the other end of the line. So we now have a clearer picture of how a telegraph worked: it was essentially a circuit with a key on one end corresponding to a switch and a sounder on the other end that allowed key presses to be heard as clicks.
+
+\section{Morse Code}
+
+Knowing that someone on the other end of a telegraph line hundreds or thousands of miles away is pressing a key at this very moment is a remarkable achievement, but in order for it to be useful for communication, there needs to exist a \emph{system} that translates the ``on'' and ``off'' states of the telegraph into useful information.
+
+We've discussed a couple such systems already, but these relied on line of sight and being able to display lots of information at once, either in the form of varying arm positions or in various lights that are on or off. In this case, we only have a single on or off state that varies over time. How can this be used to convey information?
+
+The system that stuck for telegraphy is known as Morse code. Morse code enables communication by segmenting the raw ``on'' and ``off'' states into four symbols: a dot, a dash, a short pause, and a long pause. A short press of the telegraph key was called a ``dot'' and a long press of the key was called a ``dash''. Different lengths of pauses were necessary to differentiate a pause between letters from a pause between words.
+
+\[ [TABLE OF BASIC ALPHABET OF TELEGRAPHY: DOT, DASH, SPACES] \]
+
+These four symbols comprise the basic alphabet of telegraphy, but we also need a way to translate this basic alphabet into English letters, much as we did for our system of lights earlier. It is not too difficult to create such a table:
+
+\[ [Morse code table] \]
+
+Armed with this system, the telegraph is transformed from a meaningless single-signal transmission device into the world's first widespread telecommunication technology. The way it works is similar to the semaphore system we outlined above. For example, consider the following sets of dots, dashes, short pauses and long pauses, represented on paper via our table above:
+
+\[ [COME UP WITH A STRING] \]
+
+Using the translation table, this would correspond to the English sentence:
+
+\[ [ENGLISH TRANSLATION OF STRING] \]
+
+The Morse system has the advantage that only a single circuit is needed to communicate, meaning that even very simple designs for the physical telegraph could be made to effectively communicate via Morse code. In particular, unlike the more complex designs of Cooke and Wheatstone (as well as Morse's earlier systems), the telegraph which became the standard did not require several wires across multiple circuits to be synchronized, cutting down the complexity and cost of the system significantly.
+
+\section{Practical Limits of Telegraphy}
+
+We now have a basic high level understanding of how the telegraph works, but before dismissing this topic as fully understood, it's worth pausing to reflect on all of the unknowns that we would need to flesh out to have a complete understanding of the telegraph.
+
+Perhaps the largest looming question is how electricity works. We will cover this topic in more detail in the next part of this book, so if you aren't already knowledgeable on electromagnetism, I encourage you for now to rely on a high level understanding of electricity as the flow of free electrons through wires made from conducting metals like copper. Electricity has a current, like a river, and moves very fast.
+
+This very rough notion approximates the mentality of engineers through the 1850s (minus knowing about electrons), since it wasn't until later in the 19th century that James Clerk Maxwell and others paved the way for our contemporary understanding of electromagnetism.
+
+Despite a lack of theoretical understanding of the fundamental principles that enabled electrical telegraphy to function, it did manage to work nevertheless. But it didn't work perfectly, and so a lot of energy was spend trying to get telegraphs to be more reliable, to function over long distances, and to be able to cross harsh terrain.
+
+One challenge at first seemed insurmountable: could a telegraph cable be built that traversed the Atlantic ocean?
+
+To achieve this, improvements to cabling were critical. In particular, early telegraph systems involved stringing raw copper wire along poles, or burying it underground. But raw copper wire was super unreliable as a transport mechanism: it could be easily damaged, and simply did not work that well (a lot of which can be chalked up, in retrospect, to electrical interference).
+
+So for telegraphs to function at scale, more sophisticated cabling was needed. Fortunately, \emph{gutta-percha} was discovered by the industrial world in 1843 and quickly became a household name in the Victorian world. This tree sap known for producing a naturally rigid latex became the mid to late 19th century's equivalent of plastic today, and among its myriad uses was as an insulator surrounding raw copper telegraph wires. The gutta-percha in turn was often wrapped in rubber, and then an outer layer or iron or steel, creating a cable whose cross section looked like this:
+
+\[ [IMAGE] \]
+
+It did not happen overnight, but 14 years after Morse's first successful proof of concept of the electrical telegraph in 1844 between Baltimore and Washington, D.C., the first transatlantic telegraph cable was laid, ushering in the dawn of a new information age of instantaneous cross-continent communication.
+
+In addition to better cabling, there were a lot of open questions. How thick should the copper wire be? How powerful should the battery be? The engineers involved in these early projects engaged in a tremendous amount of trial and error, and succeeded in pushing the range and reliability of telegraph lines despite very little theoretical understanding of electricity and magnetism.
+
+Yet even as engineers inched towards cables that were better optimized for the task at hand, there remained one unfortunate fact of life: over longer and longer distances, the strength of the signal diminished.
+
+This phenomenon, which in contemporary parlance is called \emph{attenuation} of the electrical signal, is due to the fact that energy is lost when electricity travels over a wire. To solve the fact that the signal would get weaker over longer distances, some sort of repeating mechanism was needed.
+
+\section{Electromagnets and Relays}
+
+Underlying the repeating mechanism is a fundamental electrical device called an \emph{electromagnet}, first invented in the 1820s.
+
+You can think of a simple electromagnet as a piece of iron with insulated wire tightly coiled around it:
+
+\[ [IMAGE] \]
+
+When current flows through the wire, it induces a magnetic field, making the iron into a magnet. This allows the flow of electricity to dictate whether a magnet is ``on'' or ``off''.
+
+One of the reasons the electromagnet is so important is that it allows electrical current to create mechanical action. To see how this is possible, consider the following setup:
+
+\[ [DIAGRAM] \]
+
+When electricity flows, the electromagnet is activated, creating a magnetic field, which pulls the metal latch down. When the flow of electricity stops, the magnetic field disappears and the latch returns to its original position.
+
+\[ [DIAGRAM] \]
+
+Now what if the metal latch that is going up and down is actually the switch of another electrical circuit? You can now have two circuits with independent power sources linked by this electromagnet like this:
+
+\[ [DIAGRAM] \]
+
+An electromagnet used in this way is called a \emph{relay}. Imagine the left side of the above diagram as a telegraph operator using a telegraph key. When the operator presses down, communicating a dot in Morse code, it opens the switch and cuts the electrical current for a brief moment. This causes the magnetic field to disappear in the electromagnet, and so the latch in the relay returns to it's original position, which breaks the current on the right hand side, communicating a dot.
+
+By offering a way around the signal attenuation issue, relays allowed telegraph lines to extend arbitrarily far, though of course relays were yet another piece of equipment that had to be installed and maintained. Still, compared to the Chappe optical telegraph system, in which the ``repeaters'' were actually just human beings re-coding the message, electrical relays are a huge cost savings.
+
+Electromagnets had another important purpose. Recall that a sounder was used at the receiving end of telegraphs to listen to the dots and dashes of Morse code. But how did a sounder actually work? It was an electromagnet that worked just like a relay, except that instead of controlling another circuit, the latch going up and down made respective and distinct ``click'' and ``clack'' sounds, allowing operators to identify difference cadences of clicks and clacks with the Morse code alphabet, which they could in turn decode into English.
+
+\chapter{A Layered Symbolic System}
+
+The telegraph was in one important way a direct precursor to the Internet. Unlike the analog telephone and broadcast radio and television technologies that succeeded it, the telegraph was a \emph{digital} communication system and in this respect strangely ahead of its time. To understand why, we must look a bit more abstractly at symbols and information.
+
+\section{Alphabets and Symbols}
+
+Consider the letter \emph{a}, the first letter of the Latin alphabet. What makes this mark meaningful? If we did not know English or any other languages based on this alphabet, then \emph{a} would just appear to be a mysterious mark with no meaning, like [INSERT RANDOM MARK]. Thus for the letter \emph{a} to carry information for the onlooker, it has to exist within the context of what we can call an \emph{alphabet}. And of course, the Latin alphabet is not the only meaningful alphabet. The traditional Chinese character [INSERT CHINESE CHARACTER] may look meaningless to a non-Chinese reader, but it certainly has a meaning within the context of the traditional Chinese alphabet.
+
+What about a number like \emph{2}? You might think that this is not part of an alphabet, since it is a number and not a letter. However, for our purposes, we are intentionally going to use the word \emph{alphabet} very broadly, as mathematicians do, and by this broad definition, the symbols 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 do indeed form an alphabet which we usually call Arabic numerals. Just think of an alphabet as any fixed set of symbols that are distinguished from one another by some known rules or conventions.
+
+There are some interesting edge cases. For example, consider the following set of symbols:
+
+[5 RANDOM SYMBOLS]
+
+Does this form an alphabet? The symbols have no meaning in themselves, but I just wrote them down and said that they ought to be go together. Is that enough to constitute an alphabet? Does there have to be some sort of shared knowledge of more than one person, or generally accepted use for the symbols of the alphabet? Or can one create a bare ones alphabet by fiat, as I just did above?
+
+Another edge case occurs when we consider infinite alphabets, like:
+
+[1 SQUIGGLY] [2 SQUIGGLIES] etc
+
+Does this count as an alphabet? One interesting question that arises here: do symbols have to be specified explicitly at the outset when defining an alphabet, or is it enough to describe how one \emph{could} draw the symbols, for example by giving a schema for the user of the alphabet to fill in?
+
+With a little bit of math, one can create a formal definition of alphabet and in doing so start to better understand these unusual examples. Fortunately for our purposes, the important thing is not the edge cases or formal definition, but rather just a basic understanding of an alphabet as a backdrop against which sets of symbols have meaning.
+
+That's enough to come to our first major insight about symbols and alphabets: all symbolic representations are interchangeable.
+
+What does this mean? If you fix a translation system, you can take any string of symbols from one alphabet and translate using the agreed upon translation system to any other string of symbols in another alphabet.
+
+As an example, consider the sentence:
+
+  \emph{All symbolic representations of information are fungible!}
+
+For starters, we could translate this to the traditional Chinese alphabet, giving us a new representation of the sentence:
+
+  \emph{所有的信息符號表示是可替代的！}
+
+I mentioned above that one had to agree on a translation system.  Which one was employed for this translation? We might call it a \emph{semantic} translation system, in that the underlying meaning of the sentence was recreated via a new sentence in Chinese. This is actually a tremendously difficult and complicated translation system. Fortunately, we can also come up with much simpler translation systems.
+
+To see this, let's translate the above sentence into Arabic numerals. \emph{Guh? How can you translate a sentence into numbers!?} The important thing to remember is that we get to decide on the translation system. In this case, we can pick something arbitrarily, just like we did earlier during our game of catch with Mary. Let's just translate each letter to it's position in the alphabet:
+
+  \emph{1 12 12  19 25 13 2 15 12 9 3  18 5 16 18 5 19 5 14 20 1 20 9 15 14 19  15 6  9 14 6 15 18 13 1 20 9 15 14  1 18 5  6 21 14 7 9 2 12 5 !}
+
+This \emph{almost} counts as a translation into the 10-symbol Arabic alphabet that we specified above. But there is a subtle issue that we need to deal with: we still have whitespace characters and the `!' character, neither of which occur in the Arabic alphabet. You might counter that neither of these are considered part of the 26-character Latin alphabet that underlies English. But remember that we are using the word alphabet in a particular sense, and in this sense, any alphabet that underlies ordinary written English must have symbols corresponding to whitespace and exclamation points, since these are part of the language. Put another way, if we formalize the written English language as a system for communication, it will include extra conventions beyond the Latin letters one learns in elementary school; whitespace is part of the language too and the easiest way to capture it the rules around whitespace is to say that there is a `space' character.
+
+Hence, to make our mapping to the alphabet of Arabic numerals a proper translation, we need a way to separate the words without using the space or exclamation point characters, neither of which we are allowed to use in our new alphabet. This isn't as trivial as simply removing the characters, since we need to away to disambiguate strings like '15' which could be either `af' or `p'.
+
+We also need this character separator to be some sort of number, in other words a string of one or more digits from 0 to 9. We didn't use the symbol `0' for any English letter, and it is available to us, so how about that? That almost works, except that there are still some ambiguous strings. For example, `2002' could translate into `b  b' or `t b'. We're getting closer, though. The problem with our current system that creates the above ambiguity is that each English letter could correspond to a variable number of digits. What if instead we enforce that every letter is exactly two digits long, so the letter 'a' is actually '01'? Now we can make '00' a space, and '27' an exclamation point. Moreover, we can also encode upper case letters and other common symbols as a sequence of two digits. Here is the whole table of our new translation system:
+
+\[ [TABLE] \]
+
+Now we can successfully write the above sentence as a rather long number:
+
+\[ [WRITE OUT NUMBER] \]
+
+With this, we have translated our sentence from the English alphabet into the alphabet of Arabic numerals. The giant number represented by the Arabic numerals has no inherent meaning, except when coupled with the translation system that we imposed earlier.
+
+Let's compare this \emph{dumb translation} to the earlier \emph{semantic translation} into Chinese.
+
+The dumb translation is in some sense vacuous. Given the semantic translation, a reader who did not understand English could understand the new Chinese sentence; given the dumb translation, on the other hand, there is no hope for this Chinese-speaker. The translated sentence still requires knowledge of English to be understood once it is decoded.
+
+Moreover, though it is vacuous, the dumb translation is also in some sense perfectly clear. Natural languages like English and Chinese are complex and messy tools for communication, and there is no way that the Chinese sentence created via the semantic translation perfectly captures the connotations wrapped up with the original English sentence. In that sense, information was lost translating to Chinese via the semantic translation. The dumb translation, on the other hand, was just manipulating symbols, not trying to understand their meaning. And since it captured each and every symbol of the original English sentence perfectly, no loss of information occurred.
+
+There is another word for performing a dumb translation like we did above: \emph{encoding}. The amazing thing about symbols is that they can be encoded without any loss of information, and you can encode any string of symbols into any other alphabet.
+
+Let's once again translate our original sentence into traditional Chinese but this time with encoding rather than semantic translation. The traditional Chinese alphabet has many more characters than the Latin alphabet, so we can pick 26 of these at random and create a translation table:
+
+\[ [ENCODING TABLE] \]
+
+Luckily the Chinese alphabet also includes whitespace characters, so we do not need to do any extra work for this. Using this encoding, we get the following sentence, written with traditional Chinese characters:
+
+\[ [INSERT SENTENCE] \]
+
+This will look like gibberish to a Chinese reader. Nevertheless, it is a faithful encoding of our English sentence, and armed with the encoding table above and knowledge of the English language, one can understand what it means.
+
+Before moving on, let's ask one last question about encoding. As we've seen, you can encode any string of symbols into any other string. So is there a simplest or best way to encode information? The metric of simplicity depends on your use case. If you want to pack in as much information as possible into a small number of symbols, you might want to use a gigantic alphabet. For example, the traditional Chinese alphabet has several thousand characters. As you might imagine, using this expanded character set, you can fit much more information on a single page.
+
+However, it turns out that the opposite optimization is actually much more important in practice. What is the minimum number of characters that we can use to encode information?
+
+You might be tempted to say one, and distinguish strings by, say, line breaks:
+
+11111111
+
+vs
+
+1111
+11111
+
+Remember, though, that line breaks are themselves a character. So if you truly restrict yourself to a single character, there is no way to convey any information within a string other than the length of the string, which is too impoverished to allow for encoding in any reasonable way.
+
+Add just one more character, however, and your two-character \emph{binary} alphabet is fully functional. Let's write the characters as `0' and `1'. We can encode any symbolic in binary: letters from any natural language, numbers, or anything at all. For example, the American Standard Code for International Interchange (ASCII) is a standard that we will meet later on that provides a standard for encoding Latin letters into binary (among other things):
+
+\[ [INSERT PART OF ASCII TABLE] \]
+
+Given its basic alphabet and importance for computing, binary has become the universal standard for understanding and communicating information.
+
+\section{A Neatly Layered and Standardized System}
+
+Although the idea of encoding information into a binary alphabet is incredibly well understood nowadays, the notion of binary had not been divined when Morse code was developed. Yet as we have seen, Morse code had its own pared down alphabet, lending evidence to assertion that simple alphabets with a small number of symbols tend to be naturally useful:
+
+[MORSE ALPHABET]
+
+Morse's alphabet was four symbols, and the translation of all information to and from this four-symbol alphabet is what makes the telegraph a \emph{digital} technology. A better word to describe the nature of the technology might be \emph{symbolic}; as we've seen, though, any symbolic alphabet can be encoded as digits, and so the word \emph{digital} is often used nowadays to refer to technologies that operate on discrete sets of symbols, as the telegraph did.
+
+As a digital technology, the telegraph had to wrestle with many of the same questions that the Internet still wrestles with: how is digital information to be encoded and decoded? How will the process be standardized? Who will control the standardization process?
+
+To begin with, the telegraph in contemporary parlance can be conceived of as a \emph{layered communication system}. In such a system, a single communication can be simultaneously described and thought about at different levels.
+
+For example, suppose you are sending some message to your friend Bill via telegram. Another perfectly valid description at a lower level would be that a series of dots and dashes is being sent over telegraph wires between operators. At the lowest level, we find yet another description: electrical circuits manipulated by humans turn off and on in rapid succession.
+
+The fact that electrical signals are being used to encode dots and dashes which in turn are being used to encode English letters allows us to form a nice mental picture of the layers of the system:
+
+[DIAGRAM :
+A. The physical layer of the electrical signal sent over the wire.
+
+B. The translation of “signal on” and “signal off” into a very simple alphabet of dots, dashes, and spaces.
+
+C. A translation of the simple alphabet of dots and dashes into the 26-letter alphabet (or more if we include extra characters such as spaces and special characters '?') of the English language.
+
+D. A set of standards and abbreviations that telegraph operators used to communicate. For example, there is a standard shortcut for asking someone to retransmit a message [WRITE MORE ABOUT ITU?]
+]
+
+Thinking about communication technology as a layered system allows us to break down the system into component parts. Having built our communication system in this fashion, layers of the system can now be changed without changing everything all at once. For example, suppose there was an improvement to Morse code that was proven to be a more efficient translation of dots and dashes into the Latin alphabet. Then layer C above could be changed, but nothing else would have to change; you wouldn't need to invent new electrical gizmos to transmit or receive messages. Conversely, suppose the technology for the physical layer vastly improved and electricity were replaced with a more advanced technology like optical fibers. In this case, we could still use Morse code if we wanted, and so layers B-D would be unperturbed by changes in layer A.
+
+\subsection{Metadata}
+
+Let's take the time to be precise and think through what the systems for layer D might look like with respect to the telegraph.
+
+Suppose you are a telegraph operator sitting in a local telegraph station in Idaho in the 1880s, and you are handed a telegram to transmit. It is identified as being from ``John Smith'' and going to a ``Mary Fitzpatrick'' along with a London address for the recipient. What steps do you have to take to deliver your telegram?
+
+First, you have to decide how you are going to route your communication. Let's suppose there is a telegraph line from your local station to a central hub in New York City, which you know has a line directly to London.
 
 [DIAGRAM]
 
-In the circuit diagram above, the power source is the battery is drawn on the left. It has positive and negative terminals, which we'll talk about in a minute. The little angled line represents a switch. If the switch is open, as it is in the diagram above, electricity does not flow through the circuit. If the switch it closed, on the other hand, then an electric current flows through this circuit:
+So you hop on the line going to New York, and it is time to transmit the message. But wait – you have to convey information about the message as well as the message itself, such as the name and address of the recipient. This information about the message is known as metadata, because it is information about the message (in this parlance, the message is the “data”), as opposed to the message itself.
 
-[DIAGRAM]
+How does this metadata gets communicated? If you start tapping away at your telegraph key, do you start with the message itself? Or the metadata? Which piece of metadata? The location, maybe? The name of the recipient? That of the sender? Or perhaps some other boilerplate indicating “I have a new transmission for you”?
 
+If you had all day to fumble through communicating this one telegram, you might be able to figure all of this out as you went, but if one is transmitting hundreds of telegrams per day, some sort of system is clearly needed. The system is represented by layer D above.
 
-\chapter{Symbols}
+\subsection{Protocols}
 
-[TODO: insert from libreoffice doc]
+The idea of system has a technical term in telecommunications – it is called a protocol. A protocol is a formal, agreed-upon system for communicating. In this case, the telegraph community uses a protocol for message transmission to avoid any ambiguity about the what information is metadata (e.g. the name of the sender) vs data (i.e. the contents of the message).
+
+You can think of the rules of driving cars on public streets as a protocol. We drive on the right side of the road in the United States. It doesn't particularly matter that we chose the right instead of the left, and other countries have chosen differently. What matters is that we make one choice or the other and stick to it, else each time two cars approached each other on the road, they would have to improvise an ad hoc solution.
+
+Protocols exist to enforce this consistency and establish an agreed upon standard for the interaction of two or more agents.
+
+As we will see when we explore the rise of the Internet later in the book, establishing some open, universal standard protocol is quite often much more advantageous to a situation in which there are competing fiefdoms each using their own protocol.
+
+Yet while the importance of a universal standard is critical, it is also important to note that there is often quite a lot of debate when designing and standardizing protocols. Good protocols are simple and efficient, but there are often trade offs and no clear ``best'' protocol in any given situation. Different stakeholders may have different requirements and different preferences in how a protocol is designed. Moreover, once a protocol is standardized, it can become quite entrenched, and so many people and entities have to live with it a while, increasing the importance of getting it as agreeable as possible the first time.
+
+We will revisit these ideas of layered systems, protocols, and metadata extensively later when we learn about the Internet and the systems of communication of which it is comprised. That global system is much more complex, but fortunately, the telegraph as a digital technology in its own right provides us with a gentle introduction.
+
+\section{Encryption}
+
+Fill me in
+
 
 \end{document}
