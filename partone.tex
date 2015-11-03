@@ -504,7 +504,84 @@ We will revisit these ideas of layered systems, protocols, and metadata extensiv
 
 \section{Encryption}
 
-Fill me in
+Unlike Chappe's optical telegraph, which was strictly intended for military use, electrical telegraphy thrived because it was embraced by the private sector. Companies quickly saw the value of investing in telegraph infrastructure and then charging for communications sent over their networks.
+
+At first there was an explosion of competition. By 1851, a mere 7 years after Morse's first successful long distance demonstration, there were already 75 companies operating in the United States that had laid over 21,000 miles of telegraph cable [CITE: https://eh.net/encyclopedia/history-of-the-u-s-telegraph-industry/]. However, telecommunications benefit tremendously from economies of scale. Why build two separate lines in competition between New York and Chicago? That leads to wasteful duplication of effort in laying cables, building telegraph offices, and so forth. Thus, economic pressure over the next 15 years pushed the industry towards consolidation, and by 1866 Western Union emerged as the dominant national telegraph monopoly.
+
+The cost of sending a domestic telegram varied quite a bit, but during the first twenty or thirty years, it was cost-prohibitive as a regular means of communication to all except businesses and wealthy individuals. For example, in 1860, the cost of a ten word telegram from New York to New Orleans cost $2.70, or about $70 in 2014 dollars. Using the Transatlantic lines was much more expensive, costing about $100 at the time for a telegram to England, or $2600 in 2014 dollars. [CITE: http://www.gizmag.com/last-telegraph-message/28314/]
+
+Given the high cost of sending telegrams and the fact that companies like Western Union charged by the word, people learned to be creatively brief with their messages. At first this was ad hoc, but by the mid 1800s, code books were developed and published that aimed to translate common phrases into single words, saving money for the users of the telegraph network. This also made the network itself more efficient at moving information around. Indeed, when code words were used, the dots and dashes had a higher information density than they would typing out the full English phrase, a notion that we will make precise in coming chapters.
+
+To get a sense of the code books, here is an excerpt from  [INSERT FROM]
+
+[INSERT EXCERPT]
+
+Notice that this is also a type of encoding just as we saw earlier, this time from the alphabet of a limited set of phrases into an alphabet of special words intended for use in telegraphy.
+
+\subsection{Encryption}
+
+These telegraph code books helped people communicate more efficiently, saving them money, but sometimes it was not cost savings but rather the privacy of the message that was the paramount concern. Since these telegraphy code books were for the most part not secret, anyone could decode a message written using this telegraphy code simply by consulting the relevant publicly available code book.
+
+Protecting the secrecy of your message, on the other hand, meant \emph{encrypting} it. Encryption is a general term that refers to the process of scrambling a message with the goal of making it unreadable to anyone except the intended recipient. Encryption has been around for thousands of years, and so it was natural to apply existing techniques to telegraphy.
+
+How did it actually work? Let's suppose you had to send a message overseas and you wanted it to be secret. One method might be to replace each letter in the alphabet with another equivalent: so 'A' becomes 'T', 'B' becomes 'H' and so on. According to this scheme, the sentence:
+
+   \[ 'BATS CANNOT SEE' \]
+
+Might become
+
+   \[ 'HTQY VTBBJQ YRR' \]
+
+Let's pause to introduce a bit of jargon. In the case above, the original message written in English is called the \emph{plaintext}. The scheme for moving from the plaintext to its encrypted form is called a \emph{cipher}, and the encrypted text is called the \emph{ciphertext}. Going from the plaintext to the ciphertext is \emph{encryption} and going from the ciphertext back to the plaintext is called \emph{decryption}.
+
+For this example, you encrypt and decrypt using the mapping that we created:
+
+\begin{align*}
+	\text{'A'} &-> \text{'T'} \\
+	\text{'B'} &-> \text{'H'} \\
+	\text{'C'} &-> \text{'V'} \\
+        \text{etc}
+\end{align*}
+
+This short mapping is called the \emph{encryption key}. And notice that it also works as the decryption key, and so in the context of ciphers can just be called the \emph{key}. It ought to work somewhat like a physical key: if you possess the key, then you can read the plaintext, otherwise you are out of luck.
+
+Since the same key is used for both encryption and decryption, we say that this scheme is \emph{symmetric}, and the particular cipher we have described is known as a simple substitution cipher.
+
+This is a good first pass, but as you might imagine, simple substitution ciphers tend to be a rather weak form of encryption. Let's now switch gears and put ourselves in the mind of an attacker. How could we break this encryption? To add just one last piece of jargon, if one is attempting to break the encryption of a message without having the key, that is known as \emph{cryptanalysis}. Your first instinct might be to try every possible key until you get a message that is an English sentence. This is known as a brute force attack.
+
+How many keys would you have to try? To compute this, notice that the letter 'A' must be mapped to one of 26 letters (allowing the mapping 'A' → 'A'). So there are 26 possibilities for 'A'. Once we have fixed 'A', how many possibilities are there for 'B'. Well, 'A' and 'B' cannot both map to the same letter (in other words 'A'->'D', 'B'->'D' is not a valid key). This means that once 'A' is fixed, there is one less option for 'B', giving a total of 25 possibilities for 'B'. Having fixed both 'A' and 'B' there are 24 possibilities for C. If we continue in this way, we can see that the total number of keys is
+
+\[ 26*25*24*23* … * 2 * 1 \]
+
+There is a mathematical abbreviation for this term: 26! (the exclamation point is an operator called \emph{factorial}).
+
+This turns out to be a surprisingly large number:
+
+\[ 403291461126605635584000000 \]
+
+Of course we may not need to check every single key. After all, we might get lucky and find the correct key early on. We can express this in terms of probability. Assuming the key was chosen randomly, so that all keys are equally likely, each key has a
+
+\[ 1/403291461126605635584000000 \]
+
+of being the correct one. This means that it is astronomically unlikely that we will get the correct key after just one or two tries. Even a million attempts gives us a probability of
+
+\[ 1000000/403291461126605635584000000 \]
+
+of finding the right key. This is way too small for us to bank on. If we wanted to get to a 50% chance of finding the key via our brute force method, we would need to expect to have to try
+
+\[ 403291461126605635584000000/2 \]
+
+possibilities. Using more standard exponential notation for large numbers, we can say that this is about 2*10^26. That may seem like a lot, but well within reach for an average computer nowadays.
+
+Unfortunately if you were trying to decrypt ciphertext in the 1860s without the key, you didn't have computers at your disposal to help perform some enormous amount of operations. So given that a brute force attack seems infeasible without a lot of computational assistance, how else might we try to decrypt a message encrypted with a simple substitution cipher? The main technique to employ is called \emph{frequency analysis} which is based on the observation that English letters are not randomly distributed in words. 'e' occurs more frequently than 'q' or 'z'. It also helps that you know the length of each word since the simple substitution cipher does not change word lengths. In the example above, the ciphertext of the last word is 'YRR'. There are only 43 three-letter words in the Scrabble dictionary that have this form, giving us a ton of information and significantly cutting down on the number of possibilities we have to check compared to our brute force approach. Armed with techniques like these, after studying a ciphertext for some length of time, one can usually start to slowly recover messages piece by piece like a Sudoku puzzle.
+
+Of course, people designing encryption systems were creative too, and came up with schemes far more complex than simple substitution ciphers. Perhaps the most famous encrypted telegram was the so-called Zimmerman Note which was sent by the German Foreign Office in 1917 to the German Ambassador to Mexico instructing the latter to propose a military alliance between Germany and Mexico should the United States enter World War I.
+
+Here is the ciphertext of this infamous telegram as it appears on the telegram:
+
+\[ [INSERT IMAGE] \]
+
+This message is encrypted with a cipher named ``cipher 0075'', which is of course much more complicated than a simple substitution cipher. Yet the British had a crack team of codebreakers throughout both World Wars – known as Room 40 – and were able to apply more advanced versions of the techniques we saw above in order to break the cipher. When the Germans' clandestine proposal was revealed, Americans were outraged and this was one of the major tipping points that pulled the United States into World War I.
 
 
 \end{document}
