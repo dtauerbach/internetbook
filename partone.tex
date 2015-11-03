@@ -249,9 +249,13 @@ Unfortunately for Morse and his peers, there were no light bulbs in the 1830s an
 
 While all electrical telegraphy developed through the 1840s was based on the paradigm of a simple circuit that we described above, the details varied quite a bit among competing designs. There was not a single telegraph during this period, but rather a plethora of distinct competing experimental systems for communicating over electrical wires.
 
-Many early designs involved creating one circuit per letter of the alphabet. In England in the late 1830s, Cooke and Wheatstone developed a working prototype of a telegraph that involved six wires. On the receiving end of this telegraph, there were five needles that could be made point to a particular letter.
+Many early designs involved creating one circuit per letter of the alphabet. In England in the late 1830s, Cooke and Wheatstone developed a working prototype of a telegraph that involved six wires. On the receiving end of this telegraph, there were five needles that could be made point to a particular letter:
 
-\[ [INSERT IMAGE] \]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\linewidth]{wheatstone}
+\caption{Cooke and Wheatstone telegraph needles pointing at 'G'}
+\end{figure}
 
 When the dust settled, however, the telegraph that became the de facto worldwide standard was an iteration coming from Morse and his collaborators, notably Alfred Vail. As we will see time and time again, simplicity is a major virtue when designing a telecommunications system, and this was an advantage of the Morse telegraph over other early prototypes.
 
@@ -261,13 +265,22 @@ Let's look in a bit more detail at how the Morse telegraph worked. Here is a rep
 
 The circuit was closed by default, which means that electricity was flowing through. Transmission occurred via \emph{telegraph key}, an invention of Vail that was essentially just a single button that an operator could press. When pressed, the circuit was opened and electricity no longer could flow through the wire. When released, electricity resumed.
 
-\[ [IMAGE OF TELEGRAPH KEY] \]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{telegraphkey}
+\caption{Telegraph key}
+\end{figure}
 
 Telegraph operators would tap out messages with this single key in a specified manner (which we'll discuss shortly).
 
 On the receiving end, there was a bit more variance in terms of what gadget was actually used to receive messages over the life of the telegraph. After experimentation with all sorts of receiving devices –- making little marks on paper, making needles point to particular locations, and so on -- the winning gadget employed throughout the peak of the telegraph in the mid to late 1800s was called a \emph{sounder}:
 
-\[ [IMAGE OF SOUNDER] \]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{telegraphsounder}
+\caption{Sounder}
+\end{figure}
+
 
 This device allowed telegraph operators to listen to clicks and pauses which corresponded to the pressing and lifting of the telegraph key by the operator at the other end of the line. So we now have a clearer picture of how a telegraph worked: it was essentially a circuit with a key on one end corresponding to a switch and a sounder on the other end that allowed key presses to be heard as clicks.
 
@@ -571,7 +584,7 @@ of finding the right key. This is way too small for us to bank on. If we wanted 
 
 \[ 403291461126605635584000000/2 \]
 
-possibilities. Using more standard exponential notation for large numbers, we can say that this is about 2*10^26. That may seem like a lot, but well within reach for an average computer nowadays.
+possibilities. Using more standard exponential notation for large numbers, we can say that this is about $2*10^{26}$. That may seem like a lot, but well within reach for an average computer nowadays.
 
 Unfortunately if you were trying to decrypt ciphertext in the 1860s without the key, you didn't have computers at your disposal to help perform some enormous amount of operations. So given that a brute force attack seems infeasible without a lot of computational assistance, how else might we try to decrypt a message encrypted with a simple substitution cipher? The main technique to employ is called \emph{frequency analysis} which is based on the observation that English letters are not randomly distributed in words. 'e' occurs more frequently than 'q' or 'z'. It also helps that you know the length of each word since the simple substitution cipher does not change word lengths. In the example above, the ciphertext of the last word is 'YRR'. There are only 43 three-letter words in the Scrabble dictionary that have this form, giving us a ton of information and significantly cutting down on the number of possibilities we have to check compared to our brute force approach. Armed with techniques like these, after studying a ciphertext for some length of time, one can usually start to slowly recover messages piece by piece like a Sudoku puzzle.
 
