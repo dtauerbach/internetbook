@@ -7,12 +7,20 @@
 \usepackage{seqsplit}
 \usepackage{tikz}
 \usepackage{pgfplots}
+\usepackage{listings}
 \newcommand\longnumber[2]{%
     \begin{minipage}{#1}
     \seqsplit{#2}
     \end{minipage}
     }
+\newcommand{\dt}{\kern-2.5pt\raisebox{0.4ex}{.}}
+\newcommand*\thickdash{\includegraphics{thick-dash2}}
+\newcommand*\thickdot{\includegraphics{thick-dot2}}
+
+\lstset{%
+literate={a}{\dt-}3{b}{-\dt\dt\dt}3{c}{-\dt-\dt}3{z}{-{}-\dt\dt}3}
 \graphicspath{ {images/} }
+
 \begin{document}
 \title{A History of Human Communication}
 \author{Dan Auerbach}
@@ -292,19 +300,29 @@ We've discussed a couple such systems already, but these relied on line of sight
 
 The system that stuck for telegraphy is known as Morse code. Morse code enables communication by segmenting the raw ``on'' and ``off'' states into four symbols: a dot, a dash, a short pause, and a long pause. A short press of the telegraph key was called a ``dot'' and a long press of the key was called a ``dash''. Different lengths of pauses were necessary to differentiate a pause between letters from a pause between words.
 
-\[ [TABLE OF BASIC ALPHABET OF TELEGRAPHY: DOT, DASH, SPACES] \]
+\begin{align*}
+	\bullet \qquad&\qquad \text{dot} \\
+	\textbf{--} \qquad&\qquad \text{dash} \\
+	\text{letter space} \qquad&\qquad \text{short pause} \\
+	\text{word space} \qquad&\qquad \text{long pause}
+\end{align*}
 
 These four symbols comprise the basic alphabet of telegraphy, but we also need a way to translate this basic alphabet into English letters, much as we did for our system of lights earlier. It is not too difficult to create such a table:
 
-\[ [Morse code table] \]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{morse-code}
+\caption{International Morse Code standard}
+\end{figure}
+
 
 Armed with this system, the telegraph is transformed from a meaningless single-signal transmission device into the world's first widespread telecommunication technology. The way it works is similar to the semaphore system we outlined above. For example, consider the following sets of dots, dashes, short pauses and long pauses, represented on paper via our table above:
 
-\[ [COME UP WITH A STRING] \]
+\[ \thickdot \thickdot \thickdot \thickdot \quad \thickdot \quad \thickdot \thickdash \thickdot \thickdot \quad \thickdot \thickdash \thickdot \thickdot \quad \thickdash \thickdash \thickdash \]
 
-Using the translation table, this would correspond to the English sentence:
+Using the translation table, this would correspond to the English word:
 
-\[ [ENGLISH TRANSLATION OF STRING] \]
+\[ \text{Hello} \]
 
 The Morse system has the advantage that only a single circuit is needed to communicate, meaning that even very simple designs for the physical telegraph could be made to effectively communicate via Morse code. In particular, unlike the more complex designs of Cooke and Wheatstone (as well as Morse's earlier systems), the telegraph which became the standard did not require several wires across multiple circuits to be synchronized, cutting down the complexity and cost of the system significantly.
 
@@ -324,7 +342,11 @@ To achieve this, improvements to cabling were critical. In particular, early tel
 
 So for telegraphs to function at scale, more sophisticated cabling was needed. Fortunately, \emph{gutta-percha} was discovered by the industrial world in 1843 and quickly became a household name in the Victorian world. This tree sap known for producing a naturally rigid latex became the mid to late 19th century's equivalent of plastic today, and among its myriad uses was as an insulator surrounding raw copper telegraph wires. The gutta-percha in turn was often wrapped in rubber, and then an outer layer or iron or steel, creating a cable whose cross section looked like this:
 
-\[ [IMAGE] \]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{cable-cross-section}
+\caption{Telegraph cable}
+\end{figure}
 
 It did not happen overnight, but 14 years after Morse's first successful proof of concept of the electrical telegraph in 1844 between Baltimore and Washington, D.C., the first transatlantic telegraph cable was laid, ushering in the dawn of a new information age of instantaneous cross-continent communication.
 
@@ -340,7 +362,11 @@ Underlying the repeating mechanism is a fundamental electrical device called an 
 
 You can think of a simple electromagnet as a piece of iron with insulated wire tightly coiled around it:
 
-\[ [IMAGE] \]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{electromagnet}
+\caption{Simple electromagnet}
+\end{figure}
 
 When current flows through the wire, it induces a magnetic field, making the iron into a magnet. This allows the flow of electricity to dictate whether a magnet is ``on'' or ``off''.
 
@@ -588,11 +614,15 @@ possibilities. Using more standard exponential notation for large numbers, we ca
 
 Unfortunately if you were trying to decrypt ciphertext in the 1860s without the key, you didn't have computers at your disposal to help perform some enormous amount of operations. So given that a brute force attack seems infeasible without a lot of computational assistance, how else might we try to decrypt a message encrypted with a simple substitution cipher? The main technique to employ is called \emph{frequency analysis} which is based on the observation that English letters are not randomly distributed in words. 'e' occurs more frequently than 'q' or 'z'. It also helps that you know the length of each word since the simple substitution cipher does not change word lengths. In the example above, the ciphertext of the last word is 'YRR'. There are only 43 three-letter words in the Scrabble dictionary that have this form, giving us a ton of information and significantly cutting down on the number of possibilities we have to check compared to our brute force approach. Armed with techniques like these, after studying a ciphertext for some length of time, one can usually start to slowly recover messages piece by piece like a Sudoku puzzle.
 
-Of course, people designing encryption systems were creative too, and came up with schemes far more complex than simple substitution ciphers. Perhaps the most famous encrypted telegram was the so-called Zimmerman Note which was sent by the German Foreign Office in 1917 to the German Ambassador to Mexico instructing the latter to propose a military alliance between Germany and Mexico should the United States enter World War I.
+Of course, people designing encryption systems were creative too, and came up with schemes far more complex than simple substitution ciphers. Perhaps the most famous encrypted telegram was the so-called Zimmermann Note which was sent by the German Foreign Office in 1917 to the German Ambassador to Mexico instructing the latter to propose a military alliance between Germany and Mexico should the United States enter World War I.
 
 Here is the ciphertext of this infamous telegram as it appears on the telegram:
 
-\[ [INSERT IMAGE] \]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{zimmermann}
+\caption{Zimmermann Note}
+\end{figure}
 
 This message is encrypted with a cipher named ``cipher 0075'', which is of course much more complicated than a simple substitution cipher. Yet the British had a crack team of codebreakers throughout both World Wars – known as Room 40 – and were able to apply more advanced versions of the techniques we saw above in order to break the cipher. When the Germans' clandestine proposal was revealed, Americans were outraged and this was one of the major tipping points that pulled the United States into World War I.
 
