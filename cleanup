@@ -10,18 +10,7 @@ H 2.2. Basic circuit with real telegraph superimposed
 H 2.5. Diagram electromagnet with latch
 H 2.5. Diagram electromagnet with latch part 2
 H 2.5. Diagram of electromagnet as a relay
-3.1. Random mark
-3.1. Chinese character
-3.1. 5 random symbols
-3.1. Squiggly alphabet
-3.1. Translation of letters into 2-digits
-3.1. Write out really long number
-3.1. Table encoding English letters to Chinese letters
-3.1. Chinese sentence given encoding
-3.1. Ascii table (part of it?)
-3.2. Morse alphabet of dots and dashes
 HH 3.2. Diagram of layered system
-3.2.1. Remove diagram of sending message to London
 3.3 Code book for telegraphy
 
 Cleanup DONE
@@ -36,8 +25,22 @@ Cleanup DONE
 2.4. Cable cross section
 2.5. Electromagnet
 3.3. Zimmerman note
+3.1. Random mark
+3.1. Chinese character
+3.1. 5 random symbols
+3.1. Squiggly alphabet
+3.1. Translation of letters into 2-digits
+3.1. Write out really long number
+3.1. Table encoding English letters to Chinese letters
+3.1. Chinese sentence given encoding
+3.1. Ascii table (part of it?)
+3.2.1. Remove diagram of sending message to London
+3.2. Morse alphabet of dots and dashes
 
+Longer term
 
+Change spacing between sentences that should be highlighted, e.g. encoded English sentence
+Remove traditional vs simplified chinese distinction
 Fix ambiguity between "symbol" and "character"
 2.1. Remove "Positive and negative terminals" language
 Fill in intro anecdote

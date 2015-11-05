@@ -1,4 +1,4 @@
-\documentclass{book}
+\documentclass[UTF8]{book}
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -8,20 +8,19 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{listings}
+\usepackage{CJK}
 \newcommand\longnumber[2]{%
     \begin{minipage}{#1}
     \seqsplit{#2}
     \end{minipage}
     }
-\newcommand{\dt}{\kern-2.5pt\raisebox{0.4ex}{.}}
 \newcommand*\thickdash{\includegraphics{thick-dash2}}
 \newcommand*\thickdot{\includegraphics{thick-dot2}}
 
-\lstset{%
-literate={a}{\dt-}3{b}{-\dt\dt\dt}3{c}{-\dt-\dt}3{z}{-{}-\dt\dt}3}
 \graphicspath{ {images/} }
-
 \begin{document}
+\begin{CJK}{UTF8}{gbsn}
+
 \title{A History of Human Communication}
 \author{Dan Auerbach}
 \date{2015}
@@ -300,12 +299,17 @@ We've discussed a couple such systems already, but these relied on line of sight
 
 The system that stuck for telegraphy is known as Morse code. Morse code enables communication by segmenting the raw ``on'' and ``off'' states into four symbols: a dot, a dash, a short pause, and a long pause. A short press of the telegraph key was called a ``dot'' and a long press of the key was called a ``dash''. Different lengths of pauses were necessary to differentiate a pause between letters from a pause between words.
 
-\begin{align*}
-	\bullet \qquad&\qquad \text{dot} \\
-	\textbf{--} \qquad&\qquad \text{dash} \\
-	\text{letter space} \qquad&\qquad \text{short pause} \\
-	\text{word space} \qquad&\qquad \text{long pause}
-\end{align*}
+\begin{center}
+\begin{tabular}{cc}
+\thickdot & dot \\
+\hline
+\thickdash & dash \\
+\hline
+[short pause] & letter space \\
+\hline
+[long pause] & word space \\
+\end{tabular}
+\end{center}
 
 These four symbols comprise the basic alphabet of telegraphy, but we also need a way to translate this basic alphabet into English letters, much as we did for our system of lights earlier. It is not too difficult to create such a table:
 
@@ -394,19 +398,29 @@ The telegraph was in one important way a direct precursor to the Internet. Unlik
 
 \section{Alphabets and Symbols}
 
-Consider the letter \emph{a}, the first letter of the Latin alphabet. What makes this mark meaningful? If we did not know English or any other languages based on this alphabet, then \emph{a} would just appear to be a mysterious mark with no meaning, like [INSERT RANDOM MARK]. Thus for the letter \emph{a} to carry information for the onlooker, it has to exist within the context of what we can call an \emph{alphabet}. And of course, the Latin alphabet is not the only meaningful alphabet. The traditional Chinese character [INSERT CHINESE CHARACTER] may look meaningless to a non-Chinese reader, but it certainly has a meaning within the context of the traditional Chinese alphabet.
+Consider the letter \emph{`a'}, the first letter of the Latin alphabet. What makes this mark meaningful? If we did not know English or any other languages based on this alphabet, then \emph{a} would just appear to be a mysterious mark with no meaning, such as $\includegraphics{randomsymbol}$.
+
+Thus for the letter \emph{a} to carry information for the onlooker, it has to exist within the context of what we can call an \emph{alphabet}. And of course, the Latin alphabet is not the only meaningful alphabet. The traditional Chinese character 章 may look meaningless to a non-Chinese reader, but it certainly has a meaning within the context of the traditional Chinese alphabet.
 
 What about a number like \emph{2}? You might think that this is not part of an alphabet, since it is a number and not a letter. However, for our purposes, we are intentionally going to use the word \emph{alphabet} very broadly, as mathematicians do, and by this broad definition, the symbols 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 do indeed form an alphabet which we usually call Arabic numerals. Just think of an alphabet as any fixed set of symbols that are distinguished from one another by some known rules or conventions.
 
 There are some interesting edge cases. For example, consider the following set of symbols:
 
-[5 RANDOM SYMBOLS]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{random-symbols}
+\caption{Set of symbols}
+\end{figure}
 
 Does this form an alphabet? The symbols have no meaning in themselves, but I just wrote them down and said that they ought to be go together. Is that enough to constitute an alphabet? Does there have to be some sort of shared knowledge of more than one person, or generally accepted use for the symbols of the alphabet? Or can one create a bare ones alphabet by fiat, as I just did above?
 
 Another edge case occurs when we consider infinite alphabets, like:
 
-[1 SQUIGGLY] [2 SQUIGGLIES] etc
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{infinite-alphabet}
+\caption{Infinite alphabet}
+\end{figure}
 
 Does this count as an alphabet? One interesting question that arises here: do symbols have to be specified explicitly at the outset when defining an alphabet, or is it enough to describe how one \emph{could} draw the symbols, for example by giving a schema for the user of the alphabet to fill in?
 
@@ -418,17 +432,26 @@ What does this mean? If you fix a translation system, you can take any string of
 
 As an example, consider the sentence:
 
-  \emph{All symbolic representations of information are fungible!}
+\begin{quotation}
+\centering
+\emph{All symbolic representations of information are fungible!}
+\end{quotation}
 
 For starters, we could translate this to the traditional Chinese alphabet, giving us a new representation of the sentence:
 
-  \emph{所有的信息符號表示是可替代的！}
+\begin{quotation}
+\centering
+\emph{所有的信息符號表示是可替代的！}
+\end{quotation}
 
 I mentioned above that one had to agree on a translation system.  Which one was employed for this translation? We might call it a \emph{semantic} translation system, in that the underlying meaning of the sentence was recreated via a new sentence in Chinese. This is actually a tremendously difficult and complicated translation system. Fortunately, we can also come up with much simpler translation systems.
 
 To see this, let's translate the above sentence into Arabic numerals. \emph{Guh? How can you translate a sentence into numbers!?} The important thing to remember is that we get to decide on the translation system. In this case, we can pick something arbitrarily, just like we did earlier during our game of catch with Mary. Let's just translate each letter to it's position in the alphabet:
 
-  \emph{1 12 12  19 25 13 2 15 12 9 3  18 5 16 18 5 19 5 14 20 1 20 9 15 14 19  15 6  9 14 6 15 18 13 1 20 9 15 14  1 18 5  6 21 14 7 9 2 12 5 !}
+\begin{quotation}
+\centering
+\emph{1 12 12  19 25 13 2 15 12 9 3  18 5 16 18 5 19 5 14 20 1 20 9 15 14 19  15 6  9 14 6 15 18 13 1 20 9 15 14  1 18 5  6 21 14 7 9 2 12 5 !}
+\end{quotation}
 
 This \emph{almost} counts as a translation into the 10-symbol Arabic alphabet that we specified above. But there is a subtle issue that we need to deal with: we still have whitespace characters and the `!' character, neither of which occur in the Arabic alphabet. You might counter that neither of these are considered part of the 26-character Latin alphabet that underlies English. But remember that we are using the word alphabet in a particular sense, and in this sense, any alphabet that underlies ordinary written English must have symbols corresponding to whitespace and exclamation points, since these are part of the language. Put another way, if we formalize the written English language as a system for communication, it will include extra conventions beyond the Latin letters one learns in elementary school; whitespace is part of the language too and the easiest way to capture it the rules around whitespace is to say that there is a `space' character.
 
@@ -436,11 +459,29 @@ Hence, to make our mapping to the alphabet of Arabic numerals a proper translati
 
 We also need this character separator to be some sort of number, in other words a string of one or more digits from 0 to 9. We didn't use the symbol `0' for any English letter, and it is available to us, so how about that? That almost works, except that there are still some ambiguous strings. For example, `2002' could translate into `b  b' or `t b'. We're getting closer, though. The problem with our current system that creates the above ambiguity is that each English letter could correspond to a variable number of digits. What if instead we enforce that every letter is exactly two digits long, so the letter 'a' is actually '01'? Now we can make '00' a space, and '27' an exclamation point. Moreover, we can also encode upper case letters and other common symbols as a sequence of two digits. Here is the whole table of our new translation system:
 
-\[ [TABLE] \]
+\begin{center}
+\begin{tabular}{ cccccccc }
+ 00 & [space] & & 12 & l & & 24 & x \\
+ 01 & a & & 13 & m & & 25 & y \\
+ 02 & b & & 14 & n & & 26 & z \\
+ 03 & c & & 15 & o & & 27 & ! \\
+ 04 & d & & 16 & p & & 28 & ? \\
+ 05 & e & & 17 & q & & 29 & . \\
+ 06 & f & & 18 & r & & 30 & ' \\
+ 07 & g & & 19 & s & & 31 & , \\
+ 08 & h & & 20 & t & & 32 & - \\
+ 09 & i & & 21 & u & & 33 & / \\
+ 10 & j & & 22 & v & & \\
+ 11 & k & & 23 & w & & \\
+\end{tabular}
+\end{center}
 
 Now we can successfully write the above sentence as a rather long number:
 
-\[ [WRITE OUT NUMBER] \]
+\begin{quotation}
+\centering
+\longnumber{4in}{01121200192513021512090300180516180519051420012009151419001506000914061518130120915140001180500062114070902120527}
+\end{quotation}
 
 With this, we have translated our sentence from the English alphabet into the alphabet of Arabic numerals. The giant number represented by the Arabic numerals has no inherent meaning, except when coupled with the translation system that we imposed earlier.
 
@@ -454,11 +495,28 @@ There is another word for performing a dumb translation like we did above: \emph
 
 Let's once again translate our original sentence into traditional Chinese but this time with encoding rather than semantic translation. The traditional Chinese alphabet has many more characters than the Latin alphabet, so we can pick 26 of these at random and create a translation table:
 
-\[ [ENCODING TABLE] \]
+\begin{center}
+\begin{tabular}{ cccccccc }
+ 吧 & a & & 爸 & l & & 八 & w \\
+ 京 & b & & 姐 & m & & 叫 & x \\
+ 很 & c & & 见 & n & & 家 & y \\
+ 会 & d & & 好 & o & & 海 & z \\
+ 百 & e & & 贵 & p & & \\
+ 过 & f & & 港 & q & & \\
+ 国 & g & & 儿 & r & & \\
+ 多 & h & & 东 & s & & \\
+ 关 & i & & 个 & t & & \\
+ 方 & j & & 哥 & u & & \\
+ 都 & k & & 对 & v & & \\
+\end{tabular}
+\end{center}
 
 Luckily the Chinese alphabet also includes whitespace characters, so we do not need to do any extra work for this. Using this encoding, we get the following sentence, written with traditional Chinese characters:
 
-\[ [INSERT SENTENCE] \]
+\begin{quotation}
+\centering
+\emph{吧爸爸 东家姐京好爸关很 儿百贵儿百东百见个吧个关好见东 好过 关见过好儿姐吧个关好见 吧儿百 过哥见国关京爸百!}
+\end{quotation}
 
 This will look like gibberish to a Chinese reader. Nevertheless, it is a faithful encoding of our English sentence, and armed with the encoding table above and knowledge of the English language, one can understand what it means.
 
@@ -468,18 +526,27 @@ However, it turns out that the opposite optimization is actually much more impor
 
 You might be tempted to say one, and distinguish strings by, say, line breaks:
 
-11111111
+\begin{quotation}
+\centering
 
-vs
+11111111 \\
 
-1111
+vs \\
+
+1111 \\
 11111
+
+\end{quotation}
 
 Remember, though, that line breaks are themselves a character. So if you truly restrict yourself to a single character, there is no way to convey any information within a string other than the length of the string, which is too impoverished to allow for encoding in any reasonable way.
 
 Add just one more character, however, and your two-character \emph{binary} alphabet is fully functional. Let's write the characters as `0' and `1'. We can encode any symbolic in binary: letters from any natural language, numbers, or anything at all. For example, the American Standard Code for International Interchange (ASCII) is a standard that we will meet later on that provides a standard for encoding Latin letters into binary (among other things):
 
-\[ [INSERT PART OF ASCII TABLE] \]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{ascii-binary-chart}
+\caption{ASCII}
+\end{figure}
 
 Given its basic alphabet and importance for computing, binary has become the universal standard for understanding and communicating information.
 
@@ -487,7 +554,17 @@ Given its basic alphabet and importance for computing, binary has become the uni
 
 Although the idea of encoding information into a binary alphabet is incredibly well understood nowadays, the notion of binary had not been divined when Morse code was developed. Yet as we have seen, Morse code had its own pared down alphabet, lending evidence to assertion that simple alphabets with a small number of symbols tend to be naturally useful:
 
-[MORSE ALPHABET]
+\begin{center}
+\begin{tabular}{cc}
+\thickdot & dot \\
+\hline
+\thickdash & dash \\
+\hline
+[short pause] & letter space \\
+\hline
+[long pause] & word space \\
+\end{tabular}
+\end{center}
 
 Morse's alphabet was four symbols, and the translation of all information to and from this four-symbol alphabet is what makes the telegraph a \emph{digital} technology. A better word to describe the nature of the technology might be \emph{symbolic}; as we've seen, though, any symbolic alphabet can be encoded as digits, and so the word \emph{digital} is often used nowadays to refer to technologies that operate on discrete sets of symbols, as the telegraph did.
 
@@ -518,8 +595,6 @@ Let's take the time to be precise and think through what the systems for layer D
 Suppose you are a telegraph operator sitting in a local telegraph station in Idaho in the 1880s, and you are handed a telegram to transmit. It is identified as being from ``John Smith'' and going to a ``Mary Fitzpatrick'' along with a London address for the recipient. What steps do you have to take to deliver your telegram?
 
 First, you have to decide how you are going to route your communication. Let's suppose there is a telegraph line from your local station to a central hub in New York City, which you know has a line directly to London.
-
-[DIAGRAM]
 
 So you hop on the line going to New York, and it is time to transmit the message. But wait – you have to convey information about the message as well as the message itself, such as the name and address of the recipient. This information about the message is known as metadata, because it is information about the message (in this parlance, the message is the “data”), as opposed to the message itself.
 
@@ -626,5 +701,5 @@ Here is the ciphertext of this infamous telegram as it appears on the telegram:
 
 This message is encrypted with a cipher named ``cipher 0075'', which is of course much more complicated than a simple substitution cipher. Yet the British had a crack team of codebreakers throughout both World Wars – known as Room 40 – and were able to apply more advanced versions of the techniques we saw above in order to break the cipher. When the Germans' clandestine proposal was revealed, Americans were outraged and this was one of the major tipping points that pulled the United States into World War I.
 
-
+\end{CJK}
 \end{document}
