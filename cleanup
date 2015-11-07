@@ -1,11 +1,6 @@
-
 Clean up:
 
-H 1.1. Graphic of network of relay stations
 ? 1.1. Quote from ancient world on series of signal fires
-H 2.1. Simple circuit diagram
-H 2.1. Simple circuit diagram current flows
-H 2.1. Simple circuit with light bulb diagram? (or cut)
 H 2.2. Basic circuit with real telegraph superimposed
 H 2.5. Diagram electromagnet with latch
 H 2.5. Diagram electromagnet with latch part 2
@@ -36,6 +31,10 @@ Cleanup DONE
 3.1. Ascii table (part of it?)
 3.2.1. Remove diagram of sending message to London
 3.2. Morse alphabet of dots and dashes
+H 1.1. Graphic of network of relay stations
+H 2.1. Simple circuit diagram
+H 2.1. Simple circuit diagram current flows
+H 2.1. Simple circuit with light bulb diagram? (or cut)
 
 Longer term
 

@@ -78,7 +78,7 @@ After thinking through it a bit more, you realize that if you could represent ev
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\linewidth]{semaphore_flags}
+\includegraphics[width=0.9\linewidth]{semaphoreflags3}
 \end{figure}
 
 Here we display one possible system where the person signaling holds flags for extra emphasis so that the arm positions can be seen from far away.
@@ -91,7 +91,10 @@ Now is there any way for us to extend this idea to quickly transfer information 
 
 The key insight is that to turn this basic semaphore system into something useful, we will need a \emph{network} of relay stations, each passing a message along to the next faster than any horse could ride.
 
-\[ [GRAPHIC OF NETWORK OF RELAY STATIONS] \]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{relay_stations}
+\end{figure}
 
 Even those in the ancient world understood that this was a conceptually sound design:
 
@@ -240,15 +243,22 @@ Besides Morse, the other prominent pair of inventors were Cooke and Wheatstone, 
 
 An electric telegraph is in essence just a very simple electrical circuit. There is a power source, a switch and a loop of wire connected to an electrical device that acts as a receiver indicating whether or not electricity is flowing through the circuit:
 
-\[ [DIAGRAM] \]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{circuit1}
+\caption{Switch closed; no electrical current}
+\end{figure}
+
 
 In the circuit diagram above, the power source is the battery is drawn on the left. It has positive and negative terminals, which we'll talk about in a minute. The little angled line represents a switch. If the switch is open, as it is in the diagram above, electricity does not flow through the circuit. If the switch it closed, on the other hand, then an electric current flows through:
 
-\[ [DIAGRAM] \]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{circuit2}
+\caption{Switch open; electricity flowing}
+\end{figure}
 
 When electrical current flows through the circuit, the electrical device on the right hand side has electricity running through it. Typically in elementary electrical engineering textbooks, a lightbulb is used as an illustration of this electrical device indicating that electricity is flowing through a circuit.
-
-\[ [DIAGRAM] \]
 
 Unfortunately for Morse and his peers, there were no light bulbs in the 1830s and 1840s, but there were elementary alternatives serving the same conceptual function as a light bulb.
 
