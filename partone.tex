@@ -21,28 +21,26 @@
 \begin{document}
 \begin{CJK}{UTF8}{gbsn}
 
-\title{A History of Human Communication}
+\title{The Network}
 \author{Dan Auerbach}
 \date{2015}
 \maketitle
 
 \part{The Telegraph}
 
-Some grabbing anecdote...
-
 \chapter{Communication at a Distance}
 
-Decades before the invention of the electrical telegraph that brought near-instantaneous communication to the Victorian world, the word ``telegraph'' was already in widespread use, having been coined by a French inventor named Claude Chappe to describe a network of towers that was also used to relay information. Much like signal fires that have been used since antiquity to convey simple, this \emph{optical telegraph} required no wires at all, as it instead relied on ordinary sight. In the section that follows we will explore a few different sight-based communication systems and in doing so lay some fundamental groundwork for understanding communication systems in general.
+The electrical telegraph brought near-instantaneous communication to the Victorian world, accelerating commerce, business and the connectedness of the human species. Yet long before telegraph engineers were plotting the best ways to build spider webs of wires all over the planet, the word ``telegraph'' was already in widespread use as a description for a network of towers used to relay information. Much like signal fires that have been used since antiquity to convey simple, this \emph{optical telegraph} required no wires at all, instead relying on ordinary sight. In the section that follows we will explore a few different sight-based communication systems and by weaving in history with some basic conceptual building blocks, we will lay some fundamental groundwork for understanding communication systems in general.
 
 \section{Telecommunications Using Plain Sight}
 
 Suppose you decide to play a game of catch with your friend Mary. After throwing back and forth a little, the inner athlete in Mary takes over and she decides just throwing the ball around is too boring -- she wants to practice some drills.
 
-You're too far apart to yell at each other, so she waves you over. Soon she is excitedly describing her workout plan to you: for each throw, she is going to tell you for each throw whether she wants a high ball, or a fast line drive ball thrown hard, and your job is to deliver these balls. The point of the exercise isn't to surprise her -- she prefers to know what is coming -- but to deliver the throws she wants as accurately as possible.
+You're too far apart to yell at each other, so she waves you over. Soon she is excitedly describing her workout plan to you: for each throw, she is going to tell you whether she wants a high ball or a fast line drive ball thrown hard, and your job is to deliver these balls. The point of the exercise isn't to surprise her -- she prefers to know what is coming -- but to deliver the throws she wants as accurately as possible.
 
-You grumble to yourself about Mary's inability to just have fun without making activities so competitive, but know that it would be futile to resist. And besides, you have a much more practical question in front of you: how is she going to indicate if she wants a high ball or a low ball? After all, she's far enough away that shouting is no use. The two of you briefly consider having her hold up one finger for a high ball, and two for a low ball, but quickly realize it will be hard to discern the number of fingers she's holding up from a distance.
+You grumble to yourself about Mary's inability to just have fun without making activities so competitive, but know that it would be futile to resist. And besides, you have a much more practical question in front of you: how is she going to indicate if she wants a high ball or a low ball? After all, she's far enough away that shouting is no use given how loud the passing cars are. The two of you briefly consider having her hold up one finger for a high ball, and two for a low ball, but quickly realize it will be hard to discern the number of fingers she's holding up from a distance.
 
-It doesn't take long for the two of you to devise a system. She will raise her right arm straight up in indicate that she wants a high ball thrown, and will put her right arm straight out sideways for a low ball:
+Then you figure out a system that works. She will raise her right arm straight up in indicate that she wants a high ball thrown, and will put her right arm straight out sideways for a low ball:
 
 \begin{figure}[H]
 \centering
@@ -63,7 +61,7 @@ It doesn't take long for the two of you to devise a system. She will raise her r
 
 This works like a charm. Mary chooses the ball she wants, and gets to practice her catching, and you have to admit that it is kind of fun to practice particular types of throws instead of just generally playing catch.
 
-Now, just as you are getting into a rhythm, Mary waves you over again, and your suspicions are quickly vindicated as she explains that she now wants to be able to signal one of \emph{six} different types of throws for you to deliver to her. After some grumbling, you give in and find yourself again faced with the task of coming up with a system for distinguishing the throws from one another without being able to communicate verbally.
+Now, just as you are getting into a rhythm, Mary waves you over again. Your suspicions are quickly vindicated as she explains that she now wants to be able to signal one of \emph{six} different types of throws for you to deliver to her. After some grumbling, you give in and find yourself again faced with the task of coming up with a system for distinguishing the throws from one another without being able to communicate verbally.
 
 The arm-based signaling system was working pretty well, so you decide to extend it, this time using two arms instead of one:
 
@@ -72,9 +70,9 @@ The arm-based signaling system was working pretty well, so you decide to extend 
 \includegraphics{stick-figure-six-positions-simplified}
 \end{figure}
 
-It takes a little getting used to, but you pick up the system and once again settle into a rhythm, having hopefully satiated your throwing partner's lust for pushing her body to the limit. You then start to wonder if you could extend your system even further. Is there a limit to how much information you can convey with just two arms?
+It takes a little getting used to, but you pick up the system and once again settle into a rhythm, having hopefully satiated your throwing partner's lust for pushing her body to the limit. Your mind wanders, and you start thinking about the system you just devised. Can it be extended further? Is there a limit to how much information you can convey with just two arms?
 
-After thinking through it a bit more, you realize that if you could represent every letter of the alphabet via a different set of arm positions, then you could signal letters, one at a time, and communicate entire sentences back and forth. It's not too difficult to come up with such a system:
+After thinking through it a bit more, you realize that if you could represent every letter of the alphabet via a different set of arm positions, then by using your arm positions to signal individual letters, one at a time, you could communicate entire sentences via your system that translates arm positions into letters.  It's not too difficult to come up with such a system:
 
 \begin{figure}[H]
 \centering
@@ -85,9 +83,9 @@ Here we display one possible system where the person signaling holds flags for e
 
 Using this system, you could compose a message (``hey Mary, let's stop being so intense when we play catch''), and pass that message to Mary one letter at a time encoded via your arm signaling system, who in turn could decode it and understand the message.
 
-This system is an example of what is called a \emph{semaphore system} of communication. While it may not seem that groundbreaking or useful for your game of catch, the core idea of transmitting symbols is the essence of all digital communication.
+This system is an example of what is called a \emph{semaphore system} of communication. While it may not seem that groundbreaking or useful for your game of catch, this core idea of encoding useful information into symbols and then transmitting those symbols is the essence of all communication in the Internet era.
 
-Now is there any way for us to extend this idea to quickly transfer information across dozens or even hundreds of miles?
+Now you might naturally wonder: is there any way for us to extend this idea to quickly transfer information across dozens or even hundreds of miles?
 
 The key insight is that to turn this basic semaphore system into something useful, we will need a \emph{network} of relay stations, each passing a message along to the next faster than any horse could ride.
 
@@ -96,7 +94,7 @@ The key insight is that to turn this basic semaphore system into something usefu
 \includegraphics[width=0.9\linewidth]{relay_stations}
 \end{figure}
 
-Even those in the ancient world understood that relay stations could be used in this way to transmit visual information, and they did this through the creation of networks of signal fires. For example, the play \emph{Agamemnon}, which was part of a trilogy that first prize at the Dionysia festival in Athens in 458 BC, begins with a watchman looking for a signal fire that would signal the fall of Troy. [CITE]
+Even those in the ancient world understood that relay stations could be used in this way to transmit visual information, and they did this through the creation of networks of signal fires. For example, the play \emph{Agamemnon}, which was part of a trilogy that won first prize at the Dionysia festival in Athens in 458 BC, begins with a watchman looking for a signal fire that was the last in a line of fires being used to signal the fall of Troy. [CITE]
 
 Another famous example is African talking drums. Originating in West Africa, the instruments themselves were hourglass-shaped drums constructed to allow the player to modulate the pitch as he or she was playing. This made it possible for skilled players to approximate speech of highly tonal African languages. Even more incredible, over time sets of phrases were developed that could be played out via the talking drum and understood from far away. The phrases were intended to communicate useful information, but they had to be quite verbose so that they could be told apart from one another from a distance. For example, ``Come back home'' might be translated by the drummers into a long phrase such as: ``Make your feet come back the way they went, make your legs come back the way they went, plant your feet and your legs below, in the village which belongs to us'', which would then be ``spoken'' by the drum doing its best imitation of a person saying that phrase aloud. [CITE GLEICK]. The phrases were often relayed from village to village, forming a system of communication that could travel faster than horseback and convey complex ideas unlike signal fires.
 
@@ -104,17 +102,15 @@ However, both signal fires and talking drums had their shortcomings, and could n
 
 \subsection{The Chappe System}
 
-If the idea of using a network of stations to relay information had been around for millenia, why did it take so long to start laying the stones and bricks to make it a reality?
+If the idea of using a network of stations to relay information had been around for thousands of years, why did it take so long to improve this core idea into a working network for reliable communication?
 
-The reasons are primarily economic. A century before Chappe was devising systems for towers to communicate, in 1684, the British thinker Robert Hooke wrote out a detailed proposal for a system of communication at a distance, but the proposal languished and was never implemented.
+The reasons are primarily economic. A century before Chappe was devising systems for towers to communicate, in 1684, the British thinker Robert Hooke wrote out a detailed proposal for a system of communication at a distance, but the proposal languished and was never implemented. [CITE]
 
-To get a sense of the economics at play, let's say one wanted to be able to send and receive messages from 300 miles away – roughly the distance from Paris to Lyon, or Philadelphia to Boston. Supposing intermediate stations were 10 miles apart, the cost of building the network would be the cost of building and maintaining 30 stations: that meant building 30 expensive buildings, and employing perhaps 60 human beings or more to manage the buildings and relay messages. Moreover the cost is pretty much all up front: it takes many stations to be built before information can usefully travel from large city centers.
+To get a sense of the economics at play, let's say one wanted to be able to send and receive messages from 300 miles away -- roughly the distance from Paris to Lyon, or Philadelphia to Boston. Intermediate stations would have to be roughly 10 miles apart (or perhaps even closer, but we can be generous). Hence, the cost of building a network capable of transmitting information between Philadelphia and Boston would amount to the cost of building and maintaining 30 expensive buildings, and employing perhaps 60 people or more to manage the buildings and relay messages. Moreover the cost is pretty much all up front: it takes many stations to be built before information can usefully travel from large city centers. It's worth highlighting this economic situation since we will see this pattern repeating again and again in the telecommunications industry: there is always an incredibly high up front cost for building a network before it can be used to send a single message. Interestingly, this is kind of the opposite business model as the prototypical Internet-era start-up, which has a very low barrier to entry. Much later, we will explore the tension between these two business models, and how they affect the net neutrality debate.
 
-This was too high a price for the English government of the late 17th century to spend on an unproven idea without any critical use cases. But a hundred years later when Chappe was (re)inventing his optical telegraph, revolutionary France was embroiled in intense international military conflict. In this context, not only did instability of the revolution encourage spikes in short-term spending by those in power looking out for their own interests, but the \emph{value} of being able to transmit and receive information quickly had also skyrocketed for a military waging fast-paced wars on multiple fronts.
+With respect to Hooke's vision of optical telegraphy, building and maintaining all of those towers was simply too high a price for the English government of the late 17th century to spend on an unproven idea without any critical use cases. But a hundred years later when Chappe was (re)inventing his optical telegraph, revolutionary France was embroiled in intense international military conflict. In this context, not only did instability of the revolution encourage spikes in short-term spending by those in power looking out for their own interests, but the \emph{value} of being able to transmit and receive information quickly had also skyrocketed for a military waging fast-paced wars on multiple fronts. It was not a completely rosy time for inventors like Chappe either. While the government and military desperately wanted the powers afforded by Chappe's towers, citizens were suspicious of these mysterious obelisks and in one incident burned a tower to the ground.
 
-This made the government receptive to the ideas of the young entrepreneurial Chappe, who furiously iterated on the design of his towers.
-
-Chappe's challenge was to figure out the nitty gritty details: how were two relay stations going to actually communicate? Chappe tried a variety of systems, some rather elaborate that involved synchronizing the time between two relay stations. In the end, the simpler solution won out, a trend that we will see continues for centuries.
+Yet instability and violence was a fact of life in revolutionary France and did not deter Chappe, who furiously iterated on the design of his towers. Chappe's challenge was to figure out the nitty gritty details: how were two relay towers going to actually communicate? Chappe tried a variety of systems, some rather elaborate that involved synchronizing the time between two relay stations. In the end, the simpler solution won out, another trend in telecommunications that we will see continues for centuries.
 
 The relay stations would be large towers with mechanical arms that could be seen from as far away as possible. In particular, there were two small arms both connected to a large cross arm:
 
@@ -123,11 +119,11 @@ The relay stations would be large towers with mechanical arms that could be seen
 \includegraphics[width=0.3\linewidth]{chappe_tower}
 \end{figure}
 
-This obelisk was the first thing to be given the name telegraph, which we could translate as ``distant writer.'' Similar to how we used human arms when experimenting with communication earlier, the arms of the tower could be given many different positions, each corresponding to a different letter or phrase. The advantage of the mechanical arms over human ones, of course, is that the arms on the tower are much larger and hence can be seen from further away.
+Similar to how we used human arms when experimenting with communication earlier, the arms of the tower could be given many different positions, each corresponding to a different letter or phrase. [ADD DIAGRAM FOR THIS?] The advantage of the mechanical arms over human ones, of course, is that the arms on the tower are much larger and hence can be seen from further away.
 
-Since this first telegraph was to be used for strictly military purposes, the meaning of the arm positions emanating from the towers was to be kept secret. In fact, even the operators of towers often were simply mimicking the arm positions of the transmitting tower, without knowing the meaning of the message contained within that series of arm positions. [CITE]
+Since this first telegraph was to be used for strictly military purposes, the meaning of the arm positions that emanated from the towers was to be kept secret. In fact, even the operators of towers often were simply mimicking the arm positions of the transmitting tower, without knowing the meaning of the message contained within that series of arm positions. [CITE]
 
-The first line of these towers between Paris and the town of Lille was completed in 1792 and given the military usefulness, within a few years, the telegraph network spanned much of France:
+The first line of these towers between Paris and the town of Lille was completed in 1792. Once this proof of concept was established, given the military utility of what Chappe offered, the telegraph network spanned much of France within half a decade:
 
 \begin{figure}[H]
 \centering
@@ -136,7 +132,7 @@ The first line of these towers between Paris and the town of Lille was completed
 
 This was the world's first extensive telecommunications (``distant communication'') network, and it required no wires at all.
 
-The network in France was copied in other countries, as telegraph towers started appearing all over. Indeed, if you live in a hilly city, you may have a neighborhood nearby called something like \emph{telegraph hill}; this name is derived from the hills upon which optical telegraphs were placed to maximize visibility.
+The network in France was copied in other countries, as telegraph towers started appearing all over. In fact, if you live in a hilly city, you may have a neighborhood nearby called \emph{telegraph hill}; this name is derived from the hills upon which optical telegraphs were placed to maximize visibility.
 
 \section{A System of Lights}
 
