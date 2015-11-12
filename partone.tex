@@ -34,7 +34,10 @@ Beyond the abstract theory of information, there are a host of much more practic
 
 To help manage this daunting array of unknowns, it helps to conceptualize questions about information technology against two broad and interrelated topics: computing and networking.
 
-[GRAPHIC]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{information_computing_and_networking}
+\end{figure}
 
 If you learn about computing, you will learn about how your laptop works, and how your phone works (since your phone is really just a computer). You will learn about how computers can accomplish useful things like displaying a cute video of a cat on your screen. You will learn about microprocessors, random access memory, hard drives, and many other components that allow these systems to talk to one another and take input from users. You will learn about software, programming languages, how code is written, algorithms, computer graphics, Moore's law, and the limits of computing. You will learn about copyright, the battles between free and proprietary software, the role the government played in developing early computers, and the ecosystem of private companies that allow you to go to the store and buy a phone with pre-installed software.
 
@@ -42,13 +45,15 @@ In contrast to a course of study focused around computing, if you study networki
 
 In practice these topics are often intertwined in thorny ways and so an individual who is interested in information will invariably learn bits and pieces of both on the journey of deepening his or her understanding.
 
-This book focuses primarily on the networking umbrella: our goal will NOT be to understand how computing works. For readers without a background in computing who want an excellent practical introduction to the fundamentals of how a computer works, I strongly recommend the book \emph{Code} by Charles Petzold. For those more inclined towards the theoretical puzzles of computing, abstracted away from the hardware, a good introductory text is \emph{The Pattern on the Stone} by W. Daniel Hillis.
+This book focuses primarily on the networking umbrella: our goal will NOT be to understand how computing works, though that these topics are often quite intertwined, we will occasionally talk about computing. For readers without a background in computing who want an excellent practical introduction to the fundamentals of how a computer works, I strongly recommend the book \emph{Code} by Charles Petzold. For those more inclined towards the theoretical puzzles of computing, abstracted away from the hardware, a good introductory text is \emph{The Pattern on the Stone} by W. Daniel Hillis.
 
 While this book is largely focused on networking, it is framed more broadly as a study into the role of technology in human communication throughout history. This framing will allow us to weave together technological and social history, electrical engineering fundamentals, networking, cryptography, and the theory of information.
 
 The text is structured around five historical technologies: the telegraph, the telephone, radio, the Internet, and mobile phone. No prior technical knowledge is required. As we progress, however, the text will gradually become more technical, as we will flesh out an understanding of the following tree of topics:
 
+\begin{quotation}
 [SKILL TREE]
+\end{quotation}
 
 By the end of the book, you should have a solid understanding of all of the topics in this tree, and as we progress the book will have informal exercises for you to test your understanding. As the technical material ramps up, you will probably get more out of the book by having a pen and paper handy to solve problems as you go.
 
@@ -56,7 +61,7 @@ By the end of the book, you should have a solid understanding of all of the topi
 
 \chapter{Communication at a Distance}
 
-The electrical telegraph brought near-instantaneous communication to the Victorian world, accelerating commerce, business and the connectedness of the human species. Yet long before telegraph engineers were plotting the best ways to build spider webs of wires all over the planet, the word ``telegraph'' was already in widespread use as a description for a network of towers used to relay information. Much like signal fires that have been used since antiquity to convey simple, this \emph{optical telegraph} required no wires at all, instead relying on ordinary sight. In the section that follows we will explore a few different sight-based communication systems and by weaving in history with some basic conceptual building blocks, we will lay some fundamental groundwork for understanding communication systems in general.
+The electrical telegraph brought near-instantaneous communication to the Victorian world, accelerating commerce, business and the connectedness of the human species. Yet long before telegraph engineers were plotting spider webs of wires connecting the world's cities, the word ``telegraph'' was already in widespread use. Much like signal fires that have been used since antiquity to convey simple yes-or-no messages, this \emph{optical telegraph} required no wires at all, instead relying on ordinary sight. In the section that follows we will explore a few different sight-based communication systems and by weaving in history with some basic conceptual building blocks, we will lay fundamental groundwork for understanding communication systems in general.
 
 \section{Telecommunications Using Plain Sight}
 
@@ -122,7 +127,7 @@ The key insight is that to turn this basic semaphore system into something usefu
 
 Even those in the ancient world understood that relay stations could be used in this way to transmit visual information, and they did this through the creation of networks of signal fires. For example, the play \emph{Agamemnon}, which was part of a trilogy that won first prize at the Dionysia festival in Athens in 458 BC, begins with a watchman looking for a signal fire that was the last in a line of fires being used to signal the fall of Troy. [CITE]
 
-Another famous example is African talking drums. Originating in West Africa, the instruments themselves were hourglass-shaped drums constructed to allow the player to modulate the pitch as he or she was playing. This made it possible for skilled players to approximate speech of highly tonal African languages. Even more incredible, over time sets of phrases were developed that could be played out via the talking drum and understood from far away. The phrases were intended to communicate useful information, but they had to be quite verbose so that they could be told apart from one another from a distance. For example, ``Come back home'' might be translated by the drummers into a long phrase such as: ``Make your feet come back the way they went, make your legs come back the way they went, plant your feet and your legs below, in the village which belongs to us'', which would then be ``spoken'' by the drum doing its best imitation of a person saying that phrase aloud. [CITE GLEICK]. The phrases were often relayed from village to village, forming a system of communication that could travel faster than horseback and convey complex ideas unlike signal fires.
+Another famous example is African talking drums. Originating in West Africa, the instruments themselves were hourglass-shaped drums constructed to allow the player to modulate the pitch as he or she was playing. This made it possible for skilled players to approximate speech of highly tonal African languages. Even more incredible, over time sets of phrases were developed that could be played out via the talking drum and understood from far away. Messages encoding via the talking drums were relayed from village to village, forming a system of communication that could travel faster than horseback and convey complex ideas.
 
 However, both signal fires and talking drums had their shortcomings, and could not carry complex messages reliably. While other systems had been proposed to accomplish communication at a distance, it wasn't until the 1790s in revolutionary France that an inventor named Claude Chappe was able to champion and get the financial backing to build a working network capable of transmitting information. He needed a name for his new invention, and so he merged the French words for ``far'' and ``writer'', resulting in the \emph{telegraph}.
 
@@ -145,7 +150,7 @@ The relay stations would be large towers with mechanical arms that could be seen
 \includegraphics[width=0.3\linewidth]{chappe_tower}
 \end{figure}
 
-Similar to how we used human arms when experimenting with communication earlier, the arms of the tower could be given many different positions, each corresponding to a different letter or phrase. [ADD DIAGRAM FOR THIS?] The advantage of the mechanical arms over human ones, of course, is that the arms on the tower are much larger and hence can be seen from further away.
+Similar to how we used human arms when experimenting with communication earlier, the arms of the tower could be given many different positions, each corresponding to a different letter or phrase. The advantage of the mechanical arms over human ones, of course, is that the arms on the tower are much larger and hence can be seen from further away.
 
 Since this first telegraph was to be used for strictly military purposes, the meaning of the arm positions that emanated from the towers was to be kept secret. In fact, even the operators of towers often were simply mimicking the arm positions of the transmitting tower, without knowing the meaning of the message contained within that series of arm positions. [CITE]
 
@@ -159,6 +164,57 @@ The first line of these towers between Paris and the town of Lille was completed
 This was the world's first extensive telecommunications (``distant communication'') network, and it required no wires at all.
 
 The network in France was copied in other countries, as telegraph towers started appearing all over. In fact, if you live in a hilly city, you may have a neighborhood nearby called \emph{telegraph hill}; this name is derived from the hills upon which optical telegraphs were placed to maximize visibility.
+
+\section{Arm Positions and Information}
+
+We've seen how a semaphore system can be used to create a one-to-one correspondence between arm positions and letters of the alphabet. The actual system used by Chappe's towers was very similar:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth]{chappe_telegraph_system}
+\end{figure}
+
+It is easy to imagine how this could be used to convey entire sentences. However, while the system was general enough to allow for entire sentences, it was often not practical to send full sentences when less information was needed.
+
+To understand why, consider that the time it takes to transmit a message grows with the number of letters, since an operator sitting in a tower has to shift the mechanical arms of the tower for each letter. Let's estimate that it takes 30 seconds to change the position of the large mechanical arms to form a letter, and another 30 seconds of waiting to ensure the next relay station down the line got a good view of the letter. That means it takes 1 minute per letter, and so a sentence made up of 14 letters might take 14 minutes to go from one tower to the next. If there are 30 such towers each 10 miles apart, transmitting your 14-letter message across a distance of 300 miles will take 14 minutes $*$ 30 towers, or 7 hours. Still faster than horseback, but only slightly.
+
+We can greatly improve the efficiency of the system if the operators sitting in the towers of optical telegraphs simultaneously transmitted and received, meaning that they saw a letter, and immediately imitated it for the next tower. This helps, but also makes the system more error-prone, since it requires operators to synchronize their speed, else letters could get missed. Without getting too deep into the tradeoffs between speed and effectiveness in transmission, sending longer messages clearly was challenging.
+
+On the other hand, sending short messages was generally much easier. A message of a single letter, for example, could traverse the entire 300 mile semaphore line in $1 * 30$ = 30 minutes, an order of magnitude faster than a horse can ride. Given the advantages of short messages, it was almost certainly the main mode of communication in early optical telegraph systems.
+
+For example, suppose a commander in Paris knew that a certain foreign adversary might march their troops to the capitol, or might instead pull back. Let's suppose this was \emph{binary}: either troops are coming to the capitol or they aren't. To indicate this, a general on the front lines could send a full sentence, such as:
+
+\begin{quotation}
+Foreign troops are en route to Paris
+\end{quotation}
+
+But as we've seen, this would be overkill and unnecessarily taxing on the semaphore line. Instead, all the general needs to send is a yes-or-no, a single \emph{bit} of information. To accomplish this, it would suffice to send a single character encoded as a single arm position. Arbitrarily, let's say that the general agrees to send the arm position corresponding to 'B' if the troops are en route to Paris, and the arm position corresponding to 'A' if they have pulled back.
+
+\begin{align*}
+	A&: \text{enemy army pulled back} \\
+	B&: \text{enemy army marching to Paris}
+\end{align*}
+
+How many possibilities can the general send with just a single letter? Well, the set of arm positions forms an \emph{alphabet} with 36 characters, and so with one character there are 36 different possible messages that one can produce. You might imagine, for example, that the French army had 36 different important phrases that were understood to be encoded by single characters:
+
+\begin{align*}
+	A&: \text{enemy army pulled back} \\
+	B&: \text{enemy army marching to Paris} \\
+	C&: \text{need more food supplies} \\
+        D&: \text{need more weapon supplies} \\
+        E&: \text{we are defeated in battle} \\
+        \text{etc} &
+\end{align*}
+
+What if the French decided that 36 phrases weren't enough to capture all of the messages that they wanted to send? Of course they could always fall back on using the optical telegraph network to convey full sentences, but before doing that, it makes sense to create codes of 2-characters
+
+
+
+
+IAMHERE
+
+
+
 
 \section{A System of Lights}
 
