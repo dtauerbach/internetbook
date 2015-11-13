@@ -167,18 +167,18 @@ The network in France was copied in other countries, as telegraph towers started
 
 \section{Arm Positions and Information}
 
-We've seen how a semaphore system can be used to create a one-to-one correspondence between arm positions and letters of the alphabet. The actual system used by Chappe's towers was very similar:
+We've seen how a semaphore system can be used to create a one-to-one correspondence between arm positions and letters of the alphabet. The system used by Chappe's towers was very similar to our example holding flags:
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\linewidth]{chappe_telegraph_system}
 \end{figure}
 
-It is easy to imagine how this could be used to convey entire sentences. However, while the system was general enough to allow for entire sentences, it was often not practical to send full sentences when less information was needed.
+It is easy to imagine how this could be used to convey arbitrarily long text. However, while the system was general enough to allow for entire sentences, it was often not practical to send full sentences when less information was needed.
 
-To understand why, consider that the time it takes to transmit a message grows with the number of letters, since an operator sitting in a tower has to shift the mechanical arms of the tower for each letter. Let's estimate that it takes 30 seconds to change the position of the large mechanical arms to form a letter, and another 30 seconds of waiting to ensure the next relay station down the line got a good view of the letter. That means it takes 1 minute per letter, and so a sentence made up of 14 letters might take 14 minutes to go from one tower to the next. If there are 30 such towers each 10 miles apart, transmitting your 14-letter message across a distance of 300 miles will take 14 minutes $*$ 30 towers, or 7 hours. Still faster than horseback, but only slightly.
+To understand why, consider that the time it takes to transmit a message grows with the number of letters, since, for each letter, an operator in a tower has to shift the mechanical arms of the tower to the position corresponding to that letter. Let's estimate that it takes 30 seconds to change the position of the large mechanical arms to form a letter, and another 30 seconds of waiting to ensure the next relay station down the line got a good view of the letter. That means it takes 1 minute per letter, and so a sentence made up of 14 letters might take 14 minutes to go from one tower to the next. If there are 30 such towers each 10 miles apart, transmitting your 14-letter message across a distance of 300 miles will take 14 minutes $*$ 30 towers, or 7 hours. Still faster than horseback, but only slightly.
 
-We can greatly improve the efficiency of the system if the operators sitting in the towers of optical telegraphs simultaneously transmitted and received, meaning that they saw a letter, and immediately imitated it for the next tower. This helps, but also makes the system more error-prone, since it requires operators to synchronize their speed, else letters could get missed. Without getting too deep into the tradeoffs between speed and effectiveness in transmission, sending longer messages clearly was challenging.
+We can greatly improve the efficiency of the system if the tower operators simultaneously transmitted and received; in other words passing letters down the line one at a time. This helps, but also makes the system more error-prone, since it requires operators to synchronize their speed, else letters could get missed. Without getting too deep into the tradeoffs between speed and effectiveness in transmission, sending longer messages clearly was challenging.
 
 On the other hand, sending short messages was generally much easier. A message of a single letter, for example, could traverse the entire 300 mile semaphore line in $1 * 30$ = 30 minutes, an order of magnitude faster than a horse can ride. Given the advantages of short messages, it was almost certainly the main mode of communication in early optical telegraph systems.
 
@@ -206,102 +206,31 @@ How many possibilities can the general send with just a single letter? Well, the
         \text{etc} &
 \end{align*}
 
-What if the French decided that 36 phrases weren't enough to capture all of the messages that they wanted to send? Of course they could always fall back on using the optical telegraph network to convey full sentences, but before doing that, it makes sense to create codes of 2-characters
-
-
-
-
-IAMHERE
-
-
-
-
-\section{A System of Lights}
-
-Chappe's large mechanical arm positions offer one way to communicate at a distance, mimicking the game of catch we played earlier with Mary. What other methods might we use?
-
-In this section, let's briefly consider another method of communication using light. Suppose that your football-playing friend Mary lives several miles away on a hill which is clearly visible from your house. Just after your game of ``catch,'' as you are about to part ways, Mary extends you an open invitation to dinner for being such an excellent throwing partner. She tells you to come any night that you would like -- how nice of her!
-
-Unfortunately, there is a catch. Mary prefers a quiet life and so has no phone or Internet connection. She assures you that she will be reliably cooking every night, and that if you show up around 8 o'clock in the evening, you will be able to enjoy whatever she has prepared; there is no need to let her know in advance that you'll be joining.
-
-But alas, you are a vegetarian, and Mary sometimes likes to cook meat. While you enjoy Mary's company, it's definitely not worth a forty five minute trek to her house unless you know Mary has cooked a meal you can enjoy.
-
-How can Mary communicate what type of meal she has cooked to you so that you know whether or not to come? Building a tower is too much work, and you couldn't see it in the dark anyway, a disadvantage of Chappe's telegraph network to be sure.
-
-But just as you are about to give up, Mary remembers that she has a huge bright light on her roof that when turned on is visible to you from your house. (Light bulbs were not invented until the late 1800s, so this method was not available to Chappe.) If she is cooking a meal with meat, she will shine the light and leave it on all evening. That way you will know that if you see the light on, you should avoid coming over.
-
-How does this simple communication system work? There are only two possible configurations for the light: on or off. Let's name the light being on as $1$ and the light being off as $0$:
-
-
-\begin{figure}[H]
-\centering
-\begin{minipage}{.5\textwidth}
-  \centering
-  \includegraphics[width=.5\linewidth]{house_on_hill_0}
-  \captionof{figure}{``0'' (light off)}
-\end{minipage}%
-\begin{minipage}{.5\textwidth}
-  \centering
-  \includegraphics[width=.5\linewidth]{house_on_hill_1}
-  \captionof{figure}{``1'' (light on)}
-\end{minipage}
-\end{figure}
-
-We can write our simple system as follows:
+What if the French army decided that 36 phrases weren't enough to capture all of the messages that they wanted to send? Of course they could always fall back on using the optical telegraph network to convey full sentences, but before doing that, it makes sense to create codes of 2 letters, e.g.
 
 \begin{align*}
-	0&: \text{no meat} \\
-	1&: \text{meat}
+	AA&: \text{enemy army remains at camp} \\
+	AB&: \text{enemy army deserting camp and returning to base} \\
+	AC&: \text{enemy army splits; half at camp, half returning to base} \\
+        \text{etc} &
 \end{align*}
 
-This works great as a system for Mary to message you about dinner, but now there's a twist -- you have a mutual friend Fred who cannot consume dairy, but does enjoy meat. In order for the system to work for both you and Fred, Mary now has to broadcast whether or not the meal being prepared that night contains meat (for you) and whether or not the meal contains dairy (for Fred). The solution is easy enough: Mary installs a second bright light, clearly distinguishable from the first. The second light is on if and only if the meal has dairy. So now when you or Fred look on Mary's house on the hill there are 4 possible configurations:
+How many messages could be sent with two letters? Each of the two characters can range over 36 possible values, giving us $36*2=36^{2}=1296$ possible 2-character messages. Similarly, there are $36*36*36=36^{3}=46656$ three-letter configurations. And more generally, with $n$ characters, we number of possible messages that can be produced is $36^{n}$. This can get large quite quickly, demonstrating the power of exponential growth.
 
 \begin{align*}
-	00&: \text{no meat, no dairy} \\
-	01&: \text{no meat, dairy} \\
-	10&: \text{meat, no dairy} \\
-	11&: \text{meat, dairy}
-\end{align*}
-
-\begin{figure}[H]
-\captionsetup{labelformat=empty}
-\centering
-\includegraphics[width=0.25\linewidth]{house_on_hill_01}
-\captionof{figure}{Example of one possible configuration ``01'' (first light off, second light on)}
-\end{figure}
-
-As we've seen, by combining 2 lights we can display 4 possible configurations. What happens when we add another friend to the mix, with an aversion to gluten? With 3 lights, how many possible configurations can we display? For each of the possible configurations we've already listed above, the third light can either be on or off, effectively doubling the number of possible configurations.
-
-\begin{align*}
-	0\quad00&: \text{no gluten, no meat, no dairy} \\
-	0\quad 01&: \text{no gluten, no meat, dairy} \\
-	0\quad 10&: \text{no gluten, meat, no dairy} \\
-	0\quad 11&: \text{no gluten, meat, dairy} \\
-          \\
-	1\quad 00&: \text{gluten, no meat, no dairy} \\
-	1\quad 01&: \text{gluten, no meat, dairy} \\
-	1\quad 10&: \text{gluten, meat, no dairy} \\
-	1\quad 11&: \text{gluten, meat, dairy}
-\end{align*}
-
-Hopefully you are starting to see a pattern. With every light we add, we double the number of possible configurations that can be displayed.
-
-\begin{align*}
-1 \text{ light} &= 2 \text{ configurations} \\
-2 \text{ lights} &= 2*2 = 2^{2} = 4 \text{ configurations} \\
-3 \text{ lights} &= 2*2*2 = 2^{3} = 8 \text{ configurations} \\
-4 \text{ lights} &= 2*2*2*2 = 2^{4} = 16 \text{ configurations} \\
-5 \text{ lights} &= 2*2*2*2*2 = 2^{5} = 32 \text{ configurations} \\
-6 \text{ lights} &= 2*2*2*2*2*2 = 2^{6} = 64 \text{ configurations} \\
-7 \text{ lights} &= 2*2*2*2*2*2*2 = 2^{7} = 128 \text{ configurations} \\
-8 \text{ lights} &= 2*2*2*2*2*2*2*2 = 2^{8} = 256 \text{ configurations} \\
-9 \text{ lights} &= 2*2*2*2*2*2*2*2*2 = 2^{9} = 512 \text{ configurations} \\
+1 \text{ letter} &= 36 \text{ configurations} \\
+2 \text{ letters} &= 36*36 = 36^{2} = 1296 \text{ configurations} \\
+3 \text{ letters} &= 36*36*36 = 36^{3} = 46656 \text{ configurations} \\
+4 \text{ letters} &= 36*36*36*36 = 36^{4} = 1679616 \text{ configurations} \\
+5 \text{ letters} &= 36*36*36*36*36 = 36^{5} = 60466176 \text{ configurations} \\
+6 \text{ letters} &= 36*36*36*36*36*36 = 36^{6} = 2176782336 \text{ configurations} \\
+7 \text{ letters} &= 36*36*36*36*36*36*36 = 36^{7} = 78364164096 \text{ configurations} \\
 &\text{etc}
 \end{align*}
 
-Written more concisely, we have just seen that if we have some number $n$ lights, then we can display $2^n$ possible configurations.
+This explosion in the number of possible messages that can be sent with such a small number of letters is a remarkable fact. It underlies why human beings will never run out of 140-character tweets, and why even 20-character passwords are thought to be strong enough that even the world's most powerful governments cannot break them.
 
-There are many more questions we might want to answer about our system of lights. What messages can be sent with these lights? What about just a single light? How fast can information be transmitted? What if a light is burned out? We will return to these questions in time, but first let's travel back to the early 1800s, when people were only first starting to understand the power of electricity.
+IAMHERE
 
 \chapter{The Electrical Telegraph}
 
