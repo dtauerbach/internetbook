@@ -178,7 +178,7 @@ It is easy to imagine how this could be used to convey arbitrarily long text. Ho
 
 To understand why, consider that the time it takes to transmit a message grows with the number of letters, since, for each letter, an operator in a tower has to shift the mechanical arms of the tower to the position corresponding to that letter. Let's estimate that it takes 30 seconds to change the position of the large mechanical arms to form a letter, and another 30 seconds of waiting to ensure the next relay station down the line got a good view of the letter. That means it takes 1 minute per letter, and so a sentence made up of 14 letters might take 14 minutes to go from one tower to the next. If there are 30 such towers each 10 miles apart, transmitting your 14-letter message across a distance of 300 miles will take 14 minutes $*$ 30 towers, or 7 hours. Still faster than horseback, but only slightly.
 
-We can greatly improve the efficiency of the system if the tower operators simultaneously transmitted and received; in other words passing letters down the line one at a time. This helps, but also makes the system more error-prone, since it requires operators to synchronize their speed, else letters could get missed. Without getting too deep into the tradeoffs between speed and effectiveness in transmission, sending longer messages clearly was challenging.
+We can greatly improve the efficiency of the system if the tower operators simultaneously transmitted and received; in other words passing letters down the line one at a time. This helps, but also makes the system more prone to error, since it requires operators to synchronize their operating speed, else letters could get missed. Without getting too deep into the tradeoffs between speed and effectiveness in transmission, sending longer messages clearly was challenging.
 
 On the other hand, sending short messages was generally much easier. A message of a single letter, for example, could traverse the entire 300 mile semaphore line in $1 * 30$ = 30 minutes, an order of magnitude faster than a horse can ride. Given the advantages of short messages, it was almost certainly the main mode of communication in early optical telegraph systems.
 
@@ -211,7 +211,7 @@ What if the French army decided that 36 phrases weren't enough to capture all of
 \begin{align*}
 	AA&: \text{enemy army remains at camp} \\
 	AB&: \text{enemy army deserting camp and returning to base} \\
-	AC&: \text{enemy army splits; half at camp, half returning to base} \\
+	AC&: \text{enemy army splits; some at camp, some returning to base} \\
         \text{etc} &
 \end{align*}
 
@@ -228,9 +228,19 @@ How many messages could be sent with two letters? Each of the two characters can
 &\text{etc}
 \end{align*}
 
-This explosion in the number of possible messages that can be sent with such a small number of letters is a remarkable fact. It underlies why human beings will never run out of 140-character tweets, and why even 20-character passwords are thought to be strong enough that even the world's most powerful governments cannot break them.
+That's quite a lot of information that can be sent with 7 characters! As a point of comparison, there are only 51339 English words that are 7 letters or less. This should reinforce the intuition that the system of coding phrases is somehow more efficient than just writing English.
+
+Can we make this notion of efficiency precise?
 
 IAMHERE
+
+
+Now suppose you were designing a system like this where short sets of letters corresponded to important phrases, and your goal was to make the system as efficient as possible.
+
+
+This explosion in the number of possible messages that can be sent with such a small number of letters is a remarkable fact. It underlies why human beings will never run out of 140-character tweets, and why even 20-character passwords are thought to be strong enough that even the world's most powerful governments cannot break them.
+
+
 
 \chapter{The Electrical Telegraph}
 
