@@ -228,11 +228,23 @@ How many messages could be sent with two letters? Each of the two characters can
 &\text{etc}
 \end{align*}
 
-That's quite a lot of information that can be sent with 7 characters! As a point of comparison, there are only 51339 English words that are 7 letters or less. This should reinforce the intuition that the system of coding phrases is more efficient than just writing English.
+That's a lot of information that can be sent with 7 characters! As a point of comparison, there are only 51339 English words that are 7 letters or less. This should reinforce the intuition that the system of coding phrases is more efficient than just writing English.
 
 \subsection{Entropy}
 
-In order to make precise the notion that the system of codes is more efficient than plain English, we need to introduce the idea of \emph{entropy}, which is defined to be a measure of unpredictability of information content. [CITE wiki?]
+In order to make precise the notion that the above system of codes is more efficient than plain English, we need to introduce the idea of \emph{entropy}, which is a measure of unpredictability of information content. [CITE wiki?] To get an intuition for entropy, let's consider a simple example.
+
+Suppose you are generating a message by flipping a coin 10 times and recording the result after each flip as a $H$ or a $T$. With a fair coin, you might end up with a message that looks something like: $HTTTHHTHTT$. In that scenario, there is no way to predict the third character of the message since the third coin flip is independent of all the others and there is a 50/50 chance of it being either heads or tails. Thus, the third character ($T$ in the example above) reveals some information that could not be known by examining the other characters.
+
+Here's another way to look at it. Suppose you were charged with making a bet of $\$1$ about what the third letter of the sequence will be ahead of time. Your expected winnings are 0, since you are guessing randomly. In other words, there's a 50\% chance you will win a dollar, and a 50\% chance you will lose a dollar, meaning we can compute the expectation like this:
+
+\[\text{Expected winnings} = 0.5 * 1 + 0.5 * -1 = 0 \]
+
+On the other hand, supposing you \emph{know} the outcome of the third flip, your expected winnings would be $\$1$ since you are guaranteed to be correct. The fact that there are different expected earnings between the two scenarios means that the third letter of $T$ actually must reveal some information.
+
+Let's consider another situation in which both sides of the coin are both heads. In this case, all sequences of ten flips will look exactly the same: $HHHHHHHHHH$. Moreover, in contrast to the case of the fair coin, there is no information whatsoever contained in the fact that the third character was $H$, since there is a 100\% chance that it would be $H$. If you once again had to bet $\$1$ on the outcome, your expected earnings would be $\$1$ and it doesn't matter at all if you actually saw the outcome of the flip or not.
+
+As a middle ground between these two extreme cases, consider a third scenario in which your coin is biased, so that it lands heads 90\% of the time. Now your sequence might look like $HHHHHTHTHH$. Supposing you were
 
 IAMHERE
 
