@@ -248,7 +248,7 @@ Despite the intuitive importance of creating communication systems more efficien
 
 One major limitation of Chappe's telegraph network is that they rely on line of sight. What happens if it gets foggy? Or if you want to communicate across a large body of water that doesn't allow for the construction of towers along the way?
 
-The electrical telegraph solves these problems, providing a more robust solution to long distance communication. Electricity traveling over a wire can be made into a fundamental building block for developing a system of communication. This approach doesn't have the shortcoming of the line-of-sight approaches – the wires can snake around large mountains, treacherous deserts, and lie at the bottom of substantial bodies of water. Moreover, electrical telegraphy doesn't require expensive towers to be built and maintained, and wires can fairly easily be re-positioned, making a network based on the electrical telegraph much less expensive and more flexible than one based on the optical telegraph paradigm.
+The electrical telegraph solves these problems, providing a more robust solution to long distance communication. Electricity traveling over a wire can be made into a fundamental building block for developing a system of communication. This approach doesn't have the shortcoming of the line-of-sight approaches – the wires can snake around large mountains, go through hazardous terrain, and lie at the bottom of large bodies of water. Moreover, electrical telegraphy doesn't require expensive towers to be built and maintained, and wires can fairly easily be re-positioned, making a network based on the electrical telegraph much less expensive and more flexible than one based on the optical telegraph paradigm.
 
 Given all the advantages of the electrical telegraph, it is no surprise that shortly after being invented around the 1840s, it eclipsed the optical telegraph as the dominant mechanism for communicating at a distance, and nowadays when someone talks about the ``telegraph'' they are almost certainly referring to the electrical telegraph. I will follow this convention, and explicitly use the phrase ``optical telegraph'' when I need to refer to the older line-of-sight-based Chappe technology.
 
@@ -256,7 +256,7 @@ The development of the electrical telegraph occurred in the first half of the 19
 
 Like many great inventions, the ideas behind the telegraph were developed more or less independently by more than one person, and, like many great inventions of the modern legal era, bitter patent lawsuits were not far behind. The man who has ended up getting the majority of the credit as the father of the telegraph is Samuel Morse, an American painter-turned-inventor who was born in 1792, just as Chappe was furiously iterating on his towers half a world away. Morse was unaware of telegraphy of any sort through his early life. He painted portraits through his 30s and only in his 40s turned his attention towards electricity and the idea of creating a system of communication using electricity over a wire. He then obsessively worked on this problem, eventually developing and popularizing the dominant telegraphy system which became the standard used throughout the world for the next sixty years.
 
-Besides Morse, the other prominent pair of inventors were Cooke and Wheatstone, who worked in England, independently developing their own systems for how to communicate over a wire. Conceptually, all of these people were on a similar track, but Morse's system had certain advantages over that of Cooke and Wheatstone, and eventually even Cooke and Wheatstone agreed that the ``Morse system'' was superior.
+Besides Morse, the other prominent pair of inventors were Cooke and Wheatstone, who worked in England, independently developing their own systems for how to communicate over a wire. Conceptually, all of these people were on a similar track, but Morse's system had certain advantages over that of Cooke and Wheatstone, and eventually the world settled on the ``Morse system'' as the superior technology.
 
 \section{A Simple Circuit}
 
@@ -268,7 +268,7 @@ The Morse telegraph is in essence just a simple electrical circuit. There is a p
 \caption{Switch closed; no electrical current}
 \end{figure}
 
-In the circuit diagram above, the power source is the battery drawn on the left. The little angled line represents a \emph{switch}, and works just like a light switch in being able to turn the system on or off (in fact, light switches are essentially just switches in the sense of a simple circuit). If the switch is open, as it is in the diagram above, electricity does not flow through the circuit. If the switch it closed, on the other hand, then an electric current flows through:
+In the circuit diagram above, the power source is the battery drawn on the left. The little angled line represents a \emph{switch}, and works just like a light switch in being able to turn the system on or off (in fact, light switches are essentially just switches in the sense of a simple circuit). If the switch is open, as it is in the diagram above, electricity does not flow through the circuit. If the switch it closed, on the other hand, then an electric current flows from the negative end of the battery through the circuit to the positive end of the battery:
 
 \begin{figure}[H]
 \centering
@@ -276,9 +276,7 @@ In the circuit diagram above, the power source is the battery drawn on the left.
 \caption{Switch open; electricity flowing}
 \end{figure}
 
-How exactly does electricity ``flow'' through a circuit? For those without a background in electrical engineering, we will deepen our understanding in the chapters to come. For now, note that objects can have positive or negative electrical charge. In the diagram above, the battery has one positive and one negative terminal. When the circuit is closed, free electrons move through the wire from the negative terminal to the positive terminal. This flow of electrical current means that the device on the right hand side has electricity running through it. Typically in elementary electrical engineering explanations, a light bulb is used as an illustration of this electrical device indicating that electricity is flowing through a circuit, and so we have used this above as a simple illustration.
-
-Unfortunately for Morse and his peers, there were no light bulbs in the 1830s and 1840s, but there were alternatives serving the same conceptual function as a light bulb in the diagram above.
+Typically in elementary electrical engineering explanations, a light bulb is used as an illustration of this electrical device indicating that electricity is flowing through a circuit, and so we have used this above as a simple illustration. Unfortunately for Morse and his peers, there were no light bulbs in the 1830s and 1840s, but there were alternatives serving the same conceptual function as a light bulb in the diagram above.
 
 \section{One Telegraph to Rule Them All}
 
@@ -289,7 +287,7 @@ Many early designs involved creating many circuits, even one per letter of the a
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.4\linewidth]{wheatstone}
-\caption{Cooke and Wheatstone telegraph needles pointing at 'G'. Note the missing letters}
+\caption{Cooke and Wheatstone telegraph receiver. Notice the two non-vertical needles pointing at 'G'.}
 \end{figure}
 
 When the dust settled, however, the telegraph that became the de facto worldwide standard was an iteration coming from Morse and his collaborators, notably Alfred Vail. As we will see time and time again, simplicity is a major virtue when designing a telecommunications system, and by requiring only a single circuit for transmission, this was a major advantage of the Morse telegraph over other early prototypes.
@@ -359,7 +357,7 @@ Armed with this system, the telegraph is transformed from a meaningless single-s
 
 Using the translation table, to which English word does this correspond?
 
-As mentioned, the Morse system has the advantage that only a single circuit is needed to communicate, meaning that even very simple designs for the physical telegraph could be made to communicate via Morse code. In particular, unlike the more complex designs of Cooke and Wheatstone (as well as Morse's earlier systems), the telegraph which became the standard did not require multiple circuits to be synchronized with one another to produce an output, significantly cutting down the complexity and of the system.
+As mentioned, the Morse system has the advantage that only a single circuit is needed to communicate, meaning that even very simple designs for the physical telegraph could be made to communicate via Morse code. In particular, unlike the more complex designs of Cooke and Wheatstone (as well as Morse's earlier systems), the telegraph which became the standard did not require multiple circuits to be synchronized with one another to produce an output, significantly cutting down the complexity of the system.
 
 \section{Practical Limits of Telegraphy}
 
@@ -435,10 +433,10 @@ The telegraph was in one important way a \emph{direct} precursor to the Internet
 
 Consider the letter \emph{`a'}, the first letter of the Latin alphabet. What makes this mark meaningful? If we did not know English or any other languages based on this alphabet, then \emph{a} would just appear to be a mysterious mark with no meaning, such as $\includegraphics{randomsymbol}$.
 
-Thus for the letter \emph{a} to carry information for the onlooker, it has to exist within the context of what we can call an \emph{alphabet}. Let us call `a' a \emph{symbol} or \emph{character}. Note that `a' has abstract meaning: we could write it in a different font like this: {\fontfamily{qcr}\selectfont a}. But even though the marks look different when represented in different fonts, the mark has enough similarity that we recognize both marks to refer to the same abstract character `a.'
+Thus for the letter \emph{a} to carry information for the onlooker, it has to exist within the context of an \emph{alphabet}. Let us call `a' a \emph{symbol} or \emph{character}. Note that `a' has abstract meaning: we could write it in a different font like this: {\fontfamily{qcr}\selectfont a}. But even though the marks look different when represented in different fonts, the mark has enough similarity that we recognize both marks to refer to the same abstract character `a.'
 Of course the Latin alphabet is not the only meaningful alphabet. The Chinese character 章 may look meaningless to a non-Chinese reader, but it certainly has meaning within the context of the Chinese alphabet.
 
-What about a number like \emph{2}? You might think that this is not part of an alphabet, since it is a number and not a letter. However, for our purposes, we are intentionally going to use the word \emph{alphabet} very broadly, as logicians do, and by this broad definition, the symbols 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 do indeed form an alphabet which we usually call Arabic numerals. Just think of an alphabet as any fixed set of symbols that are distinguished from one another by some known rules or conventions.
+What about a number like \emph{2}? You might think that this is not part of an alphabet, since it is a number and not a letter. However, for our purposes, we are intentionally going to use the word \emph{alphabet} very broadly, as logicians do, and by this broad definition, the symbols 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 do indeed form an alphabet that usually goes by the name \emph{the Arabic numerals}. Just think of an alphabet as any fixed set of symbols that are distinguished from one another by some known rules or conventions.
 
 Finally, to introduce one final bit of jargon, we will refer to a series of characters of an alphabet as a \emph{string}. So, for example `119914' is a string in the alphabet of Arabic numerals, and `sdklfsid asdfasdf' is a string in the alphabet of English.
 
