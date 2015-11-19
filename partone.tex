@@ -9,6 +9,8 @@
 \usepackage{pgfplots}
 \usepackage{listings}
 \usepackage{CJK}
+
+\newtheorem{theorem}{Proposition}
 \newcommand\longnumber[2]{%
     \begin{minipage}{#1}
     \seqsplit{#2}
@@ -425,55 +427,48 @@ By offering a way around the signal attenuation issue, relays allowed telegraph 
 
 Electromagnets had another important purpose. Recall that a sounder was used at the receiving end of telegraphs to listen to the dots and dashes of Morse code. But how did a sounder actually work? It was an electromagnet that worked just like a relay, except that instead of controlling another circuit, the latch going up and down made respective and distinct ``click'' and ``clack'' sounds, allowing operators to identify difference cadences of clicks and clacks with the Morse code alphabet, which they could in turn decode into English.
 
-\chapter{A Layered Symbolic System}
+\chapter{Symbolic Systems}
 
-The telegraph was in one important way a \emph{direct} precursor to the Internet. Unlike the analog telephone and broadcast radio and television technologies that succeeded it, the telegraph was a \emph{digital} communication system unexpectedly ahead of its time. To understand why, we must look a bit more abstractly at symbols and information.
+Having taken the time to learn about early telegraphy systems, let's step back and discuss some important elements of communications systems more abstractly. First, we can introduce the dominant paradigm for conceptualizing a communication channel:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{shannon_comm_channel}
+\caption{Shannon's Fundamental Model: an abstract representation of a communication channel}
+\end{figure}
+
+This image is taken directly from a 1948 paper by the mathematician Claude Shannon, and is still the same model in use today, demonstrating Shannon's incisive ability to give very clear and compelling guide posts for how to think about information and communication. Let's call this \emph{Shannon's Fundamental Model}. Shannon created this diagram in an era where telephones and radios were prominent, but it nevertheless pertains to the telegraph as well. In the above image, the box in the middle represents the information \emph{channel}. Depending on context, this could be the air between two optical telegraph towers, a telegraph wire, or something else. The signal being transmitted is the message, and the noise source represents the ways in which the message might get scrambled in the channel. For example, on a foggy day, it may be difficult to see an optical telegraph tower and so as an operator you might be more inclined to make a mistake about the arm positions of an adjacent tower. In this scenario, we might say that the fog is the noise source, and the less transparent air is the resulting noise. The transmitter and receiver are represented in order to suggest that ordinarily messages have to be encoded before they enter the communication channel, and then decoded once the received signal has reached its destination. We've seen this already, for example, with the electrical telegraph. Messages have to be translated into dots and dashes, and then to electrical signals, which get communicated via the telegraph wire before being decoded back into dots and dashes and ultimately into a message of letters.
+
+Beyond Shannon's Fundamental Model, there is an incredibly important distinction between two classes of communication systems. All of the communication systems we've discussed so far have been \emph{symbolic} in nature, involving the transmission of some number of symbols. But there is another type of communication entirely different from conveying symbols. Consider the human voice. The pitch rises and falls along a spectrum. There aren't only $5$ or $50$ or even $5000$ possible values for the pitch of the human voice. Instead, the values can be thought of as infinite. This means that pitch is a \emph{continuous} variable. Another example is human height. Adult humans tend to be between 1 and 9 feet tall, but adult human height is nevertheless a continuous variable, meaning that like the pitch of your voice, there is no finitely enumerable set of possible height values. Instead, there are an infinite number of values between 1 and 9 feet that could represent human height. Communication systems that are able to communicate continuous variables are called \emph{analog} and we will get a much closer look at some of these in the next chapter. In contrast, communication systems that are based on a fixed and non-infinite set of symbols are called \emph{digital} communication systems. If the term 'digital' seems a bit confusing, for now you can think of these as \emph{symbolic} communication systems.
+
+Unlike the telephone, broadcast radio and television technologies that succeeded it, which were all based on the analog paradigm, the telegraph is a digital communication system just like the Internet. That makes it particularly suitable for introducing important concepts related to digital communication and how the Internet is structured.
 
 \section{Alphabets and Symbols}
 
-Consider the letter \emph{`a'}, the first letter of the Latin alphabet. What makes this mark meaningful? If we did not know English or any other languages based on this alphabet, then \emph{a} would just appear to be a mysterious mark with no meaning, such as $\includegraphics{randomsymbol}$.
+Consider the letter \emph{`a'}, the first letter of the Latin alphabet. What makes this mark meaningful? If we did not know English or any other languages based on the Latin alphabet, then \emph{a} would just appear to be a mysterious mark with no meaning, such as $\includegraphics{randomsymbol}$.
 
-Thus for the letter \emph{a} to carry information for the onlooker, it has to exist within the context of an \emph{alphabet}. Let us call `a' a \emph{symbol} or \emph{character}. Note that `a' has abstract meaning: we could write it in a different font like this: {\fontfamily{qcr}\selectfont a}. But even though the marks look different when represented in different fonts, the mark has enough similarity that we recognize both marks to refer to the same abstract character `a.'
-Of course the Latin alphabet is not the only meaningful alphabet. The Chinese character 章 may look meaningless to a non-Chinese reader, but it certainly has meaning within the context of the Chinese alphabet.
+Thus for the letter \emph{a} to carry information for the onlooker, it has to exist within the context of an \emph{alphabet}. Let us call `a' a \emph{symbol} or \emph{character}. Note that `a' has abstract meaning: we could write it in a different font like this: {\fontfamily{qcr}\selectfont a}. But even though the marks appear differently when represented in different fonts, the mark has enough structural similarity that we recognize both marks to refer to the same abstract character `a.' Of course the Latin alphabet is not the only meaningful alphabet; the Chinese character 章 may look meaningless to a non-Chinese reader, but it certainly has meaning within the context of the Chinese alphabet.
 
-What about a number like \emph{2}? You might think that this is not part of an alphabet, since it is a number and not a letter. However, for our purposes, we are intentionally going to use the word \emph{alphabet} very broadly, as logicians do, and by this broad definition, the symbols 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 do indeed form an alphabet that usually goes by the name \emph{the Arabic numerals}. Just think of an alphabet as any fixed set of symbols that are distinguished from one another by some known rules or conventions.
+What about a number like \emph{2}? You might be inclined to think that this is not part of an alphabet, since it is a number and not a letter. However, for our purposes, we are intentionally going to use the word \emph{alphabet} very broadly, as logicians do, as a fixed set of symbols that are distinguished from one another by some known rules or conventions. Note that this broad definition does not say anything at all about what the symbols \emph{mean}, and so any sets of symbols that go together can be said to form an alphabet. In particular, the symbols $0, 1, 2, 3, 4, 5, 6, 7, 8, 9$ do indeed form an alphabet that usually goes by the name \emph{the Arabic numerals}.
 
-Finally, to introduce one final bit of jargon, we will refer to a series of characters of an alphabet as a \emph{string}. So, for example `119914' is a string in the alphabet of Arabic numerals, and `sdklfsid asdfasdf' is a string in the alphabet of English.
+We will refer to a series of characters of an alphabet as a \emph{string}. So, for example `119914' is a string in the alphabet of Arabic numerals, and `sdklfsid asdfasdf' is a string in the alphabet of Latin characters. Strings are always relative to some alphabet.
 
-There are some interesting edge cases. For example, consider the following set of marks:
+There are some interesting edge cases. What about alphabets that contain infinitely many symbols? Or symbols that are fuzzy and so it is not always possible to tell two symbols in the alphabet apart? With a bit of mathematical formalism, we could sharpen the discussion of these edge cases, and join a community of logicians who actively discuss these topics. [CITE ENDERTON]. Fortunately, for our purposes we can dismiss these edge cases and insist that the symbols are all easily distinguishable from one another and that there are only a finite number of these symbols.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\linewidth]{random-symbols}
-\caption{Set of marks}
-\end{figure}
+That's enough background to establish our first major proposition about symbolic systems.
 
-Do these form symbols in an alphabet? The marks have no meaning in themselves, but I just wrote them down and said that they ought to be go together. Is that enough to constitute an alphabet? Does there have to be some sort of shared knowledge of more than one person for the marks in a defined alphabet to become meaningful symbols? Or can one create a bare ones alphabet by fiat, as I just did above?
+\begin{theorem}
+Suppose $s$ is a string of some alphabet $A$. Then for any other alphabet $B$ that has at least two symbols, $s$ can be represented in $B$ via a new string $s'$ without any loss of information.
+\end{theorem}
 
-Another edge case occurs when we consider infinite alphabets, like:
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\linewidth]{infinite-alphabet}
-\caption{Infinite alphabet}
-\end{figure}
-
-Does this count as an alphabet? Do symbols have to be specified explicitly at the outset when defining an alphabet, or is it enough to describe how one \emph{could} draw the symbols, for example by giving a schema for the user of the alphabet to fill in?
-
-With a little bit of math, one can create a formal definition of alphabet and in doing so characterize these unusual examples. Fortunately for our current purposes, the important thing is not the edge cases or formal definition, but rather just a basic understanding of an alphabet as a backdrop against which sets of symbols have meaning.
-
-That's enough to come to our first major insight about symbols and alphabets: all symbolic representations are interchangeable.
-
-What does this mean? If you fix a translation system, you can take any string of symbols from one alphabet and translate using the agreed upon translation system to any other string of symbols in another alphabet.
-
-As an example, consider the sentence:
+This is a slightly formal way of saying that all symbolic representations are interchangeable. If you have some string in one language, like the string ``hello'' in the alphabet of Latin characters, then by fixing some translation system, one can represent this as a number (i.e. a string in the alphabet of Arabic numerals). To unpack this a bit more, let's consider an example sentence:
 
 \begin{quotation}
 \centering
 \emph{All symbolic representations of information are fungible!}
 \end{quotation}
 
-For starters, we could translate this to the Chinese alphabet, giving us a new representation of the sentence:
+How could we represent this string via another alphabet? For starters, we could translate this to the Chinese alphabet, giving us a new representation of the sentence:
 
 \begin{quotation}
 \centering
@@ -588,7 +583,7 @@ Given its simplicity and importance for computing, binary has become a sort of u
 
 \section{A Neatly Layered and Standardized System}
 
-Although the idea of encoding information into a binary alphabet is incredibly well understood nowadays, this way of thinking about information and encoding and decoding was not around when Morse code was developed. Yet remember that Morse code had its own pared down four-character alphabet:
+Although the idea of encoding information into a binary alphabet is incredibly well understood nowadays, this way of thinking about information and encoding and decoding was not around when Morse code was developed. Yet remember that Morse code has its own pared down four-character alphabet:
 
 \begin{center}
 \begin{tabular}{cc}
@@ -602,9 +597,9 @@ Although the idea of encoding information into a binary alphabet is incredibly w
 \end{tabular}
 \end{center}
 
-This alphabet served as an intermediary. It could be translated to and from electrical signals. It could also be translated to and from English. Morse's telegraph involved taking messy continuous information contained in an electrical current, and translating it into this discrete alphabet. This continuous information is sometimes called \emph{analog} and the process of turning into symbols is called \emph{digitizing} an analog symbol. As such, the telegraph can be said to be a \emph{digital} technology. That may seem strange; there are no digits involved so why would we call it `digital'? A better word to describe the nature of the technology might be \emph{symbolic}; as we've seen, though, any symbolic alphabet can be encoded as digits of a numeric alphabet, and so the word \emph{digital} is often used nowadays to refer to technologies that operate on discrete sets of symbols, as the telegraph did.
+This alphabet serves as an intermediary. It can be translated to and from electrical signals. It can also be translated to and from English. Since it operates by transmitting symbols back and forth, the telegraph is a symbolic communication technology. Moreover, since as we've seen all symbolic representations are interchangeable, any symbolic representation of information can be considered a representation in digits. Thus communication technologies based around conveying symbols are referred to as \emph{digital} and so we can say that the telegraph was a digital communication technology.
 
-As a digital or symbolic technology, the telegraph had to wrestle with many of the same questions that the Internet still wrestles with: how is digital information to be encoded and decoded? How will the process be standardized? Who will control the standardization process?
+And as a digital or technology, the telegraph had to wrestle with many of the same questions that the Internet still wrestles with: how is digital information to be encoded and decoded? How will the process be standardized? Who will control the standardization process?
 
 To begin to think about how to address these tough questions of how all the parts of the system would work together, the telegraph in contemporary parlance can be conceived of as a \emph{layered communication system}.
 
@@ -699,7 +694,7 @@ Might become
 
    \[ 'HTQY VTBBJQ YRR' \]
 
-Let's pause to introduce a bit of jargon. In the case above, the original message written in English is called the \emph{plaintext}. The scheme for moving from the plaintext to its encrypted form is called a \emph{cipher}, and the encrypted text is called the \emph{ciphertext}. Going from the plaintext to the ciphertext is \emph{encryption} and going from the ciphertext back to the plaintext is called \emph{decryption}.
+Let's pause to introduce some definitions. In the case above, the original message written in English is called the \emph{plaintext}. The scheme for moving from the plaintext to its encrypted form is called a \emph{cipher}, and the encrypted text is called the \emph{ciphertext}. Going from the plaintext to the ciphertext is \emph{encryption} and going from the ciphertext back to the plaintext is called \emph{decryption}.
 
 For this example, you encrypt and decrypt using the mapping that we created:
 
@@ -710,7 +705,7 @@ For this example, you encrypt and decrypt using the mapping that we created:
         \text{etc}
 \end{align*}
 
-This short mapping is called the \emph{encryption key}. And notice that it also works as the decryption key (well technically you have to read the arrows backwards to view it as a decryption key), and so in the context of ciphers can just be called the \emph{key}. It ought to work somewhat like a physical key: if you possess the key, then you can read the plaintext, otherwise you are out of luck.
+This short mapping is called the \emph{encryption key}. And notice that it also works as the decryption key, so for short we can just call it the \emph{key}. It ought to work somewhat like a physical key: if you possess the key, then you can read the plaintext, otherwise you are out of luck.
 
 Since the same key is used for both encryption and decryption, we say that this scheme is \emph{symmetric}, and the particular cipher we have described is known as a simple substitution cipher.
 
@@ -736,7 +731,7 @@ chance of being the correct one. This means that it is astronomically unlikely t
 
 \[ 1000000/403291461126605635584000000 \]
 
-that we will find the right key. This is way too small for us to bank on. If we wanted to get to a 50% chance of finding the key via our brute force method, we would need to expect to have to try
+that we will find the right key. This is way too small for us to bank on. If we wanted to get to a 50\% chance of finding the key via our brute force method, we would need to expect to have to try
 
 \[ 403291461126605635584000000/2 \]
 
