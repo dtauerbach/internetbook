@@ -43,7 +43,7 @@ You're too far apart to yell at each other, so she waves you over. Soon she is e
 
 You grumble to yourself about Mary's inability to just have fun without making activities so competitive, but know that it would be futile to resist. And besides, you have a much more practical question in front of you: how is she going to indicate if she wants a high ball or a low ball? You are not in shouting distance. You briefly consider having her hold up one finger for a high ball, and two for a low ball, but quickly realize it will be hard to discern the number of fingers she's holding up from a distance.
 
-Then you figure out a system that works. She will raise her right arm straight up in indicate that she wants a high ball thrown, and will put her right arm straight out sideways for a low ball:
+Then you figure out a system that works. She will raise her right arm straight up to indicate that she wants a high ball thrown, and will put her right arm straight out sideways for a low ball:
 
 \begin{figure}[H]
 \centering
@@ -75,7 +75,7 @@ The arm-based signaling system was working pretty well, so you decide to extend 
 
 It takes a little getting used to, but you pick up the system and once again settle into a rhythm, having hopefully satiated your throwing partner's lust for pushing her body to the limit. Your mind wanders, and you start thinking about the system you just devised. Can it be extended further? Is there a limit to how much information you can convey with just two arms?
 
-After thinking through it a bit more, you realize that if you could represent every letter of the alphabet via a different set of arm positions, then by using your arm positions to represent individual letters, one at a time, you could communicate entire sentences via through arm positions alone:
+After thinking through it a bit more, you realize that if you could represent every letter of the alphabet via a different set of arm positions, then by using your arm positions to represent individual letters, one at a time, you could communicate entire sentences via arm positions alone:
 
 \begin{figure}[H]
 \centering
@@ -84,7 +84,7 @@ After thinking through it a bit more, you realize that if you could represent ev
 
 Here we display one possible system where the person signaling holds flags for extra emphasis so that the arm positions can be seen from far away.
 
-Using this system, you could compose a message (``hey Mary, let's stop being so intense when we play catch''), and pass that message to Mary one letter at a time encoded via your arm signaling system, who in turn could decode it and understand the message.
+Using this system, you could compose a message (``hey Mary, let's stop being so intense when we play catch''), and pass that message one letter at a time encoded via your arm signaling system to Mary, who in turn could decode it and understand the message.
 
 This system is an example of what is called a \emph{semaphore system} of communication. While it may not seem that groundbreaking or useful for your game of catch, this core idea of encoding useful information into symbols and then transmitting those symbols is the essence of all communication in the Internet era.
 
@@ -105,9 +105,9 @@ However, both signal fires and talking drums had their shortcomings, and could n
 
 If the idea of using a network of stations to relay information had been around for thousands of years, why did it take so long to improve this core idea into a working network for reliable communication?
 
-The reasons are primarily economic. A century before Chappe was devising systems for towers to communicate, in 1684, the prominent British thinker and scientist Robert Hooke wrote out a detailed proposal for a system of communication at a distance, but the proposal languished and was never implemented. [CITE]
+The reasons are primarily economic. In 1684, a century before Chappe was devising systems for towers to communicate, the prominent British thinker and scientist Robert Hooke wrote out a detailed proposal for a system of communication at a distance. It was of great interest to his circle of distinguished academics known as the Royal Society (Isaac Newton was later president of this group), but the proposal was never implemented by the British government. [CITE]
 
-To get a sense of the economics at play, let's say one wanted to be able to send and receive messages from 300 miles away -- roughly the distance from Paris to Lyon, or Philadelphia to Boston. Intermediate stations would have to be roughly 10 miles apart, so that a tower would appear distantly on the horizon to adjacent towers but still be visible. Hence, the cost of building a network capable of transmitting information between Philadelphia and Boston would amount to the cost of building and maintaining 30 expensive buildings, and employing perhaps 60 people or more to manage the buildings and relay messages. Moreover the cost is pretty much all up front: it takes many stations to be built before information can usefully travel from large city centers. It's worth highlighting this economic situation since we will see this pattern repeating again and again in the telecommunications industry: there is always an incredibly high up front cost for building a network before it can be used to send a single message. This cost structure has historically led policy makers and governments to be involved in both financing and regulating telecommunications (``distant communications'') projects.
+To get a sense of the economics at play, let's say one wanted to be able to send and receive messages from 300 miles away -- roughly the distance from Paris to Lyon, or Philadelphia to Boston. Intermediate stations would have to be roughly 10 miles apart, so that a tower would appear distantly on the horizon to adjacent towers but still be visible. Hence, the cost of building a network capable of transmitting information between Philadelphia and Boston would amount to the cost of building and maintaining 30 expensive buildings, and employing perhaps 60 people or more to manage the buildings and relay messages. Moreover the cost is pretty much all up front: it takes many stations to be built before information can usefully travel from large city centers. It's worth highlighting this economic situation since we will see this pattern repeating again and again in the telecommunications industry: there is always an incredibly high upfront cost for building a network before it can be used to send a single message. This cost structure has historically led to the involvement of governments and policy makers in both financing and regulating telecommunications (``distant communications'') projects.
 
 With respect to Hooke's vision of optical telegraphy, building and maintaining all of those towers was simply too high a price for the English government of the late 17th century to spend on an unproven idea without any critical use cases. But a hundred years later when Chappe was (re)inventing his optical telegraph, revolutionary France was embroiled in intense international military conflict. In this context, not only did instability of the revolution encourage spikes in short-term spending by those in power looking out for their own interests, but the \emph{value} of being able to transmit and receive information quickly had also skyrocketed for a military waging fast-paced wars on multiple fronts. It was not a completely rosy time for inventors like Chappe either. While the government and military desperately wanted the powers afforded by Chappe's towers, citizens were suspicious of these mysterious obelisks and in one incident burned a tower to the ground.
 
@@ -163,7 +163,7 @@ But as we've seen, this would be overkill and unnecessarily taxing on the semaph
 	B&: \text{enemy army marching to Paris}
 \end{align*}
 
-How many possibilities can the general send with just a single letter? The set of arm positions forms an \emph{alphabet} with 36 characters, and so with one character there are 36 different possible messages that one can produce. You might imagine, for example, that the French army had 36 different important phrases that were understood to be encoded by single characters:
+How many possibilities can the general send with just a single letter? The set of arm positions forms an \emph{alphabet} with 36 characters (Latin letters plus numbers), and so with one character there are 36 different possible messages that one can produce. You might imagine, for example, that the French army had 36 different important phrases that were understood to be encoded by single characters:
 
 \begin{align*}
 	A&: \text{enemy army pulled back} \\
@@ -183,7 +183,7 @@ What if the French army decided that 36 phrases weren't enough to capture all of
         \text{etc} &
 \end{align*}
 
-How many messages could be sent with two letters? Each of the two characters can range over 36 possible values, giving us $36*2=36^{2}=1296$ possible 2-character messages. Similarly, there are $36*36*36=36^{3}=46656$ three-letter configurations. And more generally, with $n$ characters, we number of possible messages that can be produced is $36^{n}$. This can get large quite quickly, demonstrating the power of exponential growth.
+How many messages could be sent with two letters? Each of the two characters can range over 36 possible values, giving us $36*2=36^{2}=1296$ possible 2-character messages. Similarly, there are $36*36*36=36^{3}=46656$ three-letter configurations. And more generally, with $n$ characters, the number of possible messages that can be produced is $36^{n}$. This can get large quite quickly, demonstrating the power of exponential growth.
 
 \begin{align*}
 1 \text{ letter} &= 36 \text{ configurations} \\
@@ -208,7 +208,7 @@ Now, consider another sequence generated by flipping coins and only writing down
 
 Finally, consider a third example, in which you generate a sequence of 10 letters through the following procedure: flip a coin, and write the value down twice. Doing this five times gives you a sequence of ten letters that could look something like $TTTTHHTTHH$. In this case, letters in the sequence are alternatively random and completely redundant. As you might guess, this string has lower entropy than the completely randomly generated string, but higher entropy than the boring sequence of only heads.
 
-Returning to the Chappe telegraph network, we can restate what we discussed above in terms of entropy by observing that natural languages like English (or French) have fairly low entropy. For example, suppose you are reading an English sentence one letter at a time. After the letters 'communica' appear, the next letter is virtually certain to be a 't,' which makes the letter extraneous much like our redundant coin flips above. As another motivating example of why English is low entropy, consider the fact that when writing English, you can skip or mistype letters a fair amount, and yet the meaning will still be clear to readers:
+Returning to the Chappe telegraph network, we can restate what we discussed above in terms of entropy by observing that natural languages like English (or French) have fairly low entropy. For example, suppose you are reading an English sentence one letter at a time. After the letters `communica' appear, the next letter is virtually certain to be a 't,' which makes the letter extraneous much like our redundant coin flips above. As another motivating example of why English is low entropy, consider the fact that when writing English, you can skip or mistype letters a fair amount, and yet the meaning will still be clear to readers:
 
 \begin{quotation}
 \centering
@@ -243,7 +243,7 @@ The Morse telegraph is in essence just a simple electrical circuit. There is a p
 \caption{Switch closed; no electrical current}
 \end{figure}
 
-In the circuit diagram above, the power source is the battery drawn on the left. The little angled line represents a \emph{switch}, and works just like a light switch in being able to turn the system on or off (in fact, light switches are essentially just switches in the sense of a simple circuit). If the switch is open, as it is in the diagram above, electricity does not flow through the circuit. If the switch it closed, on the other hand, then an electric current flows from the negative end of the battery through the circuit to the positive end of the battery:
+In the circuit diagram above, the power source is the battery drawn on the left. The little angled line represents a \emph{switch}, and works just like a light switch in being able to turn the system on or off (in fact, light switches are essentially just switches in the sense of a simple circuit). If the switch is open, as it is in the diagram above, electricity does not flow through the circuit. If the switch is closed, on the other hand, then an electric current flows from the negative end of the battery through the circuit to the positive end of the battery:
 
 \begin{figure}[H]
 \centering
@@ -251,7 +251,7 @@ In the circuit diagram above, the power source is the battery drawn on the left.
 \caption{Switch open; electricity flowing}
 \end{figure}
 
-Typically in elementary electrical engineering explanations, a light bulb is used as an illustration of this electrical device indicating that electricity is flowing through a circuit, and so we have used this above as a simple illustration. Unfortunately for Morse and his peers, there were no light bulbs in the 1830s and 1840s, but there were alternatives serving the same conceptual function as a light bulb in the diagram above.
+Typically in elementary electrical engineering explanations, a light bulb is used as an illustration of this electrical device indicating that electricity is flowing through a circuit, as in the simple illustration above. Unfortunately for Morse and his peers, there were no light bulbs in the 1830s and 1840s, but there were alternatives serving the same conceptual function as a light bulb in the diagram above.
 
 \section{One Telegraph to Rule Them All}
 
@@ -352,7 +352,7 @@ For telegraphs to function at scale, more sophisticated cabling was needed. Fort
 \caption{Telegraph cable}
 \end{figure}
 
-It did not happen overnight, but 14 years after Morse's first successful proof of concept of the electrical telegraph in 1844 between Baltimore and Washington, D.C., the first transatlantic telegraph cable was laid, ushering in the dawn of a new information age of instantaneous cross-continent communication. Imagine the jubilation one must have felt being in New York City in 1858, hearing Queen Victoria's words to president Buchanan that for the first time could be communicated near-instantaneously across the vast Atlantic ocean.
+It did not happen overnight, but 14 years after Morse's first successful proof of concept of the electrical telegraph in 1844 between Baltimore and Washington, D.C., the first transatlantic telegraph cable was laid, ushering in the dawn of a new information age of instantaneous cross-continent communication. Imagine the jubilation one must have felt being in New York City in 1858, hearing Queen Victoria's words to president Buchanan that for the first time could be communicated almost instantaneously across the vast Atlantic ocean.
 
 Meanwhile, engineers remained hard at work making improvements. In addition to better cabling, there were a lot of open questions. How thick should the copper wire be? How powerful should the battery be? The engineers involved in these early projects engaged in a tremendous amount of trial and error, and succeeded in pushing the range and reliability of telegraph lines despite limited theoretical understanding of electricity and magnetism.
 
@@ -602,12 +602,7 @@ C. A translation of the simple alphabet of dots and dashes into the 26-letter al
 D. A set of standards and abbreviations that telegraph operators used to communicate. For example, there is a standard shortcut for asking someone to retransmit a message [WRITE MORE ABOUT ITU?]
 ]
 
-Thinking about communication technology as a layered system in this way allows us to break down the system into conceptual parts.
-
-IAMHERE
-
-
-and has the huge advantage that layers of the system can now be changed without changing everything all at once. For example, suppose there was an improvement to Morse code that was proven to be a more efficient translation of dots and dashes into the Latin alphabet. Then layer C above could be changed, but nothing else would have to change; you wouldn't need to invent new electrical gizmos to transmit or receive messages. Conversely, suppose the technology for the physical layer vastly improved and electricity were replaced with a more advanced technology like optical fibers, as would happen a hundred years later. In this case, we could still use Morse code if we wanted, and so layers B-D would be unperturbed by changes in layer A. This makes the whole technology more manageable, since some engineers can go off and work on improving layer A and others can work on improving layer B and they do not both need to holistically invent a whole new communication system.
+Thinking about communication technology via layers allows us to break down the complex system into conceptual parts. [ADD EXAMPLE ANALOGY?] This framework has the huge advantage that layers of the system can now be changed without changing everything all at once. For example, suppose there was an improvement to Morse code that was proven to be a more efficient translation of dots and dashes into the Latin alphabet. Then layer C above could be changed, but nothing else would have to change; you wouldn't need to invent new electrical gizmos to transmit or receive messages. Conversely, suppose the technology for the physical layer vastly improved and electricity were replaced with a more advanced technology like optical fibers, as would happen a hundred years later. In this case, we could still use Morse code if we wanted, and so layers B-D would be unperturbed by changes in layer A. This makes the whole technology more manageable, since some engineers can go off and work on improving layer A and others can work on improving layer B and they do not both need to holistically invent a whole new communication system.
 
 The Internet is also built upon a layered system of communication, which we'll learn about later on.
 
