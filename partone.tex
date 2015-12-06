@@ -408,7 +408,7 @@ Having taken the time to learn about early telegraphy systems, let's step back a
 \caption{Shannon's Fundamental Model: an abstract representation of a communication channel}
 \end{figure}
 
-This image is taken directly from a 1948 paper by the mathematician Claude Shannon, and is still the same model in use today, demonstrating Shannon's incisive ability to give very clear and compelling guide posts for how to think about information and communication. Let's call this \emph{Shannon's Fundamental Model}. Shannon created this diagram in an era where telephones and radios were prominent, but it nevertheless pertains to the telegraph as well, a fact noted by Shannon in his paper. In the above image, the box in the middle represents the information \emph{channel}. Depending on context, this could be the air between two optical telegraph towers, a telegraph wire, or something else. The signal being transmitted is the message, and the noise source represents the ways in which the message might get scrambled in the channel. The word \emph{noise} appears for historical reasons: anyone listening to a telegraph or telephone line would hear a lot of hissing, crackling, or buzzing sounds and this was a nuisance for communicating; \emph{noise}, then, became the abstract word to refer to any exogenous factor that might add difficulty to communicating. For example, on a foggy day, it may be difficult to see an optical telegraph tower and so as an operator you might be more inclined to make a mistake about the arm positions of an adjacent tower. In this scenario, we might say that the fog is the noise source, and the less transparent air is the resulting noise. The transmitter and receiver are represented in order to suggest that ordinarily messages have to be encoded before they enter the communication channel, and then decoded once the received signal has reached its destination. We've seen this already, for example, with both the optical and the electrical telegraph. For the latter technology, messages have to be translated into dots and dashes, and then to electrical signals, which get communicated via the telegraph wire before being decoded back into dots and dashes and ultimately into a message of letters.
+This image is taken directly from a 1948 paper by the mathematician Claude Shannon, and is still the same model in use today, demonstrating Shannon's incisive ability to give very clear and compelling guide posts for how to think about information and communication. Let's call this \emph{Shannon's Fundamental Model}. Shannon created this diagram in an era where telephones and radios were prominent, but it nevertheless pertains to the telegraph as well, a fact noted by Shannon in his paper. In the above image, the small box in the middle without a label represents the information \emph{channel}. Depending on context, this could be the air between two optical telegraph towers, a telegraph wire, or something else. The signal being transmitted is the message, and the noise source represents the ways in which the message might get scrambled in the channel. The word \emph{noise} appears for historical reasons: anyone listening to a telegraph or telephone line would hear a lot of hissing, crackling, or buzzing sounds and this was a nuisance for communicating; \emph{noise}, then, became the abstract word to refer to any exogenous factor that might add difficulty to communicating. For example, on a foggy day, it may be difficult to see an optical telegraph tower and so as an operator you might be more inclined to make a mistake about the arm positions of an adjacent tower. In this scenario, we might say that the fog is the noise source, and the less transparent air is the resulting noise. The transmitter and receiver are represented in order to suggest that ordinarily messages have to be encoded before they enter the communication channel, and then decoded once the received signal has reached its destination. We've seen this already, for example, with both the optical and the electrical telegraph. For the latter technology, messages have to be translated into dots and dashes, and then to electrical signals, which get communicated via the telegraph wire before being decoded back into dots and dashes and ultimately into a message of letters.
 
 Beyond Shannon's Fundamental Model, there is an incredibly important distinction between two classes of communication systems. All of the communication systems we've discussed so far have been \emph{symbolic} in nature, involving the transmission of a number of symbols. But there is another type of communication entirely different from conveying symbols. Consider the human voice. The pitch rises and falls along a spectrum. There aren't only $5$ or $50$ or even $5000$ possible values for the pitch of the human voice. Instead, the pitch can vary infinitely, and this makes pitch of the human voice a \emph{continuous} variable, in contrast to the \emph{discrete} variables that only take on one of some fixed finite number of values (for example, letters in the alphabet).
 
@@ -491,9 +491,9 @@ With this, we have translated our sentence from the English alphabet into the al
 
 Let's compare this \emph{dumb translation} to the earlier \emph{semantic translation} into Chinese.
 
-Given the semantic translation, a reader who did not understand English could understand the new Chinese sentence; given the dumb translation, on the other hand, there is no hope for this Chinese-speaker. The translated sentence still requires knowledge of English to be understood, and so in this sense the dumb translation is semantically vacuous.
+Given the semantic translation, a reader who did not understand English could understand the new Chinese sentence; given the dumb translation, on the other hand, there is no hope for this Chinese-speaker. The translated sentence still requires knowledge of English to be understood, and so in this sense the dumb translation is semantically empty.
 
-Moreover, though it is vacuous, the dumb translation is also in some sense a perfect translation. Natural languages like English and Chinese are complex and messy tools for communication, and there is no way that the Chinese sentence created via the semantic translation perfectly captures the connotations wrapped up with the original English sentence. In that sense, information was lost translating to Chinese via the semantic translation. The dumb translation, on the other hand, merely involved manipulating symbols without any attempt at understand their meaning. Since it faithfully represented each and every symbol of the original English sentence perfectly, no loss of information occurred.
+Moreover, though it is vacuous, the dumb translation is also a perfect translation. Natural languages like English and Chinese are complex and messy tools for communication, and there is no way that the Chinese sentence created via the semantic translation perfectly captures the connotations wrapped up with the original English sentence. In that sense, information was lost translating to Chinese via the semantic translation. The dumb translation, on the other hand, merely involved manipulating symbols without any attempt at understand their meaning. Since it faithfully represented each and every symbol of the original English sentence perfectly, no loss of information occurred.
 
 There is another word for performing a dumb translation like we did above: \emph{encoding}. The amazing thing about symbols is that they can be encoded without any loss of information, and you can encode any string of symbols into any other alphabet. The opposite of encoding is \emph{decoding} and refers to the process of backing out the original meaning from an encoded string.
 
@@ -552,19 +552,13 @@ Though a one-character alphabet is not powerful enough to serve as a fully flexi
 \caption{ASCII}
 \end{figure}
 
-Binary numbers are remarkable because you can add, subtract, multiply and divide them just as you can with decimal numbers.
+Binary numbers are remarkable because you can add, subtract, multiply and divide them just as you can with decimal numbers. These binary operations underlie the logic gates that are the building block of the CPU of a computer. While the importance of binary numbers in computing cannot be understated, that is a topic for another book (and I would recommend \emph{Code} by Charles Petzold for those interested in a detailed explanation of how computers work at a low level).
 
-IAMHERE
-
-because you can compute with binary numbers just as you can with decimal numbers. You can add, subtract, multiply and divide binary numbers, and these operations on binary numbers are at the core of how computers work.
-
-Much of the importance of binary stems from its importance to computing.
-
-Given its simplicity and importance for computing, binary has become a sort of universal standard for understanding and communicating information.
+For our purposes, binary numbers are interesting because they represent the simplest possible alphabet that can be used to represent any symbolic information. The word \emph{bit} --- short for ``binary digit'' (i.e. a single `0' or `1' in binary) --- was not coined until 1948, but it has become the fundamental unit of information. In the ASCII chart above, we see that letters are represented via 8 bit strings. A set of 8 bits is called a \emph{byte}. Since a page of text has roughly 3000 characters, we might say that it contains about 3 kilobytes of information.
 
 \section{A Neatly Layered and Standardized System}
 
-Although the idea of encoding information into a binary alphabet is incredibly well understood nowadays, this way of thinking about information and encoding and decoding was not around when Morse code was developed. Yet remember that Morse code has its own pared down four-character alphabet:
+Although thinking about information as bits and bytes and gigabytes is second nature nowadays, this mindset was foreign to the world of Morse. Back then, even the word ``information'' would have sounded strange; people talked about communication as the transmission of \emph{intelligence} rather than the more abstract notion of information that did not get a foothold in our thinking until the mid 20th century [FOOT]. Yet from a contemporary perspective looking backwards, we can see that Morse code did have its own pared down four-character alphabet:
 
 \begin{center}
 \begin{tabular}{cc}
@@ -572,15 +566,15 @@ Although the idea of encoding information into a binary alphabet is incredibly w
 \hline
 \thickdash & dash \\
 \hline
-[short pause] & letter space \\
+letter space & [short pause]  \\
 \hline
-[long pause] & word space \\
+word space & [long pause]  \\
 \end{tabular}
 \end{center}
 
-This alphabet serves as an intermediary. It can be translated to and from electrical signals. It can also be translated to and from English. Since it operates by transmitting symbols back and forth, the telegraph is a symbolic communication technology. Moreover, since as we've seen all symbolic representations are interchangeable, any symbolic representation of information can be considered a representation in digits. Thus communication technologies based around conveying symbols are referred to as \emph{digital} and so we can say that the telegraph was a digital communication technology.
+This alphabet serves as an intermediary. It can be translated to and from electrical signals. It can also be translated to and from Latin letters. Since it operates by transmitting symbols back and forth, the telegraph is a symbolic communication technology. Moreover, since as we've seen all symbolic representations are interchangeable, any symbolic representation of information can be considered a representation in digits (for example, binary digits). Thus communication technologies based around conveying symbols are generally referred to as \emph{digital} and so we can say that the telegraph was a digital communication technology, which is synonymous with saying that it is a \emph{symbolic} communication technology.
 
-And as a digital or technology, the telegraph had to wrestle with many of the same questions that the Internet still wrestles with: how is digital information to be encoded and decoded? How will the process be standardized? Who will control the standardization process?
+As a digital technology, the telegraph had to wrestle with many of the same questions that the Internet still wrestles with today: how is digital information to be encoded and decoded? How will the process be standardized? Who will control the standardization process?
 
 To begin to think about how to address these tough questions of how all the parts of the system would work together, the telegraph in contemporary parlance can be conceived of as a \emph{layered communication system}.
 
@@ -608,7 +602,12 @@ C. A translation of the simple alphabet of dots and dashes into the 26-letter al
 D. A set of standards and abbreviations that telegraph operators used to communicate. For example, there is a standard shortcut for asking someone to retransmit a message [WRITE MORE ABOUT ITU?]
 ]
 
-Thinking about communication technology as a layered system in this way allows us to break down the system into component parts, and has the huge advantage that layers of the system can now be changed without changing everything all at once. For example, suppose there was an improvement to Morse code that was proven to be a more efficient translation of dots and dashes into the Latin alphabet. Then layer C above could be changed, but nothing else would have to change; you wouldn't need to invent new electrical gizmos to transmit or receive messages. Conversely, suppose the technology for the physical layer vastly improved and electricity were replaced with a more advanced technology like optical fibers, as would happen a hundred years later. In this case, we could still use Morse code if we wanted, and so layers B-D would be unperturbed by changes in layer A. This makes the whole technology more manageable, since some engineers can go off and work on improving layer A and others can work on improving layer B and they do not both need to holistically invent a whole new communication system.
+Thinking about communication technology as a layered system in this way allows us to break down the system into conceptual parts.
+
+IAMHERE
+
+
+and has the huge advantage that layers of the system can now be changed without changing everything all at once. For example, suppose there was an improvement to Morse code that was proven to be a more efficient translation of dots and dashes into the Latin alphabet. Then layer C above could be changed, but nothing else would have to change; you wouldn't need to invent new electrical gizmos to transmit or receive messages. Conversely, suppose the technology for the physical layer vastly improved and electricity were replaced with a more advanced technology like optical fibers, as would happen a hundred years later. In this case, we could still use Morse code if we wanted, and so layers B-D would be unperturbed by changes in layer A. This makes the whole technology more manageable, since some engineers can go off and work on improving layer A and others can work on improving layer B and they do not both need to holistically invent a whole new communication system.
 
 The Internet is also built upon a layered system of communication, which we'll learn about later on.
 
