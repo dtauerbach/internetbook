@@ -4,6 +4,7 @@
 \usepackage{subcaption}
 \usepackage{float}
 \usepackage{amsmath}
+\usepackage{amsfonts}
 \usepackage{seqsplit}
 \usepackage{tikz}
 \usepackage{pgfplots}
@@ -46,11 +47,15 @@ When a tree falls and hits the ground, some of the energy upon impact is transfe
 
 [IMAGE]
 
-The wave is a \emph{longitudinal} wave, meaning it does not have the peaks and troughs of an ocean wave perpendicular to the direction of travel, but instead expands and contracts along a single dimension as it travels. Imagine a nuclear explosion, except that instead of an outwardly expanding sphere of fire, there is an outwardly expanding sphere where air particles are more tightly bunched together momentarily. The bunching of particles constitutes a change in \emph{air pressure}.
+The wave is a \emph{longitudinal} wave, meaning it does not have the peaks and troughs of an ocean wave perpendicular to the direction of travel, but instead expands and contracts along a single dimension as it travels.
 
-As objects on Earth interact with each other on land or in the air, these waves made up of changes in air pressure are created. Since objects interact with each other constantly, there are constant changes in air pressure. These air pressure changes signal important events, like when something might eat you or when you might be able to eat something. And so many species including us evolved ears to make sense of the constantly changing air pressure; we call our experience of it \emph{hearing}. In parallel to our sense of hearing, we evolved increasingly sophisticated ways to make sound ourselves, culminating in vocal chords and speaking.
+[IMAGE]
 
-The simplified description above might lead you to believe that there is only a single and uniform experience of a sound, but of course that's not the case. Sound has many different qualities, like pitch, intensity, duration, and timbre. It is easy to tell the singing of a friend from the sound of a tree falling in the woods. This is possible because sound waves can be rather sophisticated, the air particles bunching and unbunching in subtle non-uniform ways.
+Imagine a nuclear explosion, except that instead of an outwardly expanding sphere of fire, there is an outwardly expanding sphere where air particles are more tightly bunched together for a split second. The momentary compression of air particles constitutes a change in \emph{air pressure} in that location.
+
+As objects on Earth interact with each other, waves of pressure expand outward in the surrounding medium (e.g. the air). These air pressure changes signal important events, like when something might eat you or when you might be able to eat something. Given the importance of this information for survival, many species including humans evolved auditory systems to make sense of the constantly changing air pressure; we call our experience of it \emph{hearing}. In parallel to the development of our sense of hearing, we evolved increasingly sophisticated ways to create sound ourselves, culminating in vocal chords and speaking.
+
+The simplified description above of a tree falling might lead one to believe that there is only a single and uniform experience of a sound, but of course that's not the case. Sound has many different qualities, like pitch, intensity, duration, and timbre. It is easy to tell the singing of a friend from the sound of a tree falling. This is possible because sound waves can be rather sophisticated, the air particles compressing and un-compressing in subtle, non-uniform ways.
 
 Here is a representation of the sound of a tree falling:
 
@@ -60,23 +65,69 @@ And here is a representation of human speech:
 
 [IMAGE]
 
-The above representations are called \emph{time domain representations}: the x axis represents time, and the y axis represents the instantaneous change in air pressure. Large values on the y axis mean that particles are tightly compressed at that instant. Of course these representations have to be taken from some particular point in space: two people standing in different places may have different auditory experiences of the same tree fall event.
+The above figures are called \emph{time domain representations}: the x axis is time, and the y axis represents the instantaneous change in air pressure. Large values on the y axis mean that particles are tightly compressed at that instant. Of course these representations have to be taken from some particular point in space: two people standing in different places may have different auditory experiences of the same tree-falling event.
 
 \section{Functions}
 
-The two figures above representing various sounds are \emph{functions}. Functions constitute a central concept in mathematics.
+The two figures above representing various sounds are examples \emph{functions}, a central concept in mathematics.
 
 A function is a mapping from one set of objects to another:
 
 [IMAGE]
 
-We say that a function has a \emph{domain}, which is the set of objects on the left in the figure above, and a \emph{codomain} which is the set of objects on the right.
+We say that a function has a \emph{domain}, which is the set of objects on the left in the figure above, and a \emph{co-domain} which is the set of objects on the right. There are a couple of important rules that must be followed for something to be called a function:
+
+\begin{itemize}
+\item Functions must be defined for ALL elements of the domain
+\item Functions must have EXACTLY ONE value in the co-domain for each element of the domain
+\end{itemize}
+
+In other words, this isn't allowed:
+
+[IMAGE OF FUNCTION NOT DEFINED ON DOMAIN]
+
+And neither is this:
+
+[IMAGE OF FUNCTION THAT IS MULTI-VALUED]
+
+Note that the second rule above does not apply to the co-domain, meaning it is perfectly acceptable for several values in the domain to be mapped to a single value in the co-domain:
+
+[IMAGE OF NON-1-1 FUNCTION]
+
+There are no restrictions on the domain or co-domain. You can have a function where the domain is pet owners on Earth, and the co-domain is the set of pets:
+
+[IMAGE]
+
+We might call this function ``FavoritePet'', and write $FavoritePet(John) = Fluffy$ to mean that the function ``FavoritePet'' maps the element ``John'' in the domain of pet owners to the element ``Fluffy'' in the domain of pets. (Exercise: would `Owns'' with the same domain and co-domain constitute a function?)
+
+To indicate that a function $f$ has domain $A$ and co-domain $B$, we write $f: A \rightarrow B$.
+
+The domain and co-domain of a function can be finite (like Pet Owners) or infinite (like natural numbers: $\mathbb{N} = {0, 1, 2, 3, etc.}$). The domain and co-domain could be the same, but they do not have to be.
+
+Sometimes functions can be described easily, like ``FavoritePet'' or the function $f: \mathbb{N} \rightarrow \mathbb{N}$ that takes a natural number and doubles it. We could call this function ``Doubles'', but mathematicians prefer a more compact and precise description: $f(x) = 2x$. Other times functions cannot be described easily at all: they are simply a random looking mapping from the domain to the co-domain. In this case, the only way to give a full description of the function is to give it's value for every single input object, a task that is sometimes provably impossible when there are an infinite number of input objects.
+
+Domains or co-domains might be multi-dimensional spaces. For example, a function $f: \mathbb{N}^{3} \rightarrow \mathbb{N}$ maps triplets like $(4,5,1)$ to natural numbers like $17774$. Domains and co-domains can also be discrete, like the natural numbers. Or they can be continuous, like pitch, or time.
+
+A function is an abstract object, and as such it has many representations. For example, the function $f(x)=2x$ can also be described by plotting it on a two dimensional axis, where the x-axis is the input of the function and the y-axis is the output:
+
+[PLOT OF f(x)=2x]
+
+We will return to functions all the time, so it is important to understand.
+
+\emph{Exercise}: write out a mathematical description for a function $f$ that takes two numbers, and raises the first to the power of the second, then subtracts the second. What is the value of $f(3,4)$? As a bonus, use graphing software to create a graphical representation of this function as a surface.
+
+\section{Signals (need new name)}
+
+Above, we saw examples of functions that represented sound. Here again is our time domain representation of speech:
+
+[IMAGE of speech]
+
+This is just a function in which the domain is time and the co-domain is air pressure.
 
 
 
 
 
-\section{Basics of signals}
 
 
 \section{Signals on a wire}
