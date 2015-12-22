@@ -34,37 +34,50 @@
 
 In 1876, to celebrate the centennial of the Declaration of Independence, the United states hosted its first World's Fair in Philadelphia. The event lasted several months, thirty-seven countries participated, and nearly 10 million visitors attended.
 
-The biggest draws could safely be said to be mechanical contraptions: displays of steam engines, the world's Remington Typographic Machine (typewriter), and precision watches, to name a few. Yet electrical inventions were also on display, and tucked away in a small area across the Machinery Hall sat a young Alexander Graham Bell, demonstrating the transfer of human voice through wires.
+The biggest draws could safely be said to be mechanical contraptions: displays of steam engines, the world's Remington Typographic Machine (typewriter), and precision watches, to name a few. Yet the age of electricity was just around the corner, and electrical inventions were also on display. Tucked away in a small area across the Machinery Hall sat a young Alexander Graham Bell, demonstrating the transfer of human voice through wires.
 
-People viewed early telephone prototypes as a fun toy, not a serious technological contender to the business-oriented telegraph empire. That made sense since these prototypes were limited in their range, typically connecting just two adjacent rooms, and it was not obvious at first that the technology could be improved upon to rival the telegraph network. Yet once it became clear that longer-distance telephony was possible, it did not take long for commercial telephony to develop, beginning a relatively rapid shift in power away from the well-established Western Union and instead towards AT\&T, a small start-up corporation that would come to define the telecommunications industry in the United States for a century.
+People viewed early telephone prototypes as a kind of toy, not a serious technological contender to the business-oriented telegraph empire of Western Union. That perception was not just short-sightedness; these prototypes were limited in their range, typically connecting just two adjacent rooms, and it was not obvious at first that the technology could be improved upon to rival the telegraph network. Yet once it became clear that longer-distance telephony was possible, it did not take long for commercial telephony to develop, beginning a relatively rapid shift in power away from the well-established Western Union and instead towards AT\&T, then a small start-up corporation that would come to define the telecommunications industry in the United States for a century.
 
-In this part of the book, we will examine issues related to how the telephone works: what is sound, how is an analog signal transmitted over a wire, what infrastructure allowed AT\&T provided telephone access to the vast majority of Americans in their home, and how the regulatory landscape began to evolve as the telecommunications industry matured.
+In this part of the book, we will examine issues related to how the telephone works: what is sound, how is an analog signal transmitted over a wire, what infrastructure allowed AT\&T to provide telephone access to the vast majority of Americans in their home, and how the regulatory landscape began to evolve as the telecommunications industry matured.
 
 \chapter{Signals}
 
 \section{Sound}
 
-When a tree falls and hits the ground, some of the energy upon impact is transferred to nearby air particles, pushing them outwards as a wave.
+When a tree falls and hits the ground, some of the energy upon impact is transferred to nearby air particles, pushing them outwards in a wave.
 
-[IMAGE]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{treefalling_edited}
+\end{figure}
 
 The wave is a \emph{longitudinal} wave, meaning it does not have the peaks and troughs of an ocean wave perpendicular to the direction of travel, but instead expands and contracts along a single dimension as it travels.
 
-[IMAGE]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{longvstransvwave}
+\end{figure}
 
-Imagine a nuclear explosion, except that instead of an outwardly expanding sphere of fire, there is an outwardly expanding sphere where air particles are more tightly bunched together for a split second. The momentary compression of air particles constitutes a change in \emph{air pressure} in that location.
+Imagine a nuclear explosion, except that instead of an outwardly expanding sphere of fire, there is an outwardly expanding sphere where air particles are more tightly bunched together for a split second. This momentary compression of air particles constitutes a change in \emph{air pressure} in that location.
 
-As objects on Earth interact with each other, waves of pressure expand outward in the surrounding medium (in the example above, this medium is the air). These pressure changes signal important events, like when something might eat you or when you might be able to eat something. Given the importance of this information for survival, many species including humans evolved auditory systems to make sense of the constantly and subtly changing air pressure; we call our experience of it \emph{hearing}. And in parallel to the development of our sense of hearing, we evolved increasingly sophisticated ways to create sound ourselves, culminating in vocal chords and speaking.
+As objects on Earth interact with each other, waves of pressure expand outward in the surrounding medium (in the example above, this medium is the air). These pressure changes often signal events that are important to an organism, like when something might eat you or when you might be able to eat something. Given the importance of this information for survival, many species including humans evolved auditory systems to make sense of the constantly and subtly changing air pressure all around us; we call our experience of this phenomena \emph{hearing}. And in parallel to the development of our sense of hearing, we evolved increasingly sophisticated ways to create sound ourselves, culminating in vocal chords and speaking.
 
-The simplified description above of a tree falling might lead one to believe that there is only a single and uniform experience of a sound, but of course that's not the case. Sound has many different qualities, like pitch, intensity, duration, and timbre. It is easy to tell the singing of a friend from the sound of a tree falling. This is possible because sound waves can be rather sophisticated, the miniscule air particles compressing and un-compressing in non-uniform ways over very small distance and time scales.
+The simplified description above of a tree falling might lead one who is unfamiliar with hearing to believe that there is only a single and uniform experience of a sound, but of course that's not the case. Sound has many different qualities, like pitch, intensity, duration, and timbre. It is quite easy to tell the singing of a friend from the sound of a tree hitting the ground. This differentiation is possible because sound waves can be rather sophisticated, the miniscule air particles compressing and un-compressing in non-uniform ways over very small distance and time scales.
 
-Here is a representation of the sound of a tree falling:
+To highlight these differences, here is a representation of the sound of a tree falling:
 
-[IMAGE]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{tree_falling_soundwave}
+\end{figure}
+
 
 And here is a representation of human speech:
 
-[IMAGE]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{shakespeare_speech}
+\end{figure}
 
 The above figures are called \emph{time domain representations}: the x axis is time, and the y axis represents the instantaneous change in air pressure. Large values on the y axis mean that particles are tightly compressed at that instant. Of course these representations have to be taken from a single source point: two people standing in different places may have different auditory experiences of the same tree-falling event.
 
@@ -74,28 +87,34 @@ The two figures above representing various sounds are examples of \emph{function
 
 A function is a mapping from one set of objects to another:
 
-[IMAGE]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{function_basic}
+\end{figure}
 
-We say that a function has a \emph{domain}, which is the set of objects on the left in the figure above, and a \emph{co-domain} which is the set of objects on the right. There are a couple of important rules that must be followed for something to be called a function:
+We say that a function has a \emph{domain}, which is the set of objects on the left in the figure above, and a \emph{co-domain} which is the set of objects on the right. There is one important rule that must be followed for something to count as a function:
 
 \begin{itemize}
-\item Functions must be defined for ALL elements of the domain
-\item Functions must have EXACTLY ONE value in the co-domain for each element of the domain
+\item For each object in the domain, a function MUST map that to EXACTLY ONE object in the co-domain
 \end{itemize}
 
-In other words, this isn't allowed:
+In other words, since functions must be defined on the entire domain, this isn't allowed:
 
-[IMAGE OF FUNCTION NOT DEFINED ON DOMAIN]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{function_undefined}
+\end{figure}
 
 And neither is this:
 
-[IMAGE OF FUNCTION THAT IS MULTI-VALUED]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{function_multifunction}
+\end{figure}
 
-Note that the converse of the second rule above does not hold, meaning it is perfectly acceptable for several values in the domain to be mapped to a single value in the co-domain:
+Note that the converse of the second rule above does not hold; it is perfectly acceptable for several values in the domain to be mapped to a single value in the co-domain, as is the case in the first diagram above.
 
-[IMAGE OF NON-1-1 FUNCTION]
-
-There are no restrictions on the domain or co-domain. You can have a function where the domain is pet owners on Earth, and the co-domain is the set of pets:
+So far, the domain has been 4 blobs, and the co-domain has been 3 blobs, but this is just one example. There are no restrictions on the domain or co-domain. You can have a function where the domain is pet owners on Earth, and the co-domain is the set of pets:
 
 [IMAGE]
 
@@ -208,7 +227,7 @@ This created a host of challenges: overcoming competition, getting the governmen
 
 Naming was becoming a problem for the telegraph in the late 1800s. Until that point, if a telegram was addressed to John Smith in Boston, the message could properly be routed to the Boston office but then what? A lot of responsibility for getting this right fell on the sender of the message to appropriately specify a recipient (\emph{John Smith of Commonwealth Ave in Back Bay}) and on the local courier boys who worked for the telegraph office to have some familiarity with the neighborhood and where people or businesses were located.
 
-As cities grew and more telegrams were being sent, this ad hoc system was becoming unsustainable.
+As cities grew and telegram volume grew, this ad hoc system was becoming unsustainable.
 
 
 
