@@ -51,7 +51,7 @@ When a tree falls and hits the ground, some of the energy upon impact is transfe
 \includegraphics[width=0.8\linewidth]{treefalling_edited}
 \end{figure}
 
-The wave is a \emph{longitudinal} wave, meaning it does not have the peaks and troughs of an ocean wave perpendicular to the direction of travel, but instead expands and contracts along a single dimension as it travels.
+The wave is a \emph{longitudinal} wave, meaning it does not have the peaks and troughs of an ocean wave perpendicular to the direction of travel (that is called a \emph{transverse} wave), but instead expands and contracts along a single dimension as it travels.
 
 \begin{figure}[H]
 \centering
@@ -60,17 +60,16 @@ The wave is a \emph{longitudinal} wave, meaning it does not have the peaks and t
 
 Imagine a nuclear explosion, except that instead of an outwardly expanding sphere of fire, there is an outwardly expanding sphere where air particles are more tightly bunched together for a split second. This momentary compression of air particles constitutes a change in \emph{air pressure} in that location.
 
-As objects on Earth interact with each other, waves of pressure expand outward in the surrounding medium (in the example above, this medium is the air). These pressure changes often signal events that are important to an organism, like when something might eat you or when you might be able to eat something. Given the importance of this information for survival, many species including humans evolved auditory systems to make sense of the constantly and subtly changing air pressure all around us; we call our experience of this phenomena \emph{hearing}. And in parallel to the development of our sense of hearing, we evolved increasingly sophisticated ways to create sound ourselves, culminating in vocal chords and speaking.
+As objects on Earth interact with each other, waves of pressure expand outward in the surrounding medium (in the example above, this medium is the air). These pressure changes often signal events that are important to an organism, like when something might eat it or when it might be able to eat something. Given the importance of this information for survival, many species including humans evolved auditory systems to make sense of the constantly and subtly changing air pressure all around us; we call our experience of this phenomena \emph{hearing}. And in parallel to the development of our sense of hearing, we evolved increasingly sophisticated ways to create sound ourselves, culminating in vocal chords and speaking.
 
 The simplified description above of a tree falling might lead one who is unfamiliar with hearing to believe that there is only a single and uniform experience of a sound, but of course that's not the case. Sound has many different qualities, like pitch, intensity, duration, and timbre. It is quite easy to tell the singing of a friend from the sound of a tree hitting the ground. This differentiation is possible because sound waves can be rather sophisticated, the miniscule air particles compressing and un-compressing in non-uniform ways over very small distance and time scales.
 
-To highlight these differences, here is a representation of the sound of a tree falling:
+To give one illustration of these differences, here is a representation of the sound of a tree falling:
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\linewidth]{tree_falling_soundwave}
 \end{figure}
-
 
 And here is a representation of human speech:
 
@@ -116,37 +115,63 @@ Note that the converse of the second rule above does not hold; it is perfectly a
 
 So far, the domain has been 4 blobs, and the co-domain has been 3 blobs, but this is just one example. There are no restrictions on the domain or co-domain. You can have a function where the domain is pet owners on Earth, and the co-domain is the set of pets:
 
-[IMAGE]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{function_pets}
+\end{figure}
 
-We might call this function ``FavoritePet'', and write $FavoritePet(John) = Fluffy$ to mean that the function ``FavoritePet'' maps the element ``John'' in the domain of pet owners to the element ``Fluffy'' in the domain of pets, a formal way of writing that Fluffy is John's favorite pet. (Exercise: would ``Owns'' with the same domain and co-domain constitute a function?)
+We might call this function ``FavoritePet'', and write $FavoritePet(John) = Fluffy$ to mean that the function ``FavoritePet'' maps the element ``John'' in the domain of pet owners to the element ``Fluffy'' in the domain of pets, a formal way of writing that Fluffy is John's favorite pet. (\emph{Exercise}: would ``Owns'' with the same domain and co-domain constitute a function? why or why not?)
 
 To indicate that a function $f$ has domain $A$ and co-domain $B$, we use the notation $f: A \rightarrow B$.
 
 The domain and co-domain of a function can be finite (like Pet Owners) or infinite (like natural numbers: $\mathbb{N} = {0, 1, 2, 3, etc.}$). The domain and co-domain could be the same, but they do not have to be.
 
-Sometimes functions can be described easily, like ``FavoritePet'' or the function $f: \mathbb{N} \rightarrow \mathbb{N}$ that takes a natural number and doubles it. We could call this function ``Doubles'', but mathematicians prefer a more compact and precise description: $f(x) = 2x$. Other times functions cannot be described easily at all: they are simply a random looking mapping from the domain to the co-domain. In this case, the only way to give a full description of the function is to give it's value for every single input object, a task that is sometimes provably impossible when there are an infinite number of input objects.
+Sometimes functions can be described easily, like ``FavoritePet'' or the function $f: \mathbb{N} \rightarrow \mathbb{N}$ that takes a natural number and doubles it. We could call this function ``Doubles'', but mathematicians prefer a more compact and precise description: $f(x) = 2x$. Other times functions cannot be described easily at all but instead are simply a random-looking mapping from the domain to the co-domain. In this case, the only way to give a full description of the function is to give it's value for every single input object, a task that is sometimes provably impossible when there are an infinite number of input objects. But even in these cases, the functions themselves are valid in a mathematical sense, even if they defy easy description or understanding.
 
-Domains or co-domains might be multi-dimensional spaces. For example, a function $f: \mathbb{N}^{3} \rightarrow \mathbb{N}$ maps triplets like $(4,5,1)$ to natural numbers like $17774$. Domains and co-domains can also be discrete, like the natural numbers. Or they can be continuous, like pitch, or time.
+Domains or co-domains might be multi-dimensional spaces. For example, a function $f: \mathbb{N}^{3} \rightarrow \mathbb{N}$ would map triplets like $(4,5,1)$ to natural numbers like $17774$. Domains and co-domains can also be discrete, like the natural numbers. Or they can be continuous, like pitch, or time.
 
-A function is an abstract object, and as such it has many representations. For example, the function $f(x)=2x$ can also be described by plotting it on a two dimensional axis, where the x-axis is the input of the function and the y-axis is the output:
+How does this discussion of functions relate to the plots of sound waves above? It turns out that that familiar plot along an x and y axis is a representation of a function, where the x axis is the domain and the y axis is the co-domain.
 
-[PLOT OF f(x)=2x]
+After all, a function is an abstract object, and as such it has many representations. For example, the function $f(x)=2x$ can be described by plotting it on a two dimensional axis, where the x-axis is the input of the function and the y-axis is the output:
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $x$,
+    ylabel = {$f(x)$},
+]
+%Below the red parabola is defined
+\addplot [
+    domain=-10:10,
+    samples=100,
+    color=red,
+]
+{2*x};
+\addlegendentry{$f(x) = 2x$}
+\end{axis}
+\end{tikzpicture}
 
 It could also be represented with the primary visualization that we used to introduce the notion of a function:
 
-[IMAGE OF DOTS]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{function_2x}
+\end{figure}
 
-We will return to functions all the time, so it is important to develop a sharp understanding of functions.
+We will return to functions all the time, so it is important to develop a sharp understanding of this mathematical object. \newline
 
-\emph{Exercise}: write out a mathematical description for a function $f$ that takes two numbers, and raises the first to the power of the second, then subtracts the second. What is the value of $f(3,4)$? As a bonus, use graphing software to create a graphical representation of this function as a surface.
+\emph{Exercise}: write out a mathematical description for a function $f$ that takes two numbers, and raises the first to the power of the second, then subtracts the second. What is the value of $f(3,4)$? As a bonus, use graphing software to create a graphical representation of this function as a 2-dimensional surface sitting in a three-dimensional space.
 
 \section{Speech on a wire: an analog approach}
 
 Above, we saw examples of functions that represented sound. Here again is our time domain representation of speech, also called a speech \emph{waveform}:
 
-[IMAGE of speech]
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{shakespeare_speech}
+\end{figure}
 
-This is just a function in which the domain is time and the co-domain is air pressure. The information in the figure above is enough to create a sound that we would recognize as speech. In order for telephony to be possible, we need a way to continuously transmit the information of the sound waveform from one location to another.
+As we have seen, this is just a function in which the domain is time and the co-domain is air pressure. The information in the figure above is enough to create a sound that we would recognize as speech. In order for telephony to be possible, we need a way to continuously transmit the information of the sound waveform from one location to another.
 
 An electrical wire does not have air particles that can be compressed and uncompressed, but it does have other properties that can be varied continuously over time. In particular, the current flowing through a wire can increase and decrease. This is how the telegraph worked except that in that case, the current would be on or off, resulting in a function that might look like this:
 
@@ -178,7 +203,7 @@ How much information does a sound signal contain? It depends quite a bit on the 
 
 \chapter{How A Telephone Works}
 
-The telephone transforms a sound signal into an electrical signal and back again. It was not the only device in the late 1800s that was seeking to gain mastery over sound.
+The telephone transforms a sound signal into an electrical signal and back again. It was not the only device in the late 1800s that sought to gain a sort of mastery over sound.
 
 The phonograph was invented in 1877 and was the original technology in a line that continued with record players, cassette tapes players, CD players, and MP3 players. [FOOTNOTE: it seems this line of technology may have been subsumed by more general purpose desktop and mobile computers in the last 5 years or so]. The phonograph was aimed at solving a similar problem to the telephone, in that it needed to capture a sound signal somehow. The difference is that once captured, instead of the moving the sound signal quickly over a long distance, the phonograph instead was charged with creating a physical object from which the sound could be later retrieved, a record. Early phonographs used a circular disk as the record, and a sound signal was captured by deviations in a spiral groove. [MORE HERE?]
 
