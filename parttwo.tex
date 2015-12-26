@@ -34,13 +34,17 @@
 
 In 1876, to celebrate the centennial of the Declaration of Independence, the United states hosted its first World's Fair in Philadelphia. The event lasted several months, thirty-seven countries participated, and nearly 10 million visitors attended.
 
-The biggest draws could safely be said to be mechanical contraptions: displays of steam engines, the world's Remington Typographic Machine (typewriter), and precision watches, to name a few. Yet the age of electricity was just around the corner, and electrical inventions were also on display. Tucked away in a small area across the Machinery Hall sat a young Alexander Graham Bell, demonstrating the transfer of human voice through wires.
+The biggest draws could safely be said to be mechanical contraptions: displays of steam engines, the world's Remington Typographic Machine (typewriter), and precision watches, to name a few. Yet the age of electricity was just around the corner, and electrical inventions were also on display. In a small area across the Machinery Hall sat a young Alexander Graham Bell, demonstrating the transfer of human voice through wires.
 
 People viewed early telephone prototypes as a kind of toy, not a serious technological contender to the business-oriented telegraph empire of Western Union. That perception was not just short-sightedness; these prototypes were limited in their range, typically connecting just two adjacent rooms, and it was not obvious at first that the technology could be improved upon to rival the telegraph network. Yet once it became clear that longer-distance telephony was possible, it did not take long for commercial telephony to develop, beginning a relatively rapid shift in power away from the well-established Western Union and instead towards AT\&T, then a small start-up corporation that would come to define the telecommunications industry in the United States for a century.
 
-In this part of the book, we will examine issues related to how the telephone works: what is sound, how is an analog signal transmitted over a wire, what infrastructure allowed AT\&T to provide telephone access to the vast majority of Americans in their home, and how the regulatory landscape began to evolve as the telecommunications industry matured.
+In this part of the book, we will examine issues related to how the telephone works: what is sound, how is an analog signal transmitted over a wire, how to build a telephone, how to build a telephone network, what infrastructure allowed AT\&T to provide telephone access to the vast majority of Americans in their home, and how the regulatory landscape began to evolve as the telecommunications industry matured.
+
+Given that our ultimate goal is understanding the Internet and not the telephone network, we will NOT attempt to follow each step of the historical evolution of the telephone, nor describe every aspect of a real-world telephone system, which is extremely complex as you might imagine. For readers interested in developing deeper knowledge of telephony, I recommend [INSERT BOOK REC]
 
 \chapter{Signals}
+
+In the previous chapter, we studied symbols quite extensively, emphasizing that this is a \emph{digital} way of representing information. The other way that information is represented is \emph{analog}, in which a variable might take on an infinite number of values over time. Early telephone systems represented the first foray into a purely analog technology, allowing sound to be transmitted in an analog fashion from one location to another.
 
 \section{Sound}
 
@@ -51,7 +55,7 @@ When a tree falls and hits the ground, some of the energy upon impact is transfe
 \includegraphics[width=0.8\linewidth]{treefalling_edited}
 \end{figure}
 
-The wave is a \emph{longitudinal} wave, meaning it does not have the peaks and troughs of an ocean wave perpendicular to the direction of travel (that is called a \emph{transverse} wave), but instead expands and contracts along a single dimension as it travels.
+The wave is a \emph{longitudinal} wave, meaning it does not have the peaks and troughs of an ocean wave perpendicular to the direction of travel (such a wave is called a \emph{transverse} wave), but instead expands and contracts along a single dimension as it travels.
 
 \begin{figure}[H]
 \centering
@@ -62,7 +66,7 @@ Imagine a nuclear explosion, except that instead of an outwardly expanding spher
 
 As objects on Earth interact with each other, waves of pressure expand outward in the surrounding medium (in the example above, this medium is the air). These pressure changes often signal events that are important to an organism, like when something might eat it or when it might be able to eat something. Given the importance of this information for survival, many species including humans evolved auditory systems to make sense of the constantly and subtly changing air pressure all around us; we call our experience of this phenomena \emph{hearing}. And in parallel to the development of our sense of hearing, we evolved increasingly sophisticated ways to create sound ourselves, culminating in vocal chords and speaking.
 
-The simplified description above of a tree falling might lead one who is unfamiliar with hearing to believe that there is only a single and uniform experience of a sound, but of course that's not the case. Sound has many different qualities, like pitch, intensity, duration, and timbre. It is quite easy to tell the singing of a friend from the sound of a tree hitting the ground. This differentiation is possible because sound waves can be rather sophisticated, the miniscule air particles compressing and un-compressing in non-uniform ways over very small distance and time scales.
+The simplified description above of a tree falling might lead one who is unfamiliar with hearing to believe that there is only a single, uniform experience of a sound, but of course that's not the case. Sound has many different qualities, like pitch, intensity, duration, and timbre. It is quite easy to tell the singing of a friend from the sound of a tree hitting the ground. This differentiation is possible because sound waves can be rather sophisticated, the miniscule air particles compressing and un-compressing in non-uniform ways over very small distance and time scales.
 
 To give one illustration of these differences, here is a representation of the sound of a tree falling:
 
@@ -140,7 +144,6 @@ After all, a function is an abstract object, and as such it has many representat
     xlabel = $x$,
     ylabel = {$f(x)$},
 ]
-%Below the red parabola is defined
 \addplot [
     domain=-10:10,
     samples=100,
@@ -173,11 +176,45 @@ Above, we saw examples of functions that represented sound. Here again is our ti
 
 As we have seen, this is just a function in which the domain is time and the co-domain is air pressure. The information in the figure above is enough to create a sound that we would recognize as speech. In order for telephony to be possible, we need a way to continuously transmit the information of the sound waveform from one location to another.
 
-An electrical wire does not have air particles that can be compressed and uncompressed, but it does have other properties that can be varied continuously over time. In particular, the current flowing through a wire can increase and decrease. This is how the telegraph worked except that in that case, the current would be on or off, resulting in a function that might look like this:
+An electrical wire does not contain air particles that can be compressed and uncompressed, but it does have other properties that can be varied continuously over time. In particular, the current flowing through a wire can increase and decrease. In the case of the telegraph, the current was on or off, resulting in a function of electrical signal over time that might look something like this:
 
-[IMAGE OF TELEGRAPH CURRENT SIGNAL]
+\begin{tikzpicture}
+\pgfplotstableread{
+0 0
+1 0
+2 0
+3 1
+4 0
+5 1
+6 1
+7 1
+8 0
+9 1
+10 0
+11 0
+12 0
+13 0
+14 0
+15 0
+16 0
+17 0
+18 0
+19 0
+}\datatable
+\begin{axis}[
+    axis lines = left,
+    xlabel = time,
+    ylabel = electrical current,
+    ytick = {0,1},
+]
+\addplot+[thick, const plot, mark = none] table [x index=0, y index=1]{\datatable};
+\addlegendentry{$\thickdot \thickdash \thickdot$}
+\end{axis}
+\end{tikzpicture}
 
-The telephone has to solve the more subtle problem of receiving the human speech form, reproducing the information is contains by varying electrical current, and then reproducing the sound at the other end:
+The telephone, in contrast, has to solve the more difficult problem of reproducing the information of the speech waveform above via changes over time to electrical current.
+
+[INSERT IMAGE OF WAVEFORM ABOVE BUT AS CURRENT]
 
 [CHART OF CONCEPTUAL OUTLINE OF TELEPHONE]
 
@@ -185,19 +222,15 @@ The telephone has to solve the more subtle problem of receiving the human speech
 
 We will see how the telephone accomplishes this shortly, but first let us turn our attention to the idea of a \emph{signal}.
 
-We have already covered symbolic systems, and the fact that any symbolic representation of information is interchangeable [ADD NAME FOR THIS THEOREM?]. But what happens when the information we care about is something like the human voice that cannot be easily represented as a set of symbols? Recall that in this scenario, we say that the information is \emph{analog}.
+We have already covered basic symbolic systems, and the fact that any symbolic representation of information is interchangeable [ADD NAME FOR THIS THEOREM?]. But what happens when the information we care about is an analog function over time like the human voice that cannot be easily represented as a set of symbols?
 
-There is no single, neat definition of a signal. For our purposes, however, let us use the following slightly narrow and restrictive definition:
-
-[TODO FIX THIS DEFINITION]
-
-\begin{definition}
-A \emph{signal} is a function where the domain is time.
-\end{definition}
+In this case, we are instead dealing with a \emph{signal}. While there is no standard definition of a signal, for our purposes, we can consider it to be a function where the domain is time, and the co-domain is a continuous variable that bears information. This definition allows us to abstract away the function that contains information from the particular medium upon which it resides. So, for example, we can consider the speech waveform above and its translation into electrical current to both be different representations of the same signal.
 
 \section{Information content and analog signals}
 
-How much information does a sound signal contain? It depends quite a bit on the signal. A periodic signal like an alarm, intuitively, contains only information for a single period.
+How much information does a sound signal contain? Of course it's not fair to compare a hundred years of sounds to a millisecond, so to start to get a handle on the information content of a sound, let's fix our metric to be information \emph{per second}.
+
+But even now the answer is far from straight forward. A completely uniform sound intuitively has no information
 
 [IAMHERE]
 
