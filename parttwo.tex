@@ -236,13 +236,35 @@ However, a single C note in fact is a signal that looks like this:
 
 [SINE WAVE]
 
-This signal is \emph{periodic}. This very simple periodic function is sometimes called a \emph{sine wave}, corresponding to the trigonometric sinusoidal function. [ADD EXPLANATION OF SINE?]. Most sound signals, including signals corresponding to voices, are actually a composition of many such periodic signals.
+This signal is \emph{periodic}. This very simple periodic function is sometimes called a \emph{sine wave}, corresponding to the trigonometric sinusoidal function. [ADD FOOTNOTE EXPLANATION OF SINE?]. Most sound signals, including signals corresponding to voices, are actually a composition of many such periodic signals.
 
-Periodic signals have a \emph{frequency}, indicating the number of cycles per second, and an \emph{amplitude} indicating the magnitude of the peaks and troughs of the signal. In the case of a sound signal, changes in frequency correspond to changes in pitch. To give a concrete example, the note A above middle C in a piano creates a wave shaped like:
+Periodic signals have a \emph{frequency}, indicating the number of cycles per second, and an \emph{amplitude} indicating the magnitude of the peaks and troughs of the signal. In the case of a sound signal, it turns out that changes in frequency correspond to changes in pitch. To give a concrete example, the note A above middle C in a piano creates the following signal:
 
 \[ f(x) = sin(880\pi x) \]
 
+Here the domain is time in seconds, and we can graph the function:
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = time (s),
+    ylabel = {instantaneous air pressure},
+    samples = 1000,
+    domain=127/128:129/128,
+    legend pos=outer north east,
+]
+\addplot
+{sin(deg(880*pi*x))};
+\end{axis}
+\end{tikzpicture}
+
 [IAMHERE, functions for different pitches]
+
+The frequency of the function $sin(x)$ is $2\pi$ since that comprises a full rotation around the unit circle. Hence, the function $f(x)$ above corresponding to our A note has a frequency of 1/440, meaning that there are 440 oscillations per second. The unit ``per second'' has a name, which is \emph{hertz}, abbreviated \emph{Hz}, hence we say that the frequency is 440Hz. If you are a musician, you know well that this is the frequency of an A note.
+
+The fact that this frequency is fairly high helps to explain why the experience of hearing an A note can appear monotone and uniform. If the frequency were 0.5Hz, this would not add up, since we would be able to pick up the highs and lows of the air pressure waves as they changed over the course of a second. But at 440Hz, it is too fast for us to discern the individual peaks and troughs of the sound wave, and instead we just hear an A note.
+
+Musicians will also recognize that other notes are defined by their frequency.
 
 [ADD MORE HERE]
 
