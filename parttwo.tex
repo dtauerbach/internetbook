@@ -126,11 +126,13 @@ So far, the domain has been 4 blobs, and the co-domain has been 3 blobs, but thi
 
 We might call this function ``FavoritePet'', and write $FavoritePet(John) = Fluffy$ to mean that the function ``FavoritePet'' maps the element ``John'' in the domain of pet owners to the element ``Fluffy'' in the domain of pets, a formal way of writing that Fluffy is John's favorite pet. (\emph{Exercise}: would ``Owns'' with the same domain and co-domain constitute a function? why or why not?)
 
-To indicate that a function $f$ has domain $A$ and co-domain $B$, we use the notation $f: A \rightarrow B$.
+To indicate that a function $f$ has domain $A$ and co-domain $B$, we use the notation $f: A \rightarrow B$. In this case the function itself is $f$ and the value of the function at $x$ is denoted by $f(x)$.
 
 The domain and co-domain of a function can be finite (like Pet Owners) or infinite (like natural numbers: $\mathbb{N} = {0, 1, 2, 3, etc.}$). The domain and co-domain could be the same, but they do not have to be.
 
-Sometimes functions can be described easily, like ``FavoritePet'' or the function $f: \mathbb{N} \rightarrow \mathbb{N}$ that takes a natural number and doubles it. We could call this function ``Doubles'', but mathematicians prefer a more compact and precise description: $f(x) = 2x$. Other times functions cannot be described easily at all but instead are simply a random-looking mapping from the domain to the co-domain. In this case, the only way to give a full description of the function is to give it's value for every single input object, a task that is sometimes provably impossible when there are an infinite number of input objects. But even in these cases, the functions themselves are valid in a mathematical sense, even if they defy easy description or understanding.
+Sometimes functions can be described easily, like ``FavoritePet'' or the function $f: \mathbb{N} \rightarrow \mathbb{N}$ that takes a natural number and doubles it. We could call this function ``Doubles'', but mathematicians prefer a more compact and precise description: $f(x) = 2x$. Here $x$ is a variable and so the description of $f$ above works for the entire domain, although the expression does not specify the domain explicitly.
+
+Other times functions cannot be described easily at all but instead are simply a random-looking mapping from the domain to the co-domain. In this case, the only way to give a full description of the function is to give it's value for every single input object, a task that is sometimes provably impossible when there are an infinite number of input objects. But even in these cases, the functions themselves are valid in a mathematical sense, even if they defy easy description or understanding.
 
 Domains or co-domains might be multi-dimensional spaces. For example, a function $f: \mathbb{N}^{3} \rightarrow \mathbb{N}$ would map triplets like $(4,5,1)$ to natural numbers like $17774$. Domains and co-domains can also be discrete, like the natural numbers. Or they can be continuous, like pitch, or time.
 
@@ -225,6 +227,22 @@ We will see how the telephone accomplishes this shortly, but first let us turn o
 We have already covered basic symbolic systems, and the fact that any symbolic representation of information is interchangeable [ADD NAME FOR THIS THEOREM?]. But what happens when the information we care about is an analog function over time like the human voice that cannot be easily represented as a set of symbols?
 
 In this case, we are instead dealing with a \emph{signal}. While there is no standard definition of a signal, for our purposes, we can consider it to be a function where the domain is time, and the co-domain is a continuous variable that bears information. This definition allows us to abstract away the function that contains information from the particular medium upon which it resides. So, for example, we can consider the speech waveform above and its translation into electrical current to both be different representations of the same signal.
+
+So far we have looked at a speech signal, and the signal produced by a tree hitting the ground. What about the sound of a C note that does not vary in pitch or intensity? You might expect the signal associated with such a uniform sound to look like this:
+
+[STRAIGHT LINE]
+
+However, a single C note in fact is a signal that looks like this:
+
+[SINE WAVE]
+
+This signal is \emph{periodic}. This very simple periodic function is sometimes called a \emph{sine wave}, corresponding to the trigonometric sinusoidal function. [ADD EXPLANATION OF SINE?]. Most sound signals, including signals corresponding to voices, are actually a composition of many such periodic signals.
+
+Periodic signals have a \emph{frequency}, indicating the number of cycles per second, and an \emph{amplitude} indicating the magnitude of the peaks and troughs of the signal. In the case of a sound signal, changes in frequency correspond to changes in pitch. To give a concrete example, the note A above middle C in a piano creates a wave shaped like:
+
+\[ f(x) = sin(880\pi x) \]
+
+[IAMHERE, functions for different pitches]
 
 [ADD MORE HERE]
 
