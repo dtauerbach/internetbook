@@ -228,7 +228,7 @@ We have already covered basic symbolic systems, and the fact that any symbolic r
 
 In this case, we are instead dealing with a \emph{signal}. While there is no standard definition of a signal, for our purposes, we can consider it to be a function where the domain is time, and the co-domain is a continuous variable that bears information. This definition allows us to abstract away the function that contains information from the particular medium upon which it resides. So, for example, we can consider the speech waveform above and its translation into electrical current to both be different representations of the same signal.
 
-So far we have looked at a speech signal, and the signal produced by a tree hitting the ground. What about the sound of a C note that does not vary in pitch or intensity? You might expect the signal associated with such a uniform sound to look like this:
+So far we have looked at a speech signal, and the signal produced by a tree hitting the ground. What about the sound of a C note that does not vary in pitch or intensity? You might expect the signal associated with such a uniform sound to look like the function that graphs pitch over time:
 
 [STRAIGHT LINE]
 
@@ -258,15 +258,25 @@ Here the domain is time in seconds, and we can graph the function:
 \end{axis}
 \end{tikzpicture}
 
-[IAMHERE, functions for different pitches]
+The frequency of the function $sin(x)$ is $2\pi$ since that comprises a full rotation around the unit circle. Hence, the function $f(x)$ above corresponding to our A note has a frequency of 1/440, meaning that there are 440 oscillations per second. The unit ``per second'' has a name, which is \emph{hertz}, abbreviated \emph{Hz}, and so we say that the frequency of an A note is 440Hz. If you are a musician with a basic knowledge of music theory, you probably know this fact.
 
-The frequency of the function $sin(x)$ is $2\pi$ since that comprises a full rotation around the unit circle. Hence, the function $f(x)$ above corresponding to our A note has a frequency of 1/440, meaning that there are 440 oscillations per second. The unit ``per second'' has a name, which is \emph{hertz}, abbreviated \emph{Hz}, hence we say that the frequency is 440Hz. If you are a musician, you know well that this is the frequency of an A note.
+The fact that this frequency is fairly high helps to explain why the experience of hearing an A note can appear monotone and uniform. Our auditory system is not designed to discern the individual peaks and troughs whizzing by, but rather to pick up on the frequency of oscillations.
 
-The fact that this frequency is fairly high helps to explain why the experience of hearing an A note can appear monotone and uniform. If the frequency were 0.5Hz, this would not add up, since we would be able to pick up the highs and lows of the air pressure waves as they changed over the course of a second. But at 440Hz, it is too fast for us to discern the individual peaks and troughs of the sound wave, and instead we just hear an A note.
+As such, tones are distinguished by their frequency and higher-frequency sound waves have a higher pitch, a fact also familiar to those familiar with music.
 
-Musicians will also recognize that other notes are defined by their frequency.
+[IAMHERE, ADD functions for different pitches]
 
-[ADD MORE HERE]
+Given the sensitivity of the human auditory system to small oscillating vibrations, our vocal chords evolved to make sound by creating vibrating sinusoidal sound waves, but we are not single-note rookies. We have mastery over creating these sinusoidal waves and can start, stop, and move up and down quickly between different frequency waves with ease, allowing the incredible feat of human speech.
+
+It may not seem like the speech waveform displayed above is made up of sinusoidal components, but that is only because of how sophisticated our mastery is over combining adjusting different frequencies. Here is a zoomed in look at a section of the waveform over a very small time slice:
+
+[SHOW SECTION OVER SMALL TIME SLICE]
+
+As it happens, the mathematics behind combining these sinusoidal signals is quite important for telecommunication technology, and it turns out that combining signals is very simple, amounting to pointwise addition.
+
+
+
+[ADD MORE HERE ABOUT COMBINING SIN WAVES ETC]
 
 \section{Information content and analog signals}
 
@@ -284,15 +294,25 @@ The phonograph was invented in 1877 and was the original technology in a line th
 
 [DIAGRAM OF TELEPHONE VS PHONOGRAPH]
 
-In this chapter, we will work towards building a working telephone. It is worth pointing out once again that the telephone we build will NOT the same as the early prototypes of Alexander Graham Bell or Elisha Gray, nor will be a fully featured modern telephone. Instead, the goal is to provide a solid conceptual understanding of a complete, working telephone system. [CUT THIS PARAGRAPH?]
+In this chapter, we will work towards building a telephone. It is worth mentioning that the telephone we build is not historical, nor does it do justice to the incredible complexity of the telephone system in even the early 20th century. However, our goal of developing a solid conceptual understanding of the basics of telephony, and so deliberate choices have been made to stick to the simple core concepts, borrowing freely from different historical periods to offer the simplest version for readers who are new to telephony. [REMOVE OR REWORK THIS PARAGRAPH]
 
 \section{Ohm's Law}
 
-asdfsdfdsf
+Before we can build a telephone, we need to understand a bit more about electricity. The most important principle is called Ohm's Law:
+
+\[ I = V/R \]
+
+In the equation above, the term $I$ represents electrical \emph{current}. This is a measure of the ``flow'' of the electricity through the circuit, analogous to the amount of water that might flow through a pipe system per second. And just we might choose a unit such as liters per second to describe the flow of water, a popular unit of measurement for electrical current is [INSERT]
+
+The term $V$ in the equation above represents \emph{voltage}. Borrowing from the popular explanatory analogy to a water pipe, the voltage would be analogous to the pressure of the pipe. Just as increasing the water pressure would increase the number of gallons per second flowing through the pipe system, so too an increase in voltage corresponds to a proportional increase in current.
+
+The final term $R$ stands for \emph{resistance}.
+
+IAMHERE
 
 \section{Electrical components}
 
-Before we build a telephone, let's take stock of what electrical components we have at our disposal. During the age of the telegraph,
+Before we build a telephone, let's take stock of what electrical components we have at our disposal and formalize our electrical circuit diagrams a bit. We have already met the \emph{relay}, the \{power source} (or battery).
 
 \section{A one-way telephone}
 
