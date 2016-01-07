@@ -34,17 +34,17 @@
 
 In 1876, to celebrate the centennial of the Declaration of Independence, the United states hosted its first World's Fair in Philadelphia. The event lasted several months, thirty-seven countries participated, and nearly 10 million visitors attended.
 
-The biggest draws could safely be said to be mechanical contraptions: displays of steam engines, the world's Remington Typographic Machine (typewriter), and precision watches, to name a few. Yet the age of electricity was just around the corner, and electrical inventions were also on display. In a small area across the Machinery Hall sat a young Alexander Graham Bell, demonstrating the transfer of human voice through wires.
+The biggest draws could safely be said to be mechanical inventions: displays of steam engines, the world's Remington Typographic Machine (typewriter), and precision watches, to name a few. Yet the age of electricity was just around the corner, and electrical contraptions were also on display. In a modest area across the Machinery Hall sat a young Alexander Graham Bell, demonstrating the transfer of human voice through wires.
 
-People viewed early telephone prototypes as a kind of toy, not a serious technological contender to the business-oriented telegraph empire of Western Union. That perception was not just short-sightedness; these prototypes were limited in their range, typically connecting just two adjacent rooms, and it was not obvious at first that the technology could be improved upon to rival the telegraph network. Yet once it became clear that longer-distance telephony was possible, it did not take long for commercial telephony to develop, beginning a relatively rapid shift in power away from the well-established Western Union and instead towards AT\&T, then a small start-up corporation that would come to define the telecommunications industry in the United States for a century.
+People viewed early telephone prototypes as a kind of toy, not a serious contender to the business-oriented telegraph empire of Western Union. That perception was due in part to the fact that prototypes at the time were limited in their range, typically connecting just two adjacent rooms, and it was not obvious at first that the technology could scale to rival the telegraph network. Yet once it became clear that longer-distance telephony was possible, it did not take long for commercial telephony to develop, beginning a rapid shift in power away from the well-established Western Union and instead towards AT\&T, then a small start-up corporation that would come to define the telecommunications industry in the United States for a century.
 
-In this part of the book, we will examine issues related to how the telephone works: what is sound, how is an analog signal transmitted over a wire, how to build a telephone, how to build a telephone network, what infrastructure allowed AT\&T to provide telephone access to the vast majority of Americans in their home, and how the regulatory landscape began to evolve as the telecommunications industry matured.
+In this part of the book, we will examine issues related to how the telephone works: what is sound, how is an analog signal transmitted over a wire, how to build a telephone, how to build a telephone network. We will also examine some historical and social issues, related to how the regulatory landscape began to evolve in the United States as the telecommunications industry matured.
 
-Given that our ultimate goal is understanding the Internet and not the telephone network, we will NOT attempt to follow each step of the historical evolution of the telephone, nor describe every aspect of a real-world telephone system, which is extremely complex as you might imagine. For readers interested in developing deeper knowledge of telephony, I recommend [INSERT BOOK REC]
+Given that our ultimate goal is understanding the Internet and not the telephone network, we will NOT attempt to follow each step of the complex  historical evolution of the telephone, nor describe every aspect of a real-world telephone system, which is extremely complicated as you might imagine. For readers interested in developing deeper knowledge of telephony, I recommend [INSERT BOOK REC].
 
 \chapter{Signals}
 
-In the previous chapter, we studied symbols quite extensively, emphasizing the transmission of symbols from one location to another as a \emph{digital} telecommunication system. In contrast to representing information as a series of discrete symbols, information can also be presented in an \emph{analog} fashion, in which a variable might take on an infinite number of values over time. Early telephone systems represented human society's first foray into an analog telecommunication technology, allowing sound to be transmitted from one location to another.
+In the previous chapter, we studied symbols quite extensively, emphasizing the transmission of symbols from one location to another as a \emph{digital} telecommunication system. In contrast to representing information as a series of discrete symbols, information can also be presented in an \emph{analog} fashion via \emph{signals}, in which a variable might take on an infinite number of values over time. Early telephone systems represented human society's first foray into an analog telecommunication technology, allowing sound to be transmitted from one location to another.
 
 \section{Sound}
 
@@ -62,7 +62,7 @@ The wave is a \emph{longitudinal} wave, meaning it does not have the peaks and t
 \includegraphics[width=0.8\linewidth]{longvstransvwave}
 \end{figure}
 
-As a first approximation towards understanding sound, imagine a nuclear explosion at the moment the tree strikes the ground, except that instead of an outwardly expanding sphere of fire, there is an outwardly expanding sphere where air particles are more tightly bunched together for a split second. This momentary compression of air particles constitutes a change in \emph{air pressure} in that location.
+As a first approximation towards understanding sound, imagine a large explosion at the moment the tree strikes the ground, except that instead of an outwardly expanding sphere of fire, there is an outwardly expanding sphere where air particles are more tightly bunched together for a split second. This momentary compression of air particles constitutes a change in \emph{air pressure} in that location.
 
 As objects on Earth interact with each other, waves of pressure expand outward in the surrounding medium (in the example above, this medium is the air). These pressure changes often signal events that are important to an organism, like when something might eat it or when it might be able to eat something. Given the importance of this information for survival, many species including humans evolved auditory systems to make sense of the constantly and subtly changing air pressure all around us; we call our experience of this phenomena \emph{hearing}. And in parallel to the development of our sense of hearing, we evolved increasingly sophisticated ways to create sound ourselves, culminating in vocal chords and speaking.
 
@@ -134,7 +134,7 @@ Sometimes functions can be described easily, like ``FavoritePet'' or the functio
 
 Other times functions cannot be described easily at all but instead are simply a random-looking mapping from the domain to the co-domain. In this case, the only way to give a full description of the function is to give it's value for every single input object, a task that is sometimes provably impossible when there are an infinite number of input objects. But even in these cases, the functions themselves are valid in a mathematical sense, even if they defy easy description or understanding.
 
-Domains or co-domains might be multi-dimensional spaces. For example, a function $f: \mathbb{N}^{3} \rightarrow \mathbb{N}$ would map triplets like $(4,5,1)$ to natural numbers like $17774$. Domains and co-domains can also be discrete, like the natural numbers. Or they can be continuous, like pitch, or time.
+Domains or co-domains might be multi-dimensional spaces. For example, a function $f: \mathbb{N}^{3} \rightarrow \mathbb{N}$ would map triplets like $(4,5,1)$ to natural numbers like $17774$. Domains and co-domains can also be discrete, like the natural numbers. Or they can be continuous, in that they range over a continuous variable such as time. [FOOTNOTE: the mathematical definition of a continuous variable is subtle, but an approximation is the notion of \emph{density}: for a variable A, and any values $x$, $y$ that can be taken on by $A$ such that $x < y$, there is a value $z$ that the variable $A$ can take on and $x < z < y$. Exercise: show that this property does NOT hold for the natural numbers $\mathbb{N}$.]
 
 How does this discussion of functions relate to the plots of sound waves above? It turns out that that familiar plot along an x and y axis is a representation of a function, where the x axis is the domain and the y axis is the co-domain.
 
@@ -226,7 +226,7 @@ We will see how the telephone accomplishes this shortly, but first let us turn o
 
 We have already covered basic symbolic systems, and the fact that any symbolic representation of information is interchangeable [ADD NAME FOR THIS THEOREM?]. But what happens when the information we care about is an analog function over time like the human voice that cannot be easily represented as a set of symbols?
 
-In this case, we are instead dealing with a \emph{signal}. While there is no standard definition of a signal, for our purposes, we can consider it to be a function where the domain is time, and the co-domain is a continuous variable that bears information. This definition allows us to abstract away the function that contains information from the particular medium upon which it resides. So, for example, we can consider the speech waveform above and its translation into electrical current to both be different representations of the same signal.
+In this case, we are instead dealing with a \emph{signal}. While there is no standard definition of a signal, for our purposes let us consider it to be a function where the domain is time, and the co-domain is a continuous variable that bears information. This definition allows us to abstract away the function that contains information from the particular medium upon which it resides. So, for example, we can consider the speech waveform above and its translation into electrical current to both be different representations of the same signal.
 
 So far we have looked at a speech signal, and the signal produced by a tree hitting the ground. What about the sound of a C note that does not vary in pitch or intensity? You might expect the signal associated with such a uniform sound to look like the function that graphs pitch over time:
 
@@ -296,13 +296,13 @@ In this chapter, we will work towards building a telephone. It is worth mentioni
 
 \section{Ohm's Law}
 
-Before we can build a telephone, we need to understand a bit more about electricity. The most important principle is called Ohm's Law:
+Before we can build a telephone, we need to understand a bit more about electricity. The most important principle for the purpose of building simple electrical circuitry is called Ohm's Law:
 
 \[ I = V/R \]
 
-In the equation above, the term $I$ represents electrical \emph{current}. This is a measure of the ``flow'' of the electricity through the circuit, analogous to the amount of water that might flow through a pipe system per second. And just we might choose a unit such as liters per second to describe the flow of water, a popular unit of measurement for electrical current is [INSERT]
+In the equation above, the term $I$ represents electrical \emph{current}. This is a measure of the ``flow'' of the electricity through the circuit, analogous to the amount of water that might flow through a pipe system per second. It can be measured. Just we might choose a unit such as liters per second to describe the flow of water, a popular unit of measurement for electrical current is \emph{amperes (amps)}.
 
-The term $V$ in the equation above represents \emph{voltage}. Borrowing from the popular explanatory analogy to a water pipe, the voltage would be analogous to the pressure of the pipe. Just as increasing the water pressure would increase the number of gallons per second flowing through the pipe system, so too an increase in voltage corresponds to a proportional increase in current.
+The term $V$ in the equation above represents \emph{voltage}. Borrowing from the popular explanatory analogy to a water pipe, the voltage would be analogous to the pressure of the pipe. Just as increasing the water pressure would increase the number of gallons per second flowing through the pipe system, so too an increase in voltage corresponds to a proportional increase in current. The voltage is measured in \emph{volts}.
 
 The final term $R$ stands for \emph{resistance}.
 
@@ -310,7 +310,9 @@ IAMHERE
 
 \section{Electrical components}
 
-Before we build a telephone, let's take stock of what electrical components we have at our disposal and formalize our electrical circuit diagrams a bit. We have already met the \emph{relay}, the \emph{power source} (e.g. a battery).
+Before we build a telephone, let's take stock of what electrical components we have at our disposal and formalize our electrical circuit diagrams a bit. We have already met the \emph{relay}, the \emph{switch} and the \emph{power source} (e.g. a battery). Here is how these components are typically represented in circuit diagrams:
+
+[INSERT IMAGES]
 
 \section{A one-way telephone}
 
