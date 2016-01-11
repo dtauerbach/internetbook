@@ -34,17 +34,19 @@
 
 In 1876, to celebrate the centennial of the Declaration of Independence, the United states hosted its first World's Fair in Philadelphia. The event lasted several months, thirty-seven countries participated, and nearly 10 million visitors attended.
 
-The biggest draws could safely be said to be mechanical inventions: displays of steam engines, the world's Remington Typographic Machine (typewriter), and precision watches, to name a few. Yet the age of electricity was just around the corner, and electrical contraptions were also on display. In a modest area across the Machinery Hall sat a young Alexander Graham Bell, demonstrating the transfer of human voice through wires.
+The biggest draws were mechanical inventions: displays of steam engines, the world's Remington Typographic Machine (the first typewriter), and precision watches, to name a few. Yet the age of electricity was just around the corner, and electrical contraptions were also on display. In a modest area across the Machinery Hall sat a young Alexander Graham Bell, demonstrating the transfer of human voice through wires.
 
-People viewed early telephone prototypes as a kind of toy, not a serious contender to the business-oriented telegraph empire of Western Union. That perception was due in part to the fact that prototypes at the time were limited in their range, typically connecting just two adjacent rooms, and it was not obvious at first that the technology could scale to rival the telegraph network. Yet once it became clear that longer-distance telephony was possible, it did not take long for commercial telephony to develop, beginning a rapid shift in power away from the well-established Western Union and instead towards AT\&T, then a small start-up corporation that would come to define the telecommunications industry in the United States for a century.
+People viewed early telephone prototypes like the one on display by Bell as a kind of toy, not a serious contender to the business-oriented telegraph empire of Western Union. That perception was due in part to the fact that prototypes at the time were limited in their range, typically connecting just two adjacent rooms, and it was not obvious at first that the technology could scale to rival the telegraph network. Yet once it became clear that longer-distance telephony was possible, it did not take long for commercial telephony to develop, seeded by Bell and his collaborators. Once off the ground, there was a rapid shift in power away from the well-established Western Union and instead towards the upstart corporation that would become AT\&T, a telecommunications giant that would come to define the industry in the United States for a century.
 
-In this part of the book, we will examine issues related to how the telephone works: what is sound, how is an analog signal transmitted over a wire, how to build a telephone, how to build a telephone network. We will also examine some historical and social issues, related to how the regulatory landscape began to evolve in the United States as the telecommunications industry matured.
+In this part of the book, we will examine how the telephone works: what is sound? how is an analog signal transmitted over a wire? To understand telephony, we will go step by step through the process of building a telephone from scratch, and then outline the key insights required to build a telephone network. In addition to learning about the technology, we will also examine some historical and social issues related to how the regulatory landscape began to evolve in the United States as the telecommunications industry matured.
 
-Given that our ultimate goal is understanding the Internet and not the telephone network, we will NOT attempt to follow each step of the complex  historical evolution of the telephone, nor describe every aspect of a real-world telephone system, which is extremely complicated as you might imagine. For readers interested in developing deeper knowledge of telephony, I recommend [INSERT BOOK REC].
+Given that our ultimate goal is understanding the Internet and not the telephone network, we will NOT attempt to follow each step of the complex historical evolution of the telephone, nor describe every aspect of a real-world telephone system, which is of course extremely complicated. For readers interested in developing deeper knowledge of telephony, I recommend [INSERT BOOK REC].
 
 \chapter{Signals}
 
-In the previous chapter, we studied symbols quite extensively, emphasizing the transmission of symbols from one location to another as a \emph{digital} telecommunication system. In contrast to representing information as a series of discrete symbols, information can also be presented in an \emph{analog} fashion via \emph{signals}, in which a variable might take on an infinite number of values over time. Early telephone systems represented human society's first foray into an analog telecommunication technology, allowing sound to be transmitted from one location to another.
+In the previous chapter, we studied symbols quite extensively, emphasizing the transmission of symbols from one location to another as a \emph{digital} telecommunication system. In contrast to representing information as a series of discrete symbols, information can also be presented in an \emph{analog} fashion via \emph{signals}, in which a variable might take on an infinite number of values over time. Recall that such a variable is called \emph{continous}. A few examples of continuous variables are time, pitch, temperature, human height.
+
+Early telephone systems represented human society's first foray into an analog telecommunication technology, allowing sound to be transmitted from one location to another, and so we will use this a natural jumping off point to understand analog signals.
 
 \section{Sound}
 
@@ -62,11 +64,11 @@ The wave is a \emph{longitudinal} wave, meaning it does not have the peaks and t
 \includegraphics[width=0.8\linewidth]{longvstransvwave}
 \end{figure}
 
-As a first approximation towards understanding sound, imagine a large explosion at the moment the tree strikes the ground, except that instead of an outwardly expanding sphere of fire, there is an outwardly expanding sphere where air particles are more tightly bunched together for a split second. This momentary compression of air particles constitutes a change in \emph{air pressure} in that location.
+As a first approximation towards understanding sound, imagine a large explosion at the moment the tree strikes the ground, except that instead of an outwardly expanding sphere of fire, there is an outwardly expanding sphere where air particles are more tightly bunched together for perhaps a second or less. This momentary compression of air particles constitutes a change in \emph{air pressure} in that location.
 
 As objects on Earth interact with each other, waves of pressure expand outward in the surrounding medium (in the example above, this medium is the air). These pressure changes often signal events that are important to an organism, like when something might eat it or when it might be able to eat something. Given the importance of this information for survival, many species including humans evolved auditory systems to make sense of the constantly and subtly changing air pressure all around us; we call our experience of this phenomena \emph{hearing}. And in parallel to the development of our sense of hearing, we evolved increasingly sophisticated ways to create sound ourselves, culminating in vocal chords and speaking.
 
-The simplified description above of a tree falling might lead one who is unfamiliar with hearing to believe that there is only a single, uniform experience of a sound, but of course that's not the case. Sound has many different qualities, like pitch, intensity, duration, and timbre. It is quite easy to tell the singing of a friend from the sound of a tree hitting the ground. This differentiation is possible because sound waves can be rather sophisticated, the miniscule air particles compressing and un-compressing in non-uniform ways over very small distance and time scales.
+The simplified description above of a tree falling might lead one who is unfamiliar with hearing to believe that there is only a single, uniform experience of a sound, but of course that's not the case. Sound has many different qualities, like pitch, intensity, duration, and timbre. It is quite easy to tell the singing of a friend from the sound of a tree hitting the ground. This differentiation is possible because sound waves can be rather sophisticated, the miniscule air particles compressing and un-compressing in non-uniform ways over very small distance and time scales. In particular, as we will see, a single moment of the bunching of air particles is NOT detectable by our ears. Instead,we pick up on very rapid compression and un-compression that forms a wave pattern and occurs as the result of a vibration. [IAMHERE THIS NEEDS WORK]
 
 To illustrate these differences, here is a representation of the sound of a tree falling:
 
@@ -176,9 +178,11 @@ Above, we saw examples of functions that represented sound. Here again is our ti
 \includegraphics[width=0.8\linewidth]{shakespeare_speech}
 \end{figure}
 
-As we have seen, this is just a function in which the domain is time and the co-domain is air pressure. The information in the figure above is enough to create a sound that we would recognize as speech. In order for telephony to be possible, we need a way to continuously transmit the information of the sound waveform from one location to another, farther and faster than via sound waves.
+As we have seen, this is just a function in which the domain is time and the co-domain is air pressure. The information in the figure above is enough to create a sound that we would recognize as speech. In order for telephony to be possible, we need a way to continuously transmit the information of the sound waveform from one location to another, farther and faster than we could via sound waves (in other words, by just shouting).
 
-An electrical wire does not contain air particles that can be compressed and uncompressed, but it does have other properties that can be varied continuously over time. In particular, the current flowing through a wire can increase and decrease. In the case of the telegraph, the current was on or off, resulting in a function of electrical signal over time that might look something like this:
+An electrical wire does not contain air particles that can be compressed and uncompressed, but it does have other properties that can be varied continuously over time. In particular, the current flowing through a wire can increase and decrease.
+
+Let's go back to the telegraph for a moment. In the case of the telegraph, the current was on or off, resulting in a function of electrical signal over time that might look something like this:
 
 \begin{tikzpicture}
 \pgfplotstableread{
@@ -213,6 +217,8 @@ An electrical wire does not contain air particles that can be compressed and unc
 \addlegendentry{$\thickdot \thickdash \thickdot$}
 \end{axis}
 \end{tikzpicture}
+
+(In reality, the telegraph signal was distorted by the time it was received and so did not look quite so clean, but conceptually this was the signal being sent.)
 
 The telephone, in contrast, has to solve the more difficult problem of reproducing the information of the speech waveform above via changes over time to electrical current.
 
@@ -268,7 +274,7 @@ As such, tones are distinguished by their frequency and higher-frequency sound w
 
 Given the sensitivity of the human auditory system to small oscillating vibrations, our vocal chords evolved to make sound by creating vibrating sinusoidal sound waves, but we are not single-note rookies. We have mastery over creating these sinusoidal waves and can start, stop, and move up and down quickly between different frequency waves with ease, allowing the incredible feat of human speech.
 
-It may not seem like the speech waveform displayed above is made up of sinusoidal components, but that is only because of how sophisticated our mastery is over combining adjusting different frequencies. Here is a zoomed in look at a section of the waveform over a very small time slice:
+It may not seem like the speech waveform displayed above is made up of sinusoidal components, but that is only because we have a sophisticated innate mastery over producing sounds, combining and adjusting different frequencies. Here is a zoomed in look at a section of the waveform over a very small time slice:
 
 [SHOW SECTION OVER SMALL TIME SLICE]
 
@@ -286,17 +292,21 @@ But even now the answer is far from straight forward. A completely uniform sound
 
 \chapter{How A Telephone Works}
 
-The telephone transforms a sound signal into an electrical signal and back again. It was not the only device in the late 1800s that sought to gain a sort of mastery over sound.
+The telephone transforms a sound signal into an electrical signal and back again. It was not the only analog device in the late 1800s that sought to manipulate sound in new ways.
 
 The phonograph was invented in 1877 and was the original technology in a line that continued with record players, cassette tapes players, CD players, and MP3 players. [FOOTNOTE: it seems this line of technology may have been subsumed by more general purpose desktop and mobile computers in the last 5 years or so]. The phonograph was aimed at solving a dual problem to the telephone, in that it needed to capture a sound signal somehow. The difference is that once captured, instead of the moving the sound signal quickly over a long distance, the phonograph was instead tasked with creating a physical object from which the sound could be later retrieved, a record. Early phonographs used a circular disk as the record, and a sound signal was captured by deviations in a spiral groove. [MORE HERE?]
 
 [DIAGRAM OF TELEPHONE VS PHONOGRAPH]
 
-In this chapter, we will work towards building a telephone. It is worth mentioning that the telephone we build is not historical, nor does it do justice to the incredible complexity of the telephone system in even the early 20th century. However, our goal of developing a solid conceptual understanding of the basics of telephony, and so deliberate choices have been made to stick to the simple core concepts, borrowing freely from different historical periods to offer the simplest version for readers who are new to telephony. [REMOVE OR REWORK THIS PARAGRAPH]
+In this chapter, we will work towards building a telephone. It is worth mentioning that the telephone we build is not historical, nor does it do justice to the incredible complexity of the telephone system in even the early 20th century. Instead, deliberate choices have been made to stick to the simple core concepts, borrowing freely from different historical periods to offer the simplest version for readers who are new to telephony, in keeping with the goal of developing a solid conceptual understanding of the technology.
 
 \section{Ohm's Law}
 
-Before we can build a telephone, we need to understand a bit more about electricity. The most important principle for the purpose of building simple electrical circuitry is called Ohm's Law:
+Before we can build a telephone, we need to understand a bit more about electricity. The most important principle for the purpose of building simple electrical components and devices is called Ohm's Law, an empirical law discovered in the early 19th century. To motivate Ohm's law, note that there are two critically important electrical quantities that we can measure whenever electricity is flowing through a system.
+
+[IAMHERE]
+
+
 
 \[ I = V/R \]
 
