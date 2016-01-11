@@ -304,19 +304,21 @@ In this chapter, we will work towards building a telephone. It is worth mentioni
 
 Before we can build a telephone, we need to understand a bit more about electricity. The most important principle for the purpose of building simple electrical components and devices is called Ohm's Law, an empirical law discovered in the early 19th century. To motivate Ohm's law, note that there are two critically important electrical quantities that we can measure whenever electricity is flowing through a system.
 
-[IAMHERE]
+The first quantity is the electrical \emph{current}, commonly abbreviated $I$ in the field of electrical engineering. This is a measure of the ``flow'' of the electricity through the circuit, analogous to the amount of water that might flow through a pipe system per second. Electrical current can be measured using a device called a \emph{galvanometer}: a magnetic compass needle is deflected more or less depending on how much current is flowing through a wire. Just as we might choose a unit such as liters per second to describe the flow of water, a popular unit of measurement for electrical current is \emph{amperes (amps)}.
 
+The second quantity of interest is called \emph{voltage}, abbreviated $V$. Borrowing again from the popular explanatory analogy to a water pipe, the voltage would be analogous to the pressure of the pipe. The voltage is measured in \emph{volts}, and can be measured independently of current, with the details of measurement depending on the type of circuit being used.
 
+What is the relationship between current and voltage? That is the question that Georg Ohm set out to answer. Just as increasing the water pressure would increase the number of gallons per second flowing through the pipe system, so too an increase in voltage corresponds to a proportional increase in current. But until experiments are performed, the nature of this relationship is unclear. Ohm did the science: he formed a circuit with some copper wire, varied the voltage, and measured the current. He did this with different wires of different thicknesses (the \emph{gauge} of a wire is a standard measurement of diameter or, equivalently, cross sectional area). What he determined was that for any given wire, $I$ was linearly proportional to $V$. The constant changed from one length of wire to another, however.
 
-\[ I = V/R \]
+Here is a fake example illustrating the sorts of calculations that Ohm performed almost 200 years ago:
 
-In the equation above, the term $I$ represents electrical \emph{current}. This is a measure of the ``flow'' of the electricity through the circuit, analogous to the amount of water that might flow through a pipe system per second. It can be measured. Just we might choose a unit such as liters per second to describe the flow of water, a popular unit of measurement for electrical current is \emph{amperes (amps)}.
+[INSERT CHARTS]
 
-The term $V$ in the equation above represents \emph{voltage}. Borrowing from the popular explanatory analogy to a water pipe, the voltage would be analogous to the pressure of the pipe. Just as increasing the water pressure would increase the number of gallons per second flowing through the pipe system, so too an increase in voltage corresponds to a proportional increase in current. The voltage is measured in \emph{volts}.
+How do we make sense of this data? Once we posit that each length of wire, or electrical component has a specific internal electrical \emph{resistance} then ALL of the data above can be condensed into a simple equation:
 
-The final term $R$ stands for \emph{resistance}.
+$I = V/R$
 
-IAMHERE
+The final term $R$ stands for \emph{resistance}, and is the property of a particular electrical component.
 
 \section{Electrical components}
 
