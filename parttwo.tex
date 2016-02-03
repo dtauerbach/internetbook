@@ -36,7 +36,7 @@ In 1876, to celebrate the centennial of the Declaration of Independence, the Uni
 
 The biggest draws were mechanical inventions: displays of steam engines, the world's Remington Typographic Machine (the first typewriter), and precision watches, to name a few. Yet the age of electricity was just around the corner, and electrical contraptions were also on display. In a modest area across the Machinery Hall sat a young Alexander Graham Bell, demonstrating the transfer of human voice through wires.
 
-People viewed early telephone prototypes like the one on display by Bell as a kind of toy, not a serious contender to the business-oriented telegraph empire of Western Union. That perception was due in part to the fact that prototypes at the time were limited in their range, typically connecting just two adjacent rooms, and it was not obvious at first that the technology could scale to rival the telegraph network. Yet once it became clear that longer-distance telephony was possible, it did not take long for commercial telephony to develop, seeded by Bell and his collaborators. Once off the ground, there was a rapid shift in power away from the well-established Western Union and instead towards the upstart corporation that would become AT\&T, a telecommunications giant that would come to define the industry in the United States for a century.
+People viewed early telephone prototypes like the one on display by Bell as a kind of toy, not a serious contender to the business-oriented telegraph empire of Western Union. But as the viability of the telephone grew, that perception changed quickly and it did not take long for commercial telephony to develop, seeded by Bell and his collaborators. Once off the ground, there was a rapid shift in power away from the well-established Western Union and instead towards the upstart corporation that would become AT\&T, a telecommunications giant that would come to define the industry in the United States for a century.
 
 In this part of the book, we will examine how the telephone works: what is sound? how is an analog signal transmitted over a wire? To understand telephony, we will go step by step through the process of building a telephone from scratch, and then outline the key insights required to build a telephone network. In addition to learning about the technology, we will also examine some historical and social issues related to how the regulatory landscape began to evolve in the United States as the telecommunications industry matured.
 
@@ -46,7 +46,7 @@ Given that our ultimate goal is understanding the Internet and not the telephone
 
 In the previous chapter, we studied symbols quite extensively, emphasizing the transmission of symbols from one location to another as a \emph{digital} telecommunication system. In contrast to representing information as a series of discrete symbols, information can also be presented in an \emph{analog} fashion via \emph{signals}, in which a variable might take on an infinite number of values over time. Recall that such a variable is called \emph{continous}. A few examples of continuous variables are time, pitch, temperature, human height.
 
-Early telephone systems represented human society's first foray into an analog telecommunication technology, allowing sound to be transmitted from one location to another, and so we will use this a natural jumping off point to understand analog signals.
+Early telephone systems represented human society's first foray into an analog telecommunication technology, allowing sound to be transmitted from one location to another, and so we will use sound a natural jumping off point to understand analog signals.
 
 \section{Sound}
 
@@ -68,7 +68,7 @@ As a first approximation towards understanding sound, imagine a large explosion 
 
 As objects on Earth interact with each other, waves of pressure expand outward in the surrounding medium (in the example above, this medium is the air). These pressure changes often signal events that are important to an organism, like when something might eat it or when it might be able to eat something. Given the importance of this information for survival, many species including humans evolved auditory systems to make sense of the constantly and subtly changing air pressure all around us; we call our experience of this phenomena \emph{hearing}. And in parallel to the development of our sense of hearing, we evolved increasingly sophisticated ways to create sound ourselves, culminating in vocal chords and speaking.
 
-The simplified description above of a tree falling might lead one who is unfamiliar with hearing to believe that there is only a single, uniform experience of a sound, but of course that's not the case. Sound has many different qualities, like pitch, intensity, duration, and timbre. It is quite easy to tell the singing of a friend from the sound of a tree hitting the ground. This differentiation is possible because sound waves can be rather sophisticated, the miniscule air particles compressing and un-compressing in non-uniform ways over very small distance and time scales. In particular, as we will see, a single moment of the bunching of air particles is NOT detectable by our ears. Instead,we pick up on very rapid compression and un-compression that forms a wave pattern and occurs as the result of a vibration. [IAMHERE THIS NEEDS WORK]
+The simplified description above of a tree falling might lead one who is unfamiliar with hearing to believe that there is only a single, uniform experience of a sound, but of course that's not the case. Sound has many different qualities, like pitch, intensity, duration, and timbre. It is quite easy to tell the soulful barotone of a friend from the sound of a tree hitting the ground. This differentiation is possible because sound waves can be rather sophisticated, the miniscule air particles compressing and un-compressing in non-uniform ways over very small distance and time scales.
 
 To illustrate these differences, here is a representation of the sound of a tree falling:
 
@@ -218,11 +218,9 @@ Let's go back to the telegraph for a moment. In the case of the telegraph, the c
 \end{axis}
 \end{tikzpicture}
 
-(In reality, the telegraph signal was distorted by the time it was received and so did not look quite so clean, but conceptually this was the signal being sent.)
+(In reality, the telegraph signal was distorted by the time it was received and so did not look quite so clean, but this serves as an idealized representation of the signal being sent and received. We will discuss distortions later on.)
 
-The telephone, in contrast, has to solve the more difficult problem of reproducing the information of the speech waveform above via changes over time to electrical current.
-
-[INSERT IMAGE OF WAVEFORM ABOVE BUT AS CURRENT]
+The telephone, in contrast, has to solve the more difficult problem of translating an incoming speech waveform into an electrical signal and then back into a sound signal on the other end of the line.
 
 [CHART OF CONCEPTUAL OUTLINE OF TELEPHONE]
 
@@ -232,15 +230,41 @@ We will see how the telephone accomplishes this shortly, but first let us turn o
 
 We have already covered basic symbolic systems, and the fact that any symbolic representation of information is interchangeable [ADD NAME FOR THIS THEOREM?]. But what happens when the information we care about is an analog function over time like the human voice that cannot be easily represented as a set of symbols?
 
-In this case, we are instead dealing with a \emph{signal}. While there is no standard definition of a signal, for our purposes let us consider it to be a function where the domain is time, and the co-domain is a continuous variable that bears information. This definition allows us to abstract away the function that contains information from the particular medium upon which it resides. So, for example, we can consider the speech waveform above and its translation into electrical current to both be different representations of the same signal.
+In this case, we are instead dealing with a \emph{signal}. While there is no standard definition of a signal, for our purposes let us consider it to be a function where the domain is time, and the co-domain is a continuous variable that bears information. This definition allows us to abstract away the information from the particular medium in which it resides. So, for example, we can consider the speech waveform above and its translation into electrical current to both be different representations of the same signal.
 
 So far we have looked at a speech signal, and the signal produced by a tree hitting the ground. What about the sound of a C note that does not vary in pitch or intensity? You might expect the signal associated with such a uniform sound to look like the function that graphs pitch over time:
 
-[STRAIGHT LINE]
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $x$,
+    ylabel = {$f(x)$},
+]
+\addplot [
+    domain=-1:5,
+    samples=100,
+    color=black,
+]
+{2};
+\end{axis}
+\end{tikzpicture}
 
 However, a single C note in fact is a signal that looks like this:
 
-[SINE WAVE]
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $x$,
+    ylabel = {$f(x)$},
+]
+\addplot [
+    domain=-1:5,
+    samples=1000,
+    color=black,
+]
+{sin(x)};
+\end{axis}
+\end{tikzpicture}
 
 This signal is \emph{periodic}. This very simple periodic function is sometimes called a \emph{sine wave}, corresponding to the trigonometric sinusoidal function. [ADD FOOTNOTE EXPLANATION OF SINE?]. Most sound signals, including signals corresponding to voices, are actually a composition of many such periodic signals.
 
@@ -308,7 +332,7 @@ The first quantity is the electrical \emph{current}, commonly abbreviated $I$ in
 
 The second quantity of interest is called \emph{voltage}, abbreviated $V$. Borrowing again from the popular explanatory analogy to a water pipe, the voltage would be analogous to the pressure of the pipe. The voltage is measured in \emph{volts}, and can be measured independently of current, with the details of measurement depending on the type of circuit being used.
 
-What is the relationship between current and voltage? That is the question that Georg Ohm set out to answer. Just as increasing the water pressure would increase the number of gallons per second flowing through the pipe system, so too an increase in voltage corresponds to a proportional increase in current. But until experiments are performed, the nature of this relationship is unclear. Ohm did the science: he formed a circuit with some copper wire, varied the voltage, and measured the current. He did this with different wires of different thicknesses (the \emph{gauge} of a wire is a standard measurement of diameter or, equivalently, cross sectional area). What he determined was that for any given wire, $I$ was linearly proportional to $V$. The constant changed from one length of wire to another, however.
+What is the relationship between current and voltage? That is the question that Georg Ohm set out to answer. Just as increasing the water pressure would increase the number of gallons per second flowing through the pipe system, so too an increase in voltage corresponds to a proportional increase in current. But until experiments are performed, the nature of this relationship is unclear. Ohm did the experimentation: he formed a circuit with some copper wire, varied the voltage, and measured the current. He did this with different wires of different thicknesses (the \emph{gauge} of a wire is a standard measurement of diameter or, equivalently, cross sectional area). What he determined was that for any given wire, $I$ was proportional to $V$. In other words, for a given wire $I = C \dot V$ for some wire-specific constant $C$. This constant changed from wire to wire.
 
 Here is a fake example illustrating the sorts of calculations of these quantities that Ohm performed almost 200 years ago that led us to Ohm's law:
 
@@ -330,7 +354,9 @@ A resistor is a component intended to provide electrical resistance and is writt
 
 [RESISTOR]
 
-A capacitor is a new [IAMHERE]
+A capacitor is another important electrical component
+
+[CAPACITOR]
 
 At this stage of the book, it might be worth investing in an electronics starter kit to give you a hands on feel for building an electrical system.
 
