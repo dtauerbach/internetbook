@@ -38,15 +38,15 @@ The biggest draws were mechanical inventions: displays of steam engines, the wor
 
 People viewed early telephone prototypes like the one on display by Bell as a kind of toy, not a serious contender to the business-oriented telegraph empire of Western Union. But as the viability of the telephone grew, that perception changed quickly and it did not take long for commercial telephony to develop, seeded by Bell and his collaborators. Once off the ground, there was a rapid shift in power away from the well-established Western Union and instead towards the upstart corporation that would become AT\&T, a telecommunications giant that would come to define the industry in the United States for a century.
 
-In this part of the book, we will examine how the telephone works: what is sound? how is an analog signal transmitted over a wire? To understand telephony, we will go step by step through the process of building a telephone from scratch, and then outline the key insights required to build a telephone network. In addition to learning about the technology, we will also examine some historical and social issues related to how the regulatory landscape began to evolve in the United States as the telecommunications industry matured.
+In this part of the book, we will examine how the telephone works: what is sound? how is an analog signal transmitted over a wire? To understand telephony, we will go step by step through the process of building a telephone from scratch, and then outline the key insights required to build a telephone network. In addition to learning about the technology, we will also examine some historical and social issues related to the emergence of the modern telecommunications industry.
 
-Given that our ultimate goal is understanding the Internet and not the telephone network, we will NOT attempt to follow each step of the complex historical evolution of the telephone, nor describe every aspect of a real-world telephone system, which is of course extremely complicated. For readers interested in developing deeper knowledge of telephony, I recommend [INSERT BOOK REC].
+Given that our ultimate goal is understanding the Internet and not the telephone network, we will NOT attempt to follow each step of the complex historical evolution of the telephone, nor describe every aspect of a real-world telephone system, which as you might guess is quite complex. For readers interested in developing deeper knowledge of telephony, I recommend [INSERT BOOK REC].
 
 \chapter{Signals}
 
 In the previous chapter, we studied symbols quite extensively, emphasizing the transmission of symbols from one location to another as a \emph{digital} telecommunication system. In contrast to representing information as a series of discrete symbols, information can also be presented in an \emph{analog} fashion via \emph{signals}, in which a variable might take on an infinite number of values over time. Recall that such a variable is called \emph{continous}. A few examples of continuous variables are time, pitch, temperature, human height.
 
-Early telephone systems represented human society's first foray into an analog telecommunication technology, allowing sound to be transmitted from one location to another, and so we will use sound a natural jumping off point to understand analog signals.
+Early telephone systems represented human society's first foray into an analog telecommunication technology, allowing sound to be transmitted from one location to another, and so we will use sound as a natural jumping off point to understand analog signals.
 
 \section{Sound}
 
@@ -64,11 +64,11 @@ The wave is a \emph{longitudinal} wave, meaning it does not have the peaks and t
 \includegraphics[width=0.8\linewidth]{longvstransvwave}
 \end{figure}
 
-As a first approximation towards understanding sound, imagine a large explosion at the moment the tree strikes the ground, except that instead of an outwardly expanding sphere of fire, there is an outwardly expanding sphere where air particles are more tightly bunched together for perhaps a second or less. This momentary compression of air particles constitutes a change in \emph{air pressure} in that location.
+As a first approximation towards understanding sound, imagine a large explosion at the moment the tree strikes the ground, except that instead of an outwardly expanding sphere of fire, there is an outwardly expanding sphere where air particles are more tightly bunched together. This momentary compression of air particles constitutes a change in \emph{air pressure} in that location.
 
-As objects on Earth interact with each other, waves of pressure expand outward in the surrounding medium (in the example above, this medium is the air). These pressure changes often signal events that are important to an organism, like when something might eat it or when it might be able to eat something. Given the importance of this information for survival, many species including humans evolved auditory systems to make sense of the constantly and subtly changing air pressure all around us; we call our experience of this phenomena \emph{hearing}. And in parallel to the development of our sense of hearing, we evolved increasingly sophisticated ways to create sound ourselves, culminating in vocal chords and speaking.
+As objects on Earth interact with each other, waves of pressure expand outward in the surrounding medium (in the example above, this medium is the air). These pressure changes often signal events that are important to an organism, like when something is approaching an organism that could be either a predator or food. Given the importance of this information for survival, many species including humans evolved auditory systems to make sense of the constantly and subtly changing air pressure all around us; we call our experience of this phenomena \emph{hearing}. And in parallel to the development of our sense of hearing, we evolved increasingly sophisticated ways to create sound ourselves, culminating in vocal chords and speaking.
 
-The simplified description above of a tree falling might lead one who is unfamiliar with hearing to believe that there is only a single, uniform experience of a sound, but of course that's not the case. Sound has many different qualities, like pitch, intensity, duration, and timbre. It is quite easy to tell the soulful barotone of a friend from the sound of a tree hitting the ground. This differentiation is possible because sound waves can be rather sophisticated, the miniscule air particles compressing and un-compressing in non-uniform ways over very small distance and time scales.
+The simplified description above of a tree falling might lead one who is unfamiliar with hearing to believe that there is only a single, uniform experience of a sound, but of course that's not the case. Sound has many different qualities, like pitch, intensity, duration, and timbre. It is quite easy to tell the soulful barotone of a jazz singer from the sound of a tree hitting the ground. This differentiation is possible because sound waves can be rather sophisticated, the miniscule air particles compressing and un-compressing in non-uniform ways over very small distance and time scales.
 
 To illustrate these differences, here is a representation of the sound of a tree falling:
 
@@ -88,7 +88,7 @@ The above figures are called \emph{time domain representations}: the x axis is t
 
 \section{Functions}
 
-The two figures above representing various sounds are examples of \emph{functions}, a central concept in mathematics.
+The two figures above representing various sounds are examples of \emph{functions}, a central concept in mathematics that's worth covering carefully, since we will be returning to it quite often.
 
 A function is a mapping from one set of objects to another:
 
@@ -171,7 +171,7 @@ We will return to functions quite often, so it is important to develop a sharp u
 
 \section{Speech on a wire: an analog approach}
 
-Above, we saw examples of functions that represented sound. Here again is our time domain representation of speech, also called a speech \emph{waveform}:
+Above, we saw examples of functions that represented sound. Here again is our time domain representation of speech, also called a \emph{waveform} of speech:
 
 \begin{figure}[H]
 \centering
@@ -180,7 +180,7 @@ Above, we saw examples of functions that represented sound. Here again is our ti
 
 As we have seen, this is just a function in which the domain is time and the co-domain is air pressure. The information in the figure above is enough to create a sound that we would recognize as speech. In order for telephony to be possible, we need a way to continuously transmit the information of the sound waveform from one location to another, farther and faster than we could via sound waves (in other words, by just shouting).
 
-An electrical wire does not contain air particles that can be compressed and uncompressed, but it does have other properties that can be varied continuously over time. In particular, the current flowing through a wire can increase and decrease.
+An electrical wire does not contain air particles that can be compressed and uncompressed, but it does have other properties that can be varied continuously over time. In particular, the current flowing through a wire can increase and decrease over time.
 
 Let's go back to the telegraph for a moment. In the case of the telegraph, the current was on or off, resulting in a function of electrical signal over time that might look something like this:
 
@@ -218,7 +218,7 @@ Let's go back to the telegraph for a moment. In the case of the telegraph, the c
 \end{axis}
 \end{tikzpicture}
 
-(In reality, the telegraph signal was distorted by the time it was received and so did not look quite so clean, but this serves as an idealized representation of the signal being sent and received. We will discuss distortions later on.)
+(This figure is an idealized version. In reality, the telegraph signal was distorted by the time it was received and so did not look quite so clean, but this serves as an idealized representation of the signal being sent and received. We will discuss distortions later on.)
 
 The telephone, in contrast, has to solve the more difficult problem of translating an incoming speech waveform into an electrical signal and then back into a sound signal on the other end of the line.
 
@@ -230,7 +230,7 @@ We will see how the telephone accomplishes this shortly, but first let us turn o
 
 We have already covered basic symbolic systems, and the fact that any symbolic representation of information is interchangeable [ADD NAME FOR THIS THEOREM?]. But what happens when the information we care about is an analog function over time like the human voice that cannot be easily represented as a set of symbols?
 
-In this case, we are instead dealing with a \emph{signal}. While there is no standard definition of a signal, for our purposes let us consider it to be a function where the domain is time, and the co-domain is a continuous variable that bears information. This definition allows us to abstract away the information from the particular medium in which it resides. So, for example, we can consider the speech waveform above and its translation into electrical current to both be different representations of the same signal.
+In this case, we are instead dealing with a \emph{signal}. While there is no universally agreed upon definition of a signal, for our purposes let us consider it to be a function in which the domain is time, and the co-domain is a continuous variable that bears information. This definition allows us to abstract away the information from the particular medium in which it resides. So, for example, we can consider the speech waveform above and its translation into electrical current to both be different representations of the same signal.
 
 So far we have looked at a speech signal, and the signal produced by a tree hitting the ground. What about the sound of a C note that does not vary in pitch or intensity? You might expect the signal associated with such a uniform sound to look like the function that graphs pitch over time:
 
@@ -292,7 +292,7 @@ The frequency of the function $sin(x)$ is $2\pi$ since that comprises a full rot
 
 The fact that this frequency is fairly high helps to explain why the experience of hearing an A note can appear monotone and uniform. Our auditory system is not designed to discern the individual peaks and troughs whizzing by, but rather to pick up on the frequency of oscillations.
 
-As such, tones are distinguished by their frequency and higher-frequency sound waves have a higher pitch, a fact also familiar to those familiar with music.
+As such, tones are distinguished by their frequency; higher-frequency sound waves have a higher pitch, a fact also familiar to those familiar with music.
 
 [IAMHERE, ADD functions for different pitches]
 
@@ -306,14 +306,6 @@ As it happens, the mathematics behind combining these sinusoidal signals is quit
 
 [ADD MORE HERE ABOUT COMBINING SIN WAVES ETC]
 
-\section{Information content and analog signals}
-
-How much information does a sound signal contain? Of course it's not fair to compare a hundred years of sounds to a millisecond, so to start to get a handle on the information content of a sound, let's fix our metric to be information \emph{per second}.
-
-But even now the answer is far from straight forward. A completely uniform sound intuitively has no information
-
-[IAMHERE]
-
 \chapter{How A Telephone Works}
 
 The telephone transforms a sound signal into an electrical signal and back again. It was not the only analog device in the late 1800s that sought to manipulate sound in new ways.
@@ -326,23 +318,27 @@ In this chapter, we will work towards building a telephone. It is worth mentioni
 
 \section{Ohm's Law}
 
-Before we can build a telephone, we need to understand a bit more about electricity. The most important principle for the purpose of building simple electrical components and devices is called Ohm's Law, an empirical law discovered in the early 19th century. To motivate Ohm's law, note that there are two critically important electrical quantities that we can measure whenever electricity is flowing through a system.
+Before embarking on a project to build any electrical device, it's important to understand a bit more about electricity. The most important principle for the purpose of building simple electrical components and devices is called Ohm's Law, an empirical law discovered in the early 19th century.
+
+To motivate Ohm's law, note that there are two critically important electrical quantities that we can measure whenever electricity is flowing through a system.
 
 The first quantity is the electrical \emph{current}, commonly abbreviated $I$ in the field of electrical engineering. This is a measure of the ``flow'' of the electricity through the circuit, analogous to the amount of water that might flow through a pipe system per second. Electrical current can be measured using a device called a \emph{galvanometer}: a magnetic compass needle is deflected more or less depending on how much current is flowing through a wire. Just as we might choose a unit such as liters per second to describe the flow of water, a popular unit of measurement for electrical current is \emph{amperes (amps)}.
 
-The second quantity of interest is called \emph{voltage}, abbreviated $V$. Borrowing again from the popular explanatory analogy to a water pipe, the voltage would be analogous to the pressure of the pipe. The voltage is measured in \emph{volts}, and can be measured independently of current, with the details of measurement depending on the type of circuit being used.
+The second quantity of interest is called \emph{voltage}, abbreviated $V$. Borrowing again from the popular analogy to water flowing through a pipe, the voltage would be analogous to the pressure of the water against the pipe. The voltage is measured in \emph{volts}, and can be measured independently of current, with the details of measurement depending on the type of circuit being used.
 
-What is the relationship between current and voltage? That is the question that Georg Ohm set out to answer. Just as increasing the water pressure would increase the number of gallons per second flowing through the pipe system, so too an increase in voltage corresponds to a proportional increase in current. But until experiments are performed, the nature of this relationship is unclear. Ohm did the experimentation: he formed a circuit with some copper wire, varied the voltage, and measured the current. He did this with different wires of different thicknesses (the \emph{gauge} of a wire is a standard measurement of diameter or, equivalently, cross sectional area). What he determined was that for any given wire, $I$ was proportional to $V$. In other words, for a given wire $I = C \dot V$ for some wire-specific constant $C$. This constant changed from wire to wire.
+What is the relationship between current and voltage? Just as increasing the water pressure would increase the number of gallons per second flowing through the pipe system, so too an increase in voltage corresponds to a proportional increase in current. That much was well known as soon as people started tinkering with electricity. But until experiments are performed, the nature of this relationship is unclear. If we doubled the voltage of a circuit, would the current be doubled? Quadrupled? Or perhaps only increase slightly?
+
+That is the question that Georg Ohm set out to answer through experimentation. He formed a circuit with some copper wire, varied the voltage, and measured the current. He did this with different wires of different thicknesses (the \emph{gauge} of a wire is a standard measurement of diameter or, equivalently, cross sectional area). What he determined was that for any given wire, $I$ was proportional to $V$. In other words, for a given wire $I = C \dot V$ for some wire-specific constant $C$. This constant changed from wire to wire.
 
 Here is a fake example illustrating the sorts of calculations of these quantities that Ohm performed almost 200 years ago that led us to Ohm's law:
 
 [INSERT CHARTS]
 
-How do we make sense of this data? Once we posit that each length of wire, or electrical component has a specific internal electrical \emph{resistance} (which can be measured in the unit \emph{Ohms}) then ALL of the data above can be condensed into a simple equation known as Ohm's Law:
+How do we make sense of this data? Once we posit that each length of wire and each electrical component has a specific internal electrical \emph{resistance} (which can be measured in the unit \emph{Ohms}) then ALL of the data above can be condensed into a simple equation, which we call Ohm's Law:
 
 $I = V/R$
 
-The final term $R$ stands for resistance, and is the property of a particular electrical component (as well as other factors like the temperature of the system). This law is quite simple but also very powerful, and is an essential conceptual tool we'll use when designing electrical systems.
+The final term $R$ stands for resistance, and is the property of a particular circuit that depends on physical properties like the type and thickness of wire, the physical properties of each electrical component along the path that the current travels, and the temperature of the system. This law is quite simple but also very powerful, and is an essential conceptual tool we'll use when designing electrical systems.
 
 \section{Electrical components}
 
@@ -350,19 +346,21 @@ Before we build a telephone, let's take stock of what electrical components we h
 
 [INSERT IMAGES]
 
-A resistor is a component intended to provide electrical resistance and is written like so:
+A resistor is a component that provides electrical resistance and is written like so:
 
 [RESISTOR]
 
-A capacitor is another important electrical component
+Using the above notation borrowed from electrical engineering, we would thus write a simple circuit with a switch like this:
 
-[CAPACITOR]
+[ADD IMAGE]
 
-At this stage of the book, it might be worth investing in an electronics starter kit to give you a hands on feel for building an electrical system.
+
 
 
 
 \section{A one-way telephone}
+
+Now let's build a
 
 A one-way telephone has a microphone at one end capable of translating an analog sound signal into an electrical one, and a receiver at the other end capable of translating the electrical signal back into an audible sound signal:
 
@@ -406,6 +404,18 @@ This created a host of challenges: overcoming competition, getting the governmen
 Naming was becoming a problem for the telegraph in the late 1800s. Until that point, if a telegram was addressed to John Smith in Boston, the message could properly be routed to the Boston office but then what? A lot of responsibility for getting this right fell on the sender of the message to appropriately specify a recipient (\emph{John Smith of Commonwealth Ave in Back Bay}) and on the local courier boys who worked for the telegraph office to have some familiarity with the neighborhood and where people or businesses were located.
 
 As cities grew and telegram volume grew, this ad hoc system was becoming unsustainable.
+
+
+\chapter{Modern Digital Telephone}
+
+\section{Information content and analog signals}
+
+How much information does a sound signal contain? Of course it's not fair to compare a hundred years of sounds to a millisecond, so to start to get a handle on the information content of a sound, let's fix our metric to be information \emph{per second}.
+
+But even now the answer is far from straight forward. A completely uniform sound intuitively has no information
+
+[IAMHERE]
+
 
 
 
