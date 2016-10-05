@@ -366,13 +366,13 @@ This forms the basis for how signals can be combined, shifted, and generally man
 
 \chapter{How A Telephone Works}
 
-The telephone transforms a sound signal into an electrical signal and back again. It was not the only analog device in the late 1800s that sought to manipulate sound in new ways.
+The telephone transforms a sound signal into an electrical signal and back again.
 
-The phonograph was invented in 1877 and was the original technology in a line that continued with record players, cassette tapes players, CD players, and MP3 players. [FOOTNOTE: it seems this line of technology may have been subsumed by more general purpose desktop and mobile computers in the last 5 years or so]. The phonograph was aimed at solving a dual problem to the telephone, in that it needed to capture a sound signal somehow. The difference is that once captured, instead of the moving the sound signal quickly over a long distance, the phonograph was instead tasked with creating a physical object from which the sound could be later retrieved, a record. Early phonographs used a circular disk as the record, and a sound signal was captured by deviations in a spiral groove. [MORE HERE?]
+But it was not the only game in town when it came to experimenting with sound. For example, the phonograph was invented in 1877 and is the ancestor of record players, cassette tapes players, CD players, and MP3 players. [FOOTNOTE: it seems this line of technology may have been subsumed by more general purpose desktop and mobile computers in the last 5 years or so]. The phonograph was aimed at solving a dual problem to the telephone. Both devices needed to capture sound. The difference is that once captured, the phonograph created a physical object from which the sound could be later retrieved, a record of the sound. Early phonographs used a circular disk as the record, and a sound signal was captured by deviations in a spiral groove. The telephone, in contrast, needed to quickly transport the sound to far away location, but did not need to make a record while doing so.
 
 [DIAGRAM OF TELEPHONE VS PHONOGRAPH]
 
-In this chapter, we will work towards building a telephone. It is worth mentioning that the telephone we build is not historical, nor does it do justice to the incredible complexity of the telephone system in even the early 20th century. Instead, deliberate choices have been made to stick to the simple core concepts, borrowing freely from different historical periods to offer the simplest version for readers who are new to telephony, in keeping with the goal of developing a solid conceptual understanding of the technology.
+In this chapter, we will work towards building a telephone. It is worth mentioning that the telephone we build is not a historical replica, nor does it do justice to the incredible complexity of the telephone system in even the early 20th century. Instead, deliberate choices have been made to stick to the simple core concepts, borrowing freely from different historical periods to offer the simplest version for readers who are new to telephony, in keeping with the goal of developing a solid conceptual understanding of the technology.
 
 \section{Ohm's Law}
 
@@ -382,13 +382,13 @@ To motivate Ohm's law, note that there are two critically important electrical q
 
 The first quantity is the electrical \emph{current}, commonly abbreviated $I$ in the field of electrical engineering. This is a measure of the ``flow'' of the electricity through the circuit, analogous to the amount of water that might flow through a pipe system per second. Electrical current can be measured using a device called a \emph{galvanometer}: a magnetic compass needle is deflected more or less depending on how much current is flowing through a wire. Just as we might choose a unit such as liters per second to describe the flow of water, a popular unit of measurement for electrical current is \emph{amperes (amps)}.
 
-The second quantity of interest is called \emph{voltage}, abbreviated $V$. Borrowing again from the popular analogy to water flowing through a pipe, the voltage would be analogous to the pressure of the water against the pipe. The voltage is measured in \emph{volts}, and can be measured independently of current, with the details of measurement depending on the type of circuit being used.
+The second quantity of interest is called \emph{voltage}, abbreviated $V$. Borrowing again from the well-worn analogy of electricity to water flowing through a pipe, the voltage would be analogous to the pressure of the water in the pipe. The voltage is measured in \emph{volts}, and can be measured independently of current, with the details of measurement depending on the type of circuit being used.
 
 What is the relationship between current and voltage? Just as increasing the water pressure would increase the number of gallons per second flowing through the pipe system, so too an increase in voltage corresponds to a proportional increase in current. That much was well known as soon as people started tinkering with electricity. But until experiments are performed, the nature of this relationship is unclear. If we doubled the voltage of a circuit, would the current be doubled? Quadrupled? Or perhaps only increase slightly?
 
 That is the question that Georg Ohm set out to answer through experimentation. He formed a circuit with some copper wire, varied the voltage, and measured the current. He did this with different wires of different thicknesses (the \emph{gauge} of a wire is a standard measurement of diameter or, equivalently, cross sectional area). What he determined was that for any given wire, $I$ was proportional to $V$. In other words, for a given wire $I = C \dot V$ for some wire-specific constant $C$. This constant changed from wire to wire.
 
-Here is a fake example illustrating the sorts of calculations of these quantities that Ohm performed almost 200 years ago that led us to Ohm's law:
+Here is a possible example illustrating the sorts of calculations of these quantities that Ohm performed almost 200 years ago that led us to Ohm's law:
 
 [INSERT CHARTS]
 
@@ -402,17 +402,17 @@ The final term $R$ stands for resistance, and is the property of a particular ci
 
 Before we build a telephone, let's take stock of what electrical components we have at our disposal and formalize our electrical circuit schematic diagrams a bit. We have already met the \emph{relay}, the \emph{switch} and the \emph{power source} (e.g. a battery). Here is how these components are typically represented in circuit diagrams:
 
+IAMHERE
+
 [INSERT IMAGES]
 
 A resistor is a component that provides electrical resistance and is written like so:
 
 [RESISTOR]
 
-Using the above notation borrowed from electrical engineering, we would thus write a simple circuit with a switch like this:
+Using this more formal electrical engineering notation, we would write a simple circuit with a switch like this:
 
 [ADD IMAGE]
-
-
 
 
 
@@ -432,7 +432,7 @@ A \emph{microphone} serves as the input mechanism, translating our sound signal 
 
 Much like our eardrums, a thin metal diaphragm is used that vibrates in response to sound waves. When it is pushed inward, as in the diagram above, the carbon granules are squeezed closer together, decreasing the resistance of the granules, and thus increasing the current flowing through the wire. This means that the wire now can carry the same signal as the sound waves.
 
-You might imagine that the carbon granules have to be specially placed for this scheme to work, but this is not the case. We do not need to know the exact path that electrons might take for the macroscopic principle to hold: as the instantaneous air pressure increases, the diaphragm is pushed inward, packing the granules more tightly and decreasing their electrical resistance, proportionally to the increase in air pressure.
+You might think that the carbon granules have to be specially placed for this scheme to work, and imagine an engineer hunched over a telephone receiver carefully moving granules of carbon around with the precision of a caretaker working on a bonsai tree. But thankfully, this is not the case. We do not need to know the exact path that electrons might take for the macroscopic principle to hold: as the instantaneous air pressure increases, the diaphragm is pushed inward, packing the granules more tightly and decreasing their electrical resistance proportionally to the increase in air pressure.
 
 \subsection{Receiver}
 
@@ -440,18 +440,15 @@ A \emph{receiver} is a diaphragm attached to an electromagnet. As the electrical
 
 \section{Telephones of the early 1900s}
 
-In the above conceptual diagram, the electrical circuit is always closed, meaning that current is flowing continuously through the circuit without any means to stop it (aside from cutting the cord). In practice, a mechanism is needed to open the circuit when it is not in use, which helps to save battery. It is also desirable for phones to work in the familiar two-way fashion in which a person can talk and listen at the same time.
-
+In the above conceptual diagram, the electrical circuit is always closed, meaning that current is flowing continuously through the circuit without any means to stop it (aside from cutting the cord). In practice, a mechanism is needed to open the circuit when it is not in use, which helps to save battery. It is also desirable for phones to work in the familiar two-way fashion in which a person can talk and listen at the same time. These engineering challenges are significant and interesting, but unfortunately beyond the scope of this text. Readers interested in learning more about telephony should consult one of the excellent historical texts or reference manuals that spare no detail [CITATIONS]
 
 \chapter{The Telephone Network}
 
-The first telephones connected a pair of adjacent rooms, making the problem of knowing who was at the other end of the line pretty straight forward.
-
-But the dream of industrialist Theodore Vail, president of AT\&T from 1885 to 1889 and again from 1907 to 1919, was universal telephone service for all:
+The first telephones connected a pair of adjacent rooms, and so knowing who was at the other end of the line did not require much detective work. But the dream of industrialist Theodore Vail, president of AT\&T from 1885 to 1889 and again from 1907 to 1919, was far more ambitious: universal telephone service for all.
 
 [QUOTE FROM VAIL]
 
-He was an unabashed monopolist, and genuinely believed that a telecommunications monopoly was in the best interest of the country.
+A proud and unabashed monopolist, and genuinely believed that a telecommunications monopoly was in the best interest of the country.
 
 [QUOTE FROM VAIL]
 
