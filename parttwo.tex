@@ -32,9 +32,7 @@
 
 \part{The Telephone}
 
-In 1876, to celebrate the centennial of the Declaration of Independence, the United states hosted its first World's Fair in Philadelphia. The event lasted several months, thirty-seven countries participated, and nearly 10 million visitors attended.
-
-The biggest draws were mechanical inventions: displays of steam engines, the world's Remington Typographic Machine (the first typewriter), and precision watches, to name a few. Yet the age of electricity was just around the corner, and electrical contraptions were also on display. In a modest area across the Machinery Hall sat a young Alexander Graham Bell, demonstrating the transfer of human voice through wires.
+The 1876 World's Fair in Philadelphia was a steampunk fantasy: displays of steam engines, the world's Remington Typographic Machine (the first typewriter), and precision watches. Yet while mechanical attractions dominated the event, the age of electricity was just around the corner, evident in a modest area across the Machinery Hall, where a young Alexander Graham Bell was demonstrating the transfer of human voice through wires.
 
 People viewed early telephone prototypes like the one on display by Bell as a kind of toy, not a serious contender to the business-oriented telegraph empire of Western Union. But as the viability of the telephone grew, that perception changed quickly and it did not take long for commercial telephony to develop, seeded by Bell and his collaborators. Once off the ground, there was a rapid shift in power away from the well-established Western Union and instead towards the upstart corporation that would become AT\&T, a telecommunications giant that would come to define the industry in the United States for a century.
 
@@ -44,7 +42,7 @@ Given that our ultimate goal is understanding the Internet and not the telephone
 
 \chapter{Signals}
 
-In the previous chapter, we studied symbols quite extensively, emphasizing the transmission of symbols from one location to another as a \emph{digital} telecommunication system. In contrast to representing information as a series of discrete symbols, information can also be presented in an \emph{analog} fashion via \emph{signals}, in which a variable might take on an infinite number of values over time. Recall that such a variable is called \emph{continous}. A few examples of continuous variables are time, pitch, temperature, human height.
+In the previous chapter, we studied symbols quite extensively, emphasizing the transmission of symbols from one location to another as a \emph{digital} telecommunication system. In contrast to representing information as a series of discrete symbols, information can also be presented in an \emph{analog} fashion via \emph{signals}, in which a variable might take on an infinite number of values over time. Recall that such a variable is called \emph{continuous}. A few examples of continuous variables are time, pitch, temperature, human height.
 
 Early telephone systems represented human society's first foray into an analog telecommunication technology, allowing sound to be transmitted from one location to another, and so we will use sound as a natural jumping off point to understand analog signals.
 
@@ -64,9 +62,9 @@ The wave is a \emph{longitudinal} wave, meaning it does not have the peaks and t
 \includegraphics[width=0.8\linewidth]{longvstransvwave}
 \end{figure}
 
-As a first approximation towards understanding sound, imagine a large explosion at the moment the tree strikes the ground, except that instead of an outwardly expanding sphere of fire, there is an outwardly expanding sphere where air particles are more tightly bunched together. This momentary compression of air particles constitutes a change in \emph{air pressure} in that location.
+As a first approximation towards understanding sound, imagine a large nuclear explosion right where the tree strikes the ground, except that instead of an outwardly expanding sphere of fire, there is an outwardly expanding sphere where air particles are more tightly bunched together. This momentary compression of air particles constitutes a change in \emph{air pressure} in that location.
 
-As objects on Earth interact with each other, waves of pressure expand outward in the surrounding medium (in the example above, this medium is the air). These pressure changes often signal events that are important to an organism, like when something is approaching an organism that could be either a predator or food. Given the importance of this information for survival, many species including humans evolved auditory systems to make sense of the constantly and subtly changing air pressure all around us; we call our experience of this phenomena \emph{hearing}. And in parallel to the development of our sense of hearing, we evolved increasingly sophisticated ways to create sound ourselves, culminating in vocal chords and speaking.
+As objects on Earth interact with each other, waves of pressure expand outward in the surrounding medium (in the example above, this medium is the air). These pressure changes often signal events that are important to humans and other biological organisms, like when something is approaching an organism that could be either a predator or food. Given the importance of this information for survival, many species including humans evolved auditory systems to make sense of the constantly and subtly changing air pressure all around us; we call our experience of this phenomena \emph{hearing}. And in parallel to the development of our sense of hearing, we evolved increasingly sophisticated ways to create sound ourselves, culminating in vocal chords and speaking.
 
 The simplified description above of a tree falling might lead one who is unfamiliar with hearing to believe that there is only a single, uniform experience of a sound, but of course that's not the case. Sound has many different qualities, like pitch, intensity, duration, and timbre. It is quite easy to tell the soulful barotone of a jazz singer from the sound of a tree hitting the ground. This differentiation is possible because sound waves can be rather sophisticated, the miniscule air particles compressing and un-compressing in non-uniform ways over very small distance and time scales.
 
@@ -97,10 +95,10 @@ A function is a mapping from one set of objects to another:
 \includegraphics[width=0.8\linewidth]{function_basic}
 \end{figure}
 
-We say that a function has a \emph{domain}, which is the set of objects on the left in the figure above, and a \emph{co-domain} which is the set of objects on the right. There is one important rule that must be followed for something to count as a function:
+We say that a function has a \emph{domain}, which is the set of objects on the left in the figure above, and a \emph{co-domain} which is the set of objects on the right. We call the objects here \emph{elements}. So a domain and a co-domain both are composed of elements, and a function is a mapping from the elements of the domain to the elements of the co-domain. There is one important rule that must be followed for something to count as a function:
 
 \begin{itemize}
-\item For each object in the domain, a function MUST map that to EXACTLY ONE object in the co-domain
+\item For each element in the domain, a function MUST map that to EXACTLY ONE element in the co-domain
 \end{itemize}
 
 In other words, since functions must be defined on the entire domain, this isn't allowed:
@@ -117,7 +115,7 @@ And neither is this:
 \includegraphics[width=0.8\linewidth]{function_multifunction}
 \end{figure}
 
-Note that the converse of the second rule above does not hold; it is perfectly acceptable for several values in the domain to be mapped to a single value in the co-domain, as is the case in the first diagram above.
+Note that the converse of the second rule above does not hold; it is perfectly acceptable for several elements in the domain to be mapped to a single element in the co-domain, as is the case in the first diagram above.
 
 So far, the domain has been 4 blobs, and the co-domain has been 3 blobs, but this is just one example. There are no restrictions on the domain or co-domain. You can have a function where the domain is pet owners on Earth, and the co-domain is the set of pets:
 
@@ -128,15 +126,15 @@ So far, the domain has been 4 blobs, and the co-domain has been 3 blobs, but thi
 
 We might call this function ``FavoritePet'', and write $FavoritePet(John) = Fluffy$ to mean that the function ``FavoritePet'' maps the element ``John'' in the domain of pet owners to the element ``Fluffy'' in the domain of pets, a formal way of writing that Fluffy is John's favorite pet. (\emph{Exercise}: would ``Owns'' with the same domain and co-domain constitute a function? why or why not?)
 
-To indicate that a function $f$ has domain $A$ and co-domain $B$, we use the notation $f: A \rightarrow B$. In this case the function itself is $f$ and the value of the function at $x$ is denoted by $f(x)$.
+To indicate that a function $f$ has domain $A$ and co-domain $B$, we use the notation $f: A \rightarrow B$. In this case the function itself is $f$ and the \emph{value} of the function at $x$ is denoted by $f(x)$. The value of a function at a particular element $x$ of the domain is just the element of the co-domain where $x$ is mapped.
 
-The domain and co-domain of a function can be finite (like Pet Owners) or infinite (like natural numbers: $\mathbb{N} = {0, 1, 2, 3, etc.}$). The domain and co-domain could be the same, but they do not have to be.
+The domain and co-domain of a function can be finite (like Pet Owners) or infinite (like natural numbers: $\mathbb{N} = {0, 1, 2, 3, etc.}$). The domain and co-domain could be the same, but they of course do not have to be.
 
 Sometimes functions can be described easily, like ``FavoritePet'' or the function $f: \mathbb{N} \rightarrow \mathbb{N}$ that takes a natural number and doubles it. We could call this function ``Doubles'', but mathematicians prefer a more compact and precise description: $f(x) = 2x$. Here $x$ is a variable and so the description of $f$ above works for the entire domain, although the expression does not specify the domain explicitly.
 
-Other times functions cannot be described easily at all but instead are simply a random-looking mapping from the domain to the co-domain. In this case, the only way to give a full description of the function is to give it's value for every single input object, a task that is sometimes provably impossible when there are an infinite number of input objects. But even in these cases, the functions themselves are valid in a mathematical sense, even if they defy easy description or understanding.
+Other times functions cannot be described easily at all but instead are simply a random-looking mapping from the domain to the co-domain. In this case, the only way to give a full description of the function is to give it's value for every single input object, a task that might be (provably) impossible when there are an infinite number of input objects. [FOOTNOTE] But even in these cases, even if they defy easy description or understanding, the functions themselves are valid in a mathematical sense.
 
-Domains or co-domains might be multi-dimensional spaces. For example, a function $f: \mathbb{N}^{3} \rightarrow \mathbb{N}$ would map triplets like $(4,5,1)$ to natural numbers like $17774$. Domains and co-domains can also be discrete, like the natural numbers. Or they can be continuous, in that they range over a continuous variable such as time. [FOOTNOTE: the mathematical definition of a continuous variable is subtle, but an approximation is the notion of \emph{density}: for a variable A, and any values $x$, $y$ that can be taken on by $A$ such that $x < y$, there is a value $z$ that the variable $A$ can take on and $x < z < y$. Exercise: show that this property does NOT hold for the natural numbers $\mathbb{N}$.]
+Domains or co-domains might be multi-dimensional spaces. For example, a function $f: \mathbb{N}^{3} \rightarrow \mathbb{N}$ would map triplets like $(4,5,1)$ to natural numbers like $17774$. Domains and co-domains can also be discrete, like the natural numbers. Or they can be continuous, in that they range over a continuous variable such as time. [FOOTNOTE: the mathematical definition of a continuous variable is subtle, but a very rough approximation is the notion of \emph{density}: for a variable A, and any values $x$, $y$ that can be taken on by $A$ such that $x < y$, there is a value $z$ that the variable $A$ can take on and $x < z < y$. Exercise: show that this property does NOT hold for the natural numbers $\mathbb{N}$.]
 
 How does this discussion of functions relate to the plots of sound waves above? It turns out that that familiar plot along an x and y axis is a representation of a function, where the x axis is the domain and the y axis is the co-domain.
 
@@ -218,7 +216,7 @@ Let's go back to the telegraph for a moment. In the case of the telegraph, the c
 \end{axis}
 \end{tikzpicture}
 
-(This figure is an idealized version. In reality, the telegraph signal was distorted by the time it was received and so did not look quite so clean, but this serves as an idealized representation of the signal being sent and received. We will discuss distortions later on.)
+(Note that this figure is an idealized representation. In reality, the telegraph signal was distorted by the time it was received and so did not look quite so clean, but this serves as an idealized representation of the signal being sent and received. We will discuss distortions later on.)
 
 The telephone, in contrast, has to solve the more difficult problem of translating an incoming speech waveform into an electrical signal and then back into a sound signal on the other end of the line.
 
@@ -232,7 +230,7 @@ We have already covered basic symbolic systems, and the fact that any symbolic r
 
 In this case, we are instead dealing with a \emph{signal}. While there is no universally agreed upon definition of a signal, for our purposes let us consider it to be a function in which the domain is time, and the co-domain is a continuous variable that bears information. This definition allows us to abstract away the information from the particular medium in which it resides. So, for example, we can consider the speech waveform above and its translation into electrical current to both be different representations of the same signal.
 
-So far we have looked at a speech signal, and the signal produced by a tree hitting the ground. What about the sound of a C note that does not vary in pitch or intensity? You might expect the signal associated with such a uniform sound to look like the function that graphs pitch over time:
+So far we have looked at a speech signal, and the signal produced by a tree hitting the ground. What about the sound of a C note that does not vary in pitch or intensity? Given the uniformity of experience associated with the monotone sound of a C note, you might expect at first blush that the signal associated with such a uniform sound to look like the function that graphs pitch over time:
 
 \begin{tikzpicture}
 \begin{axis}[
@@ -249,7 +247,7 @@ So far we have looked at a speech signal, and the signal produced by a tree hitt
 \end{axis}
 \end{tikzpicture}
 
-However, a single C note in fact is a signal that looks like this:
+However, a single C note in fact is better represented by a signal that looks like this:
 
 \begin{tikzpicture}
 \begin{axis}[
@@ -290,21 +288,81 @@ Here the domain is time in seconds, and we can graph the function:
 
 The frequency of the function $sin(x)$ is $2\pi$ since that comprises a full rotation around the unit circle. Hence, the function $f(x)$ above corresponding to our A note has a frequency of 1/440, meaning that there are 440 oscillations per second. The unit ``per second'' has a name, which is \emph{hertz}, abbreviated \emph{Hz}, and so we say that the frequency of an A note is 440Hz. If you are a musician with a basic knowledge of music theory, you probably know this fact.
 
-The fact that this frequency is fairly high helps to explain why the experience of hearing an A note can appear monotone and uniform. Our auditory system is not designed to discern the individual peaks and troughs whizzing by, but rather to pick up on the frequency of oscillations.
+So why do we hear an A or C note as a uniform tone? Keep in mind that the oscillations are whizzing by rather fast -- 440 per second. Our auditory system is not designed to discern the individual peaks and troughs at such a low level of granularity, but rather to pick up on the frequency of oscillations. There is no particular reason for this, it just turned out to be more useful and practical from an evolutionary standpoint to detect patterns in how frequencies change. If our evolutionary history played out differently, we might have evolved instead to react in a completely different way to the constant changes in air pressure and the experience of ``sound'' might be radically different. Instead, as it turns out we became sensitized to rapid oscillating vibrations, the pitches they produce, and to surrounding phenomena like the changes from one rapid oscillating vibration to another, the combining of different vibrations, the slow change in frequency or amplitude of a vibration.
 
-As such, tones are distinguished by their frequency; higher-frequency sound waves have a higher pitch, a fact also familiar to those familiar with music.
+Moreover, given the sensitivity of the human auditory system to small oscillating vibrations, our vocal chords evolved to make sound by creating vibrating sinusoidal sound waves. But we are not single-note rookies. We have mastery over creating these sinusoidal waves and can start, stop, and with unconscious ease are able to quickly shift and alter the frequencies and amplitudes of the waves, resulting in the incredible feat of human speech.
 
-[IAMHERE, ADD functions for different pitches]
-
-Given the sensitivity of the human auditory system to small oscillating vibrations, our vocal chords evolved to make sound by creating vibrating sinusoidal sound waves, but we are not single-note rookies. We have mastery over creating these sinusoidal waves and can start, stop, and move up and down quickly between different frequency waves with ease, allowing the incredible feat of human speech.
-
-It may not seem like the speech waveform displayed above is made up of sinusoidal components, but that is only because we have a sophisticated innate mastery over producing sounds, combining and adjusting different frequencies. Here is a zoomed in look at a section of the waveform over a very small time slice:
+It may not seem obvious that the disorderly-looking speech waveform displayed above is made up of sinusoidal components. But that is only because as speakers and listeners we have a sophisticated innate mastery over producing and deciphering sounds, combining and adjusting different frequencies. Here is a zoomed in look at a section of the waveform over a very small time slice:
 
 [SHOW SECTION OVER SMALL TIME SLICE]
 
-As it happens, the mathematics behind combining these sinusoidal signals is quite important for telecommunication technology, and is basically as simple as addition.
+As it happens, the mathematics behind combining these sinusoidal signals is quite important for telecommunication technology, and is a very straightforward extension of the addition operator you learned in elementary school called \emph{pointwise addition}. Let's start with an illustration. Suppose you have the following two functions:
 
-[ADD MORE HERE ABOUT COMBINING SIN WAVES ETC]
+\[
+
+f_{1}: \mathbb{N} \rightarrow \mathbb{N} \\
+f_{2}: \mathbb{N} \rightarrow [-1,1] \\
+
+\]
+
+Let $f_{1}$ be defined by $f_{1}(x) = 2x$ and let $f_{2}(x) = sin(x)$.
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $x$,
+    ylabel = {$f_{1}(x)$},
+]
+\addplot [
+    domain=-1:5,
+    samples=100,
+    color=black,
+]
+{2 * x};
+\end{axis}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $x$,
+    ylabel = {$f_{2}(x)$},
+]
+\addplot [
+    domain=-1:5,
+    samples=1000,
+    color=black,
+]
+{sin(x)};
+\end{axis}
+\end{tikzpicture}
+
+So $f_{1}(4) = 8$, and $f_{2}(4) = sin(4) = -0.7568$ (rounding some decimal places). So what is $f_{1} + f_{2}(4)$? Well let's just add the two values at that point: $f_{1} + f_{2}(4) = f_{1}(4) + f_{2}(4) = 8 + (-0.7568) = 7.2432$. By taking every element of the shared domain for $f_{1}$ and $f_{2}$ and adding the values for that element at $f_{1}$ and $f_{2}$ just as we have done for the element $4$, we can construct the new function $f_{1}+f_{2}$.
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $x$,
+    ylabel = {$f_{1}+f_{2}(x)$},
+]
+\addplot [
+    domain=-1:5,
+    samples=1000,
+    color=black,
+]
+{2*x + sin(x)};
+\end{axis}
+\end{tikzpicture}
+
+[TODO explicitly point out the value of this graph at $4$?]
+
+What does this have to do with sound waves or human speech? Well if there are two distinct vibrations happening from the same source, let's say a C note at XXX Hz and an A note at YYY Hz, then the resulting sound wave will be added together as above.
+
+[ADD IMAGE]
+
+This forms the basis for how signals can be combined, shifted, and generally manipulated to form speech waveforms.
+
+[MORE HERE?]
 
 \chapter{How A Telephone Works}
 
