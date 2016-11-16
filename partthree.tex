@@ -1,0 +1,63 @@
+\documentclass[UTF8]{book}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{seqsplit}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{listings}
+\usepackage{CJK}
+
+\newtheorem{theorem}{Proposition}
+\newtheorem{definition}{Definition}
+\newcommand\longnumber[2]{%
+    \begin{minipage}{#1}
+    \seqsplit{#2}
+    \end{minipage}
+    }
+\newcommand*\thickdash{\includegraphics{thick-dash2}}
+\newcommand*\thickdot{\includegraphics{thick-dot2}}
+
+\graphicspath{ {images/} }
+\begin{document}
+\begin{CJK}{UTF8}{gbsn}
+
+\title{The Network}
+\author{Dan Auerbach}
+\date{2015}
+\maketitle
+
+\part{Radio}
+
+The idea of radio waves conveying information is both commonplace and magical. It is commonplace in that by using phones and computers every day, people in society have absorbed the idea that without the help of any wires, a mobile device can communicate with a cell tower or a home WiFi router. It is magical because unless you are an electrical engineer or have a background in radio, you probably have no idea how the 1s and 0s that make up that cat video actually make it from the cell tower to your phone.
+
+Our first project in this part of the book is to demystify radio, so that it will become clear exactly how information can be transmitted without wires by making use of the electromagnetic spectrum.
+
+Next, we will discuss the development of radio within the global information network that was developing in the early and mid 20th century. Radio was critical because it proved we don't always need wires everywhere, but could instead rely on radio links. And broadcast radio became its own entertainment empire.
+
+\chapter{Signals in light}
+
+In the last part[TODO: specify] of the book, we discussed signals, or information-bearing functions where the domain is time.
+
+We discussed how a sound wave could be abstracted away to its signal form, transposed into electrical current running through wires with the help of some electromechanical components, and finally transposed back again into sound.
+
+But what about light? Could the same signal be transmitted via light? Absolutely! Our earliest thought experiment with Mary and [TODO fill in] demonstrated how symbolic information could be transmitted via light, so let's return to that example with an eye towards transmitting an analog signal.
+
+To do this, we must discard the idea that a light is on or off. In fact, a given light can be in a continuous number of states of brightness, and the level of brightness can vary with time, giving us -- tada -- a signal.
+
+[TODO: image?]
+
+How, practically speaking, could you transmit a signal via light? In practice, the technology
+
+\chapter{Electromagnetic spectrum}
+
+
+
+
+
+
+\end{CJK}
+\end{document}
